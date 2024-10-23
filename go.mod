@@ -5,7 +5,7 @@ go 1.22.8
 require (
 	github.com/yyle88/done v1.0.11
 	github.com/yyle88/must v0.0.3
-	github.com/yyle88/osexistpath v0.0.8
+	github.com/yyle88/osexistpath v0.0.9
 	github.com/yyle88/runpath v1.0.9
 )
 
