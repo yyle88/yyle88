@@ -14,8 +14,15 @@
 
 这是我的账号：
 
-| 账号名称             | 账号描述   |
-|------------------|--------|
-| [yyle88](https://github.com/yyle88)       | 主要开源账号 |
-| [yyle66](https://github.com/yyle66)       | 备用开源账号 |
+| 账号名称                                            | 账号描述   |
+|-------------------------------------------------|--------|
+| [yyle88](https://github.com/yyle88)             | 主要开源账号 |
+| [yyle66](https://github.com/yyle66)             | 备用开源账号 |
 | [yangyile1990](https://github.com/yangyile1990) | 其他开源账号 |
+
+这是我的组织：
+
+| 组织名称                                      | 组织描述                   |
+|-------------------------------------------|------------------------|
+| [go-xlan](https://github.com/go-xlan)     | 使用Go语言接其他语言/环境/协议的代码   |
+| [orzkratos](https://github.com/orzkratos) | 使用Go-Kratos框架的心得体会工具代码 |
