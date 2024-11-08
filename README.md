@@ -14,6 +14,7 @@
 
 我的项目列表：
 [我的项目列表](https://github.com/yyle88?tab=repositories&sort=stargazers)
+[给我星星谢谢](https://github.com/yyle88?tab=repositories&sort=stargazers)
 给我星星谢谢！
 
 这是我的项目：
