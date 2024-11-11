@@ -3,7 +3,7 @@ module github.com/yyle88/yyle88
 go 1.22.8
 
 require (
-	github.com/go-resty/resty/v2 v2.15.3
+	github.com/go-resty/resty/v2 v2.16.0
 	github.com/stretchr/testify v1.9.0
 	github.com/yyle88/done v1.0.13
 	github.com/yyle88/must v0.0.3
@@ -24,7 +24,7 @@ require (
 	github.com/yyle88/syntaxgo v0.0.30 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
-	golang.org/x/net v0.27.0 // indirect
+	golang.org/x/net v0.31.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
