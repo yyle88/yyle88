@@ -42,8 +42,9 @@
 | [neatjson](https://github.com/yyle88/neatjson) | neat json make it neat to use "encoding/json" in golang. |
 | [demojavabtcsign](https://github.com/yyle88/demojavabtcsign) | 使用Java给BTC签名的DEMO 当然由于我在开发时顺带也接了狗狗币dogecoin，因此这里也同样可以适用于狗狗币的签名（跟BTC签名共用逻辑，区别仅仅在于，链的网络参数不同）。 |
 | [must](https://github.com/yyle88/must) | must means assert means require. while the assert/require are using in testcase. must is using in main code. |
-| [yyle88](https://github.com/yyle88/yyle88) | Go Go Go |
+| [yyle88](https://github.com/yyle88/yyle88) | 这个项目的用途是，自我介绍，和，项目介绍。self-introduction, as well as a self-introduction of my projects |
 | [osexec](https://github.com/yyle88/osexec) | simple utils to use golang os/exec |
+| [eroticgo](https://github.com/yyle88/eroticgo) | 打印彩色的日志 |
 
 给我星星谢谢。
 
