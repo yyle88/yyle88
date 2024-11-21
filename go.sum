@@ -1,7 +1,7 @@
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/go-resty/resty/v2 v2.16.0 h1:qpKalHWI2bpp9BIKlyT8TYWEJXOk1NuKbfiT3RRnzWc=
-github.com/go-resty/resty/v2 v2.16.0/go.mod h1:0fHAoK7JoBy/Ch36N8VFeMsK7xQOHhvWaC3iOktwmIU=
+github.com/go-resty/resty/v2 v2.16.1 h1:0EB9QI65hPIGU1uX7EdRPd0ZBcvWHS0DcpAoEayMVQw=
+github.com/go-resty/resty/v2 v2.16.1/go.mod h1:0fHAoK7JoBy/Ch36N8VFeMsK7xQOHhvWaC3iOktwmIU=
 github.com/kr/pretty v0.3.1 h1:flRD4NNwYAUpkphVc1HcthR4KEIFJ65n8Mw5qdRn3LE=
 github.com/kr/pretty v0.3.1/go.mod h1:hoEshYVHaxMs3cyo3Yncou5ZscifuDolrwPKZanG3xk=
 github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
@@ -14,8 +14,8 @@ github.com/rogpeppe/go-internal v1.12.0 h1:exVL4IDcn6na9z1rAb56Vxr+CgyK3nn3O+epU
 github.com/rogpeppe/go-internal v1.12.0/go.mod h1:E+RYuTGaKKdloAfM02xzb0FW3Paa99yedzYV+kq4uf4=
 github.com/stretchr/testify v1.9.0 h1:HtqpIVDClZ4nwg75+f6Lvsy/wHu+3BoSGCbBAcpTsTg=
 github.com/stretchr/testify v1.9.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
-github.com/yyle88/done v1.0.15 h1:3aYX+8dbYa/3OQj19S8TJvtxbYFNfqtLOmPr6vFmazU=
-github.com/yyle88/done v1.0.15/go.mod h1:xIJ57RqfY6zRHhcDHSdOSpgaFAF2RfHf7IE2ApQo7I0=
+github.com/yyle88/done v1.0.16 h1:IucG7Xtxk2sGhkd/YLj7hK96h9RrRhsaF2B7QBAcys8=
+github.com/yyle88/done v1.0.16/go.mod h1:xIJ57RqfY6zRHhcDHSdOSpgaFAF2RfHf7IE2ApQo7I0=
 github.com/yyle88/erero v1.0.11 h1:Qg1yAv4EXWa2oGwynlKIvkQXrNj3WUsEZaBeolXdAgU=
 github.com/yyle88/erero v1.0.11/go.mod h1:Py9OKSuz3A7r3PmgeUBmgjkVUpNPCeinFlS0LQeC0rQ=
 github.com/yyle88/formatgo v1.0.11 h1:bJuHyTAV/L3RD2BfGuk85APwu15qCA8rey+TnnhUgt4=

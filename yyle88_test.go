@@ -12,26 +12,13 @@ import (
 	"github.com/yyle88/must"
 	"github.com/yyle88/osexistpath/osmustexist"
 	"github.com/yyle88/runpath"
-	"github.com/yyle88/runpath/runtestpath"
 	"github.com/yyle88/yyle88"
 	"github.com/yyle88/yyle88/internal/utils"
 )
 
-func TestExample(t *testing.T) {
-	path := runtestpath.SrcPath(t)
-
-	t.Log(path)
-
-	must.True(osmustexist.IsFile(path))
-
-	data := done.VAE(os.ReadFile(path)).Nice()
-
-	t.Log(string(data))
-}
-
 func TestGenMarkdown(t *testing.T) {
 	username := "yyle88"
-	repos := yyle88.MustGetGithubRepos(username)
+	repos := done.VAE(yyle88.GetGithubRepos(username)).Nice()
 
 	ptx := utils.NewPTX()
 	ptx.Println("| 项目名称 | 项目描述 |")
@@ -62,6 +49,6 @@ func TestGenMarkdown(t *testing.T) {
 		strings.Join(sLns[eIdx:], "\n")
 	t.Log(content)
 
-	require.NoError(t, os.WriteFile(path, []byte(content), 0666))
+	must.Done(os.WriteFile(path, []byte(content), 0666))
 	t.Log("success")
 }
