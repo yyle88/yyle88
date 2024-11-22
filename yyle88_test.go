@@ -20,6 +20,8 @@ func TestGenMarkdown(t *testing.T) {
 	username := "yyle88"
 	repos := done.VAE(yyle88.GetGithubRepos(username)).Nice()
 
+	repos = repos[:min(5, len(repos))]
+
 	ptx := utils.NewPTX()
 	ptx.Println("| 项目名称 | 项目描述 |")
 	ptx.Println("|-------------------------------------------------|--------|")

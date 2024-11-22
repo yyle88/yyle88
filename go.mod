@@ -3,13 +3,14 @@ module github.com/yyle88/yyle88
 go 1.22.8
 
 require (
-	github.com/go-resty/resty/v2 v2.16.1
+	github.com/go-resty/resty/v2 v2.16.2
 	github.com/stretchr/testify v1.9.0
-	github.com/yyle88/done v1.0.16
-	github.com/yyle88/erero v1.0.11
-	github.com/yyle88/must v0.0.5
+	github.com/yyle88/done v1.0.17
+	github.com/yyle88/erero v1.0.12
+	github.com/yyle88/must v0.0.6
 	github.com/yyle88/neatjson v0.0.8
 	github.com/yyle88/osexistpath v0.0.9
+	github.com/yyle88/printgo v1.0.0
 	github.com/yyle88/runpath v1.0.10
 	github.com/yyle88/sortslice v1.0.4
 	github.com/yyle88/zaplog v0.0.14
