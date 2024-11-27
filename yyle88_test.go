@@ -16,14 +16,52 @@ import (
 	"github.com/yyle88/yyle88/internal/utils"
 )
 
+type argType struct {
+	shortName string
+	startWith string
+	titleLine string
+	closeWith string
+}
+
 func TestGenMarkdown(t *testing.T) {
-	username := "yyle88"
+	const username = "yyle88"
+
+	const shortName = "README.md"
+	const startWith = "Here are some of my key projects:"
+	const titleLine = "| **Project Name** | **Description** |"
+	const closeWith = "**Explore and star my projects. Your support means a lot!**"
+
+	GenMarkdownTable(t, username, &argType{
+		shortName: shortName,
+		startWith: startWith,
+		titleLine: titleLine,
+		closeWith: closeWith,
+	})
+}
+
+func TestGenMarkdownZhHans(t *testing.T) {
+	const username = "yyle88"
+
+	const shortName = "README.zh.md"
+	const startWith = "这是我的项目："
+	const titleLine = "| 项目名称 | 项目描述 |"
+	const closeWith = "给我星星谢谢。"
+
+	GenMarkdownTable(t, username, &argType{
+		shortName: shortName,
+		startWith: startWith,
+		titleLine: titleLine,
+		closeWith: closeWith,
+	})
+}
+
+func GenMarkdownTable(t *testing.T, username string, arg *argType) {
 	repos := done.VAE(yyle88.GetGithubRepos(username)).Nice()
 
 	repos = repos[:min(5, len(repos))]
 
 	ptx := utils.NewPTX()
-	ptx.Println("| 项目名称 | 项目描述 |")
+	ptx.Println(arg.titleLine)
 	ptx.Println("|-------------------------------------------------|--------|")
 	for _, repo := range repos {
 		ptx.Println(fmt.Sprintf("| [%s](%s) | %s |", repo.Name, repo.Link, strings.ReplaceAll(repo.Desc, "|", "-")))
@@ -32,16 +70,16 @@ func TestGenMarkdown(t *testing.T) {
 	stb := ptx.String()
 	t.Log(stb)
 
-	path := osmustexist.PATH(runpath.PARENT.Join("README.md"))
+	path := osmustexist.PATH(runpath.PARENT.Join(arg.shortName))
 	t.Log(path)
 
 	text := string(done.VAE(os.ReadFile(path)).Nice())
 	t.Log(text)
 
 	sLns := strings.Split(text, "\n")
-	sIdx := slices.Index(sLns, "这是我的项目：")
+	sIdx := slices.Index(sLns, arg.startWith)
 	require.Positive(t, sIdx)
-	eIdx := slices.Index(sLns, "给我星星谢谢。")
+	eIdx := slices.Index(sLns, arg.closeWith)
 	require.Positive(t, eIdx)
 
 	require.Less(t, sIdx, eIdx)
