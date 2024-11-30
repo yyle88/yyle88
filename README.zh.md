@@ -46,9 +46,9 @@
 |-------------------------------------------------|--------|
 | [gobtcsign](https://github.com/yyle88/gobtcsign) | 简单的Go语言版本比特币创建钱包和签名逻辑 |
 | [gotrontrx](https://github.com/yyle88/gotrontrx) | 简单的Go语言版本波场创建钱包/获得测试币/发出交易的逻辑 |
-| [syncmap](https://github.com/yyle88/syncmap) | SyncMap is a type-safe and generic wrapper around Go's sync.Map |
-| [gormcngen](https://github.com/yyle88/gormcngen) | gormcngen help gen enum code with gormcnm. 因为gormcnm能够以枚举定义字段名和字段类型，这个工具gormcngen就是自动帮你生成枚举代码的。 |
 | [reggin](https://github.com/yyle88/reggin) | reggin means register gin routes. 非常简单的gin路由注册器。 |
+| [gormcngen](https://github.com/yyle88/gormcngen) | gormcngen help gen enum code with gormcnm. 因为gormcnm能够以枚举定义字段名和字段类型，这个工具gormcngen就是自动帮你生成枚举代码的。 |
+| [syncmap](https://github.com/yyle88/syncmap) | SyncMap is a type-safe and generic wrapper pkg around Go's sync.Map |
 
 给我星星谢谢。
 
