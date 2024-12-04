@@ -14,11 +14,11 @@
 - 🌱 **Gender:** Male
 - 👯 **Education:** [Xidian (XDU)](https://www.xidian.edu.cn/) (2010-2014)
 - 💼 **Work Experience:** Huawei, ThoughtWorks, BX, PangQiu&PangDa&HuiOne.
-- 🤔 **Main Language:** Go
-- 💬 Passionate about software development.
-- 📫 Contributing to open-source in my spare time.
+- 📫 **Main Language:** Go
+- 💬 Passionate about software development and open-source contributions.
+- 🔗 **Github:** [repositories](https://github.com/yyle88?tab=repositories&type=public&sort=stargazers)
 - 🌟 **Starring my projects would greatly encourage me!**
-- ⚡ **Thank you for your support!**
+- ⬆️ **Thank you for your support!**
 
 ---
 

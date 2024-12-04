@@ -16,7 +16,7 @@ import (
 	"github.com/yyle88/yyle88/internal/utils"
 )
 
-type argType struct {
+type DocGenParamType struct {
 	shortName string
 	startWith string
 	titleLine string
@@ -31,7 +31,7 @@ func TestGenMarkdown(t *testing.T) {
 	const titleLine = "| **Project Name** | **Description** |"
 	const closeWith = "**Explore and star my projects. Your support means a lot!**"
 
-	GenMarkdownTable(t, username, &argType{
+	GenMarkdownTable(t, username, &DocGenParamType{
 		shortName: shortName,
 		startWith: startWith,
 		titleLine: titleLine,
@@ -47,7 +47,7 @@ func TestGenMarkdownZhHans(t *testing.T) {
 	const titleLine = "| 项目名称 | 项目描述 |"
 	const closeWith = "给我星星谢谢。"
 
-	GenMarkdownTable(t, username, &argType{
+	GenMarkdownTable(t, username, &DocGenParamType{
 		shortName: shortName,
 		startWith: startWith,
 		titleLine: titleLine,
@@ -55,7 +55,7 @@ func TestGenMarkdownZhHans(t *testing.T) {
 	})
 }
 
-func GenMarkdownTable(t *testing.T, username string, arg *argType) {
+func GenMarkdownTable(t *testing.T, username string, arg *DocGenParamType) {
 	repos := done.VAE(yyle88.GetGithubRepos(username)).Nice()
 
 	repos = repos[:min(5, len(repos))]
