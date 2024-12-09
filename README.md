@@ -53,8 +53,8 @@ Here are some of my key projects:
 |-------------------------------------------------|--------|
 | [gobtcsign](https://github.com/yyle88/gobtcsign) | 简单的Go语言版本比特币创建钱包和签名逻辑 |
 | [gotrontrx](https://github.com/yyle88/gotrontrx) | 简单的Go语言版本波场创建钱包/获得测试币/发出交易的逻辑 |
+| [gormcngen](https://github.com/yyle88/gormcngen) | `gormcngen`: Provides a Columns() Function to Retrieve Column Names for GORM Models |
 | [reggin](https://github.com/yyle88/reggin) | reggin means register gin routes. 非常简单的gin路由注册器。 |
-| [gormcngen](https://github.com/yyle88/gormcngen) | gormcngen help gen enum code with gormcnm. 因为gormcnm能够以枚举定义字段名和字段类型，这个工具gormcngen就是自动帮你生成枚举代码的。 |
 | [syncmap](https://github.com/yyle88/syncmap) | SyncMap is a type-safe and generic wrapper pkg around Go's sync.Map |
 
 **Explore and star my projects. Your support means a lot!**
@@ -64,5 +64,11 @@ Here are some of my key projects:
 ## Acknowledgments
 
 🌟 **Thank you for supporting my work by starring my projects! Let's achieve greatness together & Go-Go-Go!**
+
+---
+
+## See stars
+
+[![see stars](https://starchart.cc/yyle88/yyle88.svg?variant=adaptive)](https://starchart.cc/yyle88/yyle88)
 
 ---
