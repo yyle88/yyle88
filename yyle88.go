@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-resty/resty/v2"
+	restyv2 "github.com/go-resty/resty/v2"
 	"github.com/yyle88/erero"
 	"github.com/yyle88/neatjson/neatjsons"
 	"github.com/yyle88/sortslice"
@@ -21,7 +21,7 @@ type Repo struct {
 
 func GetGithubRepos(username string) ([]*Repo, error) {
 	var repos []*Repo
-	response, err := resty.New().SetTimeout(time.Minute).R().
+	response, err := restyv2.New().SetTimeout(time.Minute).R().
 		SetPathParam("username", username).
 		SetResult(&repos).
 		Get("https://api.github.com/users/{username}/repos")

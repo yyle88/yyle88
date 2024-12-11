@@ -38,8 +38,8 @@ github.com/yyle88/sortslice v1.0.6 h1:c9XoKbVzhjr0gbcOMwuE4xeBvREhreGN/62ZIGA5KA
 github.com/yyle88/sortslice v1.0.6/go.mod h1:/mlmWz1/w0CCeLSs/FaByXM5SKsVlZ7IJ+3O/PMS5Ws=
 github.com/yyle88/sure v0.0.33 h1:draMRRyZ3IWnXFyfKIWwH3ljWvA5Pq/X+z/fHyCbyFE=
 github.com/yyle88/sure v0.0.33/go.mod h1:ep6XBfw1D5bBNsihnaWlenO8Qc8lF+vfqwDqvnZBM9Y=
-github.com/yyle88/syntaxgo v0.0.39 h1:947UHHAqGsHAmS7nJ5Y/Br+yhJjTZtq1543XIizfevI=
-github.com/yyle88/syntaxgo v0.0.39/go.mod h1:vR/bU2RVwvkfkQyMy30OWpdmn5jc3wrm8vcMbHQGCbc=
+github.com/yyle88/syntaxgo v0.0.40 h1:b+Z7USsOPDS2B75oFZCupleLNn29FSuvgjcsWBAO5QE=
+github.com/yyle88/syntaxgo v0.0.40/go.mod h1:vR/bU2RVwvkfkQyMy30OWpdmn5jc3wrm8vcMbHQGCbc=
 github.com/yyle88/tern v0.0.3 h1:Ut5p1wPAVcreEkmzDp+IiteA3K2vnTeAYE1PyBLNgjU=
 github.com/yyle88/tern v0.0.3/go.mod h1:g9weyOMLtXYyt37EAshZPUTTHdH7WFauuxDi4oPr7/8=
 github.com/yyle88/zaplog v0.0.16 h1:ZCxQhq3+nWeWMAXIzeA1EA4exRq5Pn8pXTpEw1GjyD4=
