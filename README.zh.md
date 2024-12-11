@@ -1,6 +1,10 @@
-## Hi there 👋热烈欢迎贵宾光临 👋
+[![MasterHead](https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif)](https://judeotine.vercel.app/)
 
-这是我的介绍:
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)](https://git.io/typing-svg)
+
+---
+
+## 自我介绍
 
 - 😄 杨亦乐
 - 🔭 1990
@@ -17,6 +21,21 @@
 ## 英文文档
 
 [English Documentation](README.md)
+
+---
+
+## 技术
+![Go](https://img.shields.io/badge/Go-%23FF5733.svg?style=flat&logo=go&logoColor=white)
+![Gorm](https://img.shields.io/badge/Gorm-%2391C4A4.svg?style=flat&logo=gorm&logoColor=white)
+![Kratos](https://img.shields.io/badge/Go%20Kratos-%237D4B91.svg?style=flat&logo=go&logoColor=white)
+![Vue](https://img.shields.io/badge/Vue-%2335A8D5.svg?style=flat&logo=vue&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-%23F2D330.svg?style=flat&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-%23F09F3B.svg?style=flat&logo=python&logoColor=ffdd54)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23F7931E.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
+![MongoDB](https://img.shields.io/badge/MongoDB-%2395C59D.svg?style=flat&logo=mongodb&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-%237D5E7F.svg?style=flat&logo=github&logoColor=white)
+
+---
 
 ## 补充说明
 
@@ -51,11 +70,21 @@
 |-------------------------------------------------|--------|
 | [gobtcsign](https://github.com/yyle88/gobtcsign) | 简单的Go语言版本比特币创建钱包和签名逻辑 |
 | [gotrontrx](https://github.com/yyle88/gotrontrx) | 简单的Go语言版本波场创建钱包/获得测试币/发出交易的逻辑 |
-| [reggin](https://github.com/yyle88/reggin) | `reggin` is a lightweight pkg for registering and managing Gin HTTP routes with a structured and reusable approach. |
 | [gormcngen](https://github.com/yyle88/gormcngen) | `gormcngen`: Provides a Columns() Function to Retrieve Column Names for GORM Models |
+| [reggin](https://github.com/yyle88/reggin) | `reggin` is a pkg for registering and managing Gin HTTP routes. |
 | [syncmap](https://github.com/yyle88/syncmap) | SyncMap is a type-safe and generic wrapper pkg around Go's sync.Map |
 
 给我星星谢谢。
+
+---
+
+![Time Graph](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yyle88&theme=radical&utcOffset=8.00)
+
+---
+
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=yyle88&theme=github)
+
+---
 
 ---
 
@@ -79,3 +108,9 @@
 ## 感谢
 
 给我⭐ ⭐ ⭐我们携手暴富，谢谢您！！！
+
+---
+
+[![](https://visitcount.itsvg.in/api?id=yyle88&label=profile-views&pretty=true)](https://visitcount.itsvg.in)
+
+---
