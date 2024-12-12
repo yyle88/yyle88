@@ -7,7 +7,7 @@ require (
 	github.com/stretchr/testify v1.10.0
 	github.com/yyle88/done v1.0.18
 	github.com/yyle88/erero v1.0.14
-	github.com/yyle88/must v0.0.9
+	github.com/yyle88/must v0.0.10
 	github.com/yyle88/neatjson v0.0.10
 	github.com/yyle88/osexistpath v0.0.13
 	github.com/yyle88/printgo v1.0.1

@@ -49,13 +49,13 @@
 
 ## Languages
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yyle88&hide=html)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Lang](https://github-readme-stats.vercel.app/api/top-langs/?username=yyle88&hide=html)](https://github.com/anuraghazra/github-readme-stats)
 
 ---
 
 ## Contributions
 
-![Shooter's GitHub stats](https://github-readme-stats.vercel.app/api?username=yyle88&show_icons=true&theme=radical&show=reviews,prs_merged,prs_merged_percentage&hide=contribs)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=yyle88&show_icons=true&theme=radical&show=reviews,prs_merged,prs_merged_percentage&hide=contribs)
 
 ---
 
@@ -73,10 +73,10 @@ Here are some of my key projects:
 | **Project Name** | **Description** |
 |-------------------------------------------------|--------|
 | [gobtcsign](https://github.com/yyle88/gobtcsign) | 简单的Go语言版本比特币创建钱包和签名逻辑 |
-| [gotrontrx](https://github.com/yyle88/gotrontrx) | 简单的Go语言版本波场创建钱包/获得测试币/发出交易的逻辑 |
+| [gotrontrx](https://github.com/yyle88/gotrontrx) | `gotrontrx` is a Go toolkit exploring TRON blockchain tech without participating in crypto coins. |
 | [gormcngen](https://github.com/yyle88/gormcngen) | `gormcngen`: Provides a Columns() Function to Retrieve Column Names for GORM Models |
 | [reggin](https://github.com/yyle88/reggin) | `reggin` is a pkg for registering and managing Gin HTTP routes. |
-| [syncmap](https://github.com/yyle88/syncmap) | SyncMap is a type-safe and generic wrapper pkg around Go's sync.Map |
+| [syncmap](https://github.com/yyle88/syncmap) | `syncmap` is a type-safe and generic wrapper package around Go's `sync.Map`. |
 
 **Explore and star my projects. Your support means a lot!**
 
