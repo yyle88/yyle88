@@ -34,19 +34,6 @@
 
 ---
 
-## Tech stack
-![Go](https://img.shields.io/badge/Go-%23FF5733.svg?style=flat&logo=go&logoColor=white)
-![Gorm](https://img.shields.io/badge/Gorm-%2391C4A4.svg?style=flat&logo=gorm&logoColor=white)
-![Kratos](https://img.shields.io/badge/Go%20Kratos-%237D4B91.svg?style=flat&logo=go&logoColor=white)
-![Vue](https://img.shields.io/badge/Vue-%2335A8D5.svg?style=flat&logo=vue&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-%23F2D330.svg?style=flat&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-%23F09F3B.svg?style=flat&logo=python&logoColor=ffdd54)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23F7931E.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
-![MongoDB](https://img.shields.io/badge/MongoDB-%2395C59D.svg?style=flat&logo=mongodb&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-%237D5E7F.svg?style=flat&logo=github&logoColor=white)
-
----
-
 ## Languages
 
 [![Top Lang](https://github-readme-stats.vercel.app/api/top-langs/?username=yyle88&hide=html)](https://github.com/anuraghazra/github-readme-stats)
@@ -82,11 +69,11 @@ Here are some of my key projects:
 
 ---
 
-![Time Graph](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yyle88&theme=radical&utcOffset=8.00)
+![TIME-GRAPH](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yyle88&theme=radical&utcOffset=8.00)
 
 ---
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=yyle88&theme=github)
+[![YYLE88'S_GITHUB_ACTIVITY_GRAPH](https://github-readme-activity-graph.vercel.app/graph?username=yyle88)](https://github.com/yyle88)
 
 ---
 
@@ -96,12 +83,12 @@ Here are some of my key projects:
 
 ---
 
-## Github stars
+[![CURRENT-PROFILE-TROPHY](https://github-profile-trophy.vercel.app/?username=yyle88)](#)
 
-[![github stars](https://starchart.cc/yyle88/yyle88.svg?variant=adaptive)](https://starchart.cc/yyle88/yyle88)
+![github contribution grid snake animation](https://raw.githubusercontent.com/yyle88/yyle88/snake/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
 
----
+![github contribution grid snake animation](https://raw.githubusercontent.com/yyle88/yyle88/snake/github-contribution-grid-snake.svg#gh-light-mode-only)
 
-[![](https://visitcount.itsvg.in/api?id=yyle88&label=profile-views&pretty=true)](https://visitcount.itsvg.in)
+[![VISIT-COUNT](https://visitcount.itsvg.in/api?id=yyle88&label=profile-views&pretty=true)](https://visitcount.itsvg.in)
 
 ---

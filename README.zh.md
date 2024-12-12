@@ -78,11 +78,11 @@
 
 ---
 
-![Time Graph](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yyle88&theme=radical&utcOffset=8.00)
+![TIME-GRAPH](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yyle88&theme=radical&utcOffset=8.00)
 
 ---
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=yyle88&theme=github)
+![YYLE88'S_GITHUB_ACTIVITY_GRAPH](https://github-readme-activity-graph.vercel.app/graph?username=yyle88&theme=github)
 
 ---
 
@@ -111,6 +111,6 @@
 
 ---
 
-[![](https://visitcount.itsvg.in/api?id=yyle88&label=profile-views&pretty=true)](https://visitcount.itsvg.in)
+[![VISIT-COUNT](https://visitcount.itsvg.in/api?id=yyle88&label=profile-views&pretty=true)](https://visitcount.itsvg.in)
 
 ---
