@@ -51,7 +51,7 @@
 
 ## 说明
 
-该文档由 [代码](yyle88.go)[逻辑](yyle88_test.go) 自动编写。 给我⭐ ⭐ ⭐谢谢！
+该文档由 [代码](yyle88.go)[单元测试代码](yyle88_test.go) 自动编写。 给我⭐ ⭐ ⭐谢谢！
 
 ## 给星
 首先请点击这里的[项目仓库列表](https://github.com/yyle88?tab=repositories)
@@ -90,11 +90,7 @@
 
 ---
 
----
-
-这是其它项目：
-
-[其它项目](OTHERS.zh)
+这是其它项目：[其它项目](OTHERS.zh.md)
 
 ---
 
