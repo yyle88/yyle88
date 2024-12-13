@@ -7,9 +7,9 @@
 
 ---
 
-[![MasterHead](https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif)](https://judeotine.vercel.app/)
+[![MASTER-HEAD](https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif)](https://judeotine.vercel.app/)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)](https://git.io/typing-svg)
+[![TYPING-SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)](https://git.io/typing-svg)
 
 ---
 
@@ -23,7 +23,7 @@
 - 📫 **Main Language:** Go
 - 💬 Passionate about software development and open-source contributions.
 - 🔗 **Github:** [repositories](https://github.com/yyle88?tab=repositories&type=public&sort=stargazers)
-- 🌟 **Starring my projects would greatly encourage me!**
+- 🌟 **Give me some ⭐**
 - ⬆️ **Thank you for your support!**
 
 ---
@@ -59,7 +59,7 @@ Here are some of my key projects:
 
 | **Project Name** | **Description** |
 |-------------------------------------------------|--------|
-| [gobtcsign](https://github.com/yyle88/gobtcsign) | 简单的Go语言版本比特币创建钱包和签名逻辑 |
+| [gobtcsign](https://github.com/yyle88/gobtcsign) | `gobtcsign` simplifies BITCOIN/DOGECOIN transaction signing. Help developers to explore BTC blockchain knowledge. |
 | [gotrontrx](https://github.com/yyle88/gotrontrx) | `gotrontrx` is a Go toolkit exploring TRON blockchain tech without participating in crypto coins. |
 | [gormcngen](https://github.com/yyle88/gormcngen) | `gormcngen`: Provides a Columns() Function to Retrieve Column Names for GORM Models |
 | [reggin](https://github.com/yyle88/reggin) | `reggin` is a pkg for registering and managing Gin HTTP routes. |
@@ -85,9 +85,13 @@ Here are some of my key projects:
 
 [![CURRENT-PROFILE-TROPHY](https://github-profile-trophy.vercel.app/?username=yyle88)](#)
 
+---
+
 ![github contribution grid snake animation](https://raw.githubusercontent.com/yyle88/yyle88/snake/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
 
 ![github contribution grid snake animation](https://raw.githubusercontent.com/yyle88/yyle88/snake/github-contribution-grid-snake.svg#gh-light-mode-only)
+
+---
 
 [![VISIT-COUNT](https://visitcount.itsvg.in/api?id=yyle88&label=profile-views&pretty=true)](https://visitcount.itsvg.in)
 

@@ -15,7 +15,7 @@
 - 💬 我是个兴趣使然的程序员
 - 📫 偶尔有空时写写开源代码
 - 🔗 **Github:** [主账号项目列表](https://github.com/yyle88?tab=repositories&type=public&sort=stargazers)
-- 😄 希望你给我点星星
+- 😄 希望你给我点星星-还有关注
 - ⬆️ Give me stars. Thank you!!! 谢谢大家。
 
 ## 英文文档
@@ -62,13 +62,17 @@
 
 谢谢你，这对于我非常重要。
 
+![给力的朋友](assets/给力的朋友.jpg)
+
+谢谢你，这对于我非常重要。
+
 ## 项目
 
 这是我的项目：
 
 | 项目名称 | 项目描述 |
 |-------------------------------------------------|--------|
-| [gobtcsign](https://github.com/yyle88/gobtcsign) | 简单的Go语言版本比特币创建钱包和签名逻辑 |
+| [gobtcsign](https://github.com/yyle88/gobtcsign) | `gobtcsign` simplifies BITCOIN/DOGECOIN transaction signing. Help developers to explore BTC blockchain knowledge. |
 | [gotrontrx](https://github.com/yyle88/gotrontrx) | `gotrontrx` is a Go toolkit exploring TRON blockchain tech without participating in crypto coins. |
 | [gormcngen](https://github.com/yyle88/gormcngen) | `gormcngen`: Provides a Columns() Function to Retrieve Column Names for GORM Models |
 | [reggin](https://github.com/yyle88/reggin) | `reggin` is a pkg for registering and managing Gin HTTP routes. |
