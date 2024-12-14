@@ -16,7 +16,7 @@ import (
 	"github.com/yyle88/yyle88/internal/utils"
 )
 
-type DocGenParamType struct {
+type DocGenParam struct {
 	shortName string
 	startWith string
 	titleLine string
@@ -31,7 +31,7 @@ func TestGenMarkdown(t *testing.T) {
 	const titleLine = "| **Project Name** | **Description** |"
 	const closeWith = "**Explore and star my projects. Your support means a lot!**"
 
-	GenMarkdownTable(t, username, &DocGenParamType{
+	GenMarkdownTable(t, username, &DocGenParam{
 		shortName: shortName,
 		startWith: startWith,
 		titleLine: titleLine,
@@ -47,7 +47,7 @@ func TestGenMarkdownZhHans(t *testing.T) {
 	const titleLine = "| 项目名称 | 项目描述 |"
 	const closeWith = "给我星星谢谢。"
 
-	GenMarkdownTable(t, username, &DocGenParamType{
+	GenMarkdownTable(t, username, &DocGenParam{
 		shortName: shortName,
 		startWith: startWith,
 		titleLine: titleLine,
@@ -55,16 +55,28 @@ func TestGenMarkdownZhHans(t *testing.T) {
 	})
 }
 
-func GenMarkdownTable(t *testing.T, username string, arg *DocGenParamType) {
+func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
 	repos := done.VAE(yyle88.GetGithubRepos(username)).Nice()
 
-	repos = repos[:min(5, len(repos))]
-
 	ptx := utils.NewPTX()
-	ptx.Println(arg.titleLine)
-	ptx.Println("|-------------------------------------------------|--------|")
-	for _, repo := range repos {
-		ptx.Println(fmt.Sprintf("| [%s](%s) | %s |", repo.Name, repo.Link, strings.ReplaceAll(repo.Desc, "|", "-")))
+
+	subRepos, repos := splitRepos(repos, 5)
+	for _, repo := range subRepos {
+		const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme=algolia)]({{ repo_link }})"
+
+		rep := strings.NewReplacer("{{ username }}", username, "{{ repo_name }}", repo.Name, "{{ repo_link }}", repo.Link)
+
+		ptx.Println(rep.Replace(templateLine))
+		ptx.Println()
+	}
+
+	subRepos, repos = splitRepos(repos, 10)
+	if len(subRepos) > 0 {
+		ptx.Println(arg.titleLine)
+		ptx.Println("|-------------------------------------------------|--------|")
+		for _, repo := range subRepos {
+			ptx.Println(fmt.Sprintf("| [%s](%s) | %s |", repo.Name, repo.Link, strings.ReplaceAll(repo.Desc, "|", "-")))
+		}
 	}
 
 	stb := ptx.String()
@@ -91,4 +103,9 @@ func GenMarkdownTable(t *testing.T, username string, arg *DocGenParamType) {
 
 	must.Done(os.WriteFile(path, []byte(content), 0666))
 	t.Log("success")
+}
+
+func splitRepos(repos []*yyle88.Repo, subSize int) ([]*yyle88.Repo, []*yyle88.Repo) {
+	idx := min(subSize, len(repos))
+	return repos[:idx], repos[idx:]
 }

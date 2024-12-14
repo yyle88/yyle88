@@ -42,6 +42,7 @@ jobs:
           path-to-profile: /tmp/coverage/combined.txt
           flag-name: Go-${{ matrix.go }}
           parallel: true
+        if: ${{ github.event.repository.fork == false }}  # 仅在非 fork 时上传覆盖率
 
   check-coverage:
     name: Check coverage
@@ -51,14 +52,15 @@ jobs:
       - uses: shogo82148/actions-goveralls@v1
         with:
           parallel-finished: true
+        if: ${{ github.event.repository.fork == false }}  # 仅在非 fork 时检查覆盖率
 
   # 发布 Release
   release:
     name: Release a new version
     needs: [ lint, test ]
     runs-on: ubuntu-latest
-    # 仅在推送标签时执行
-    if: ${{ success() && startsWith(github.ref, 'refs/tags/v') }}
+    # 仅在推送标签时执行 - && - 仅在非 fork 时执行发布
+    if: ${{ github.event.repository.fork == false && success() && startsWith(github.ref, 'refs/tags/v') }}
     steps:
       # 1. 检出代码
       - name: Checkout code

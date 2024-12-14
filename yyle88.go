@@ -33,12 +33,14 @@ func GetGithubRepos(username string) ([]*Repo, error) {
 	}
 
 	sortslice.SortVStable(repos, func(a, b *Repo) bool {
-		if a.Stargazers > b.Stargazers {
-			return true
+		if a.Name == username || b.Name == username {
+			return a.Name != username //当是主页项目时把它排在最后面，避免排的太靠前占据重要的位置
+		} else if a.Stargazers > b.Stargazers {
+			return true //星多者排前面
 		} else if a.Stargazers < b.Stargazers {
-			return false
+			return false //星少者排后面
 		} else {
-			return a.PushedAt.After(b.PushedAt)
+			return a.PushedAt.After(b.PushedAt) //同样星星时最近有更新的排前面
 		}
 	})
 	zaplog.SUG.Info(neatjsons.S(repos))

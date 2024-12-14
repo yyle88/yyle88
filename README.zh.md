@@ -70,13 +70,28 @@
 
 这是我的项目：
 
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=algolia)](https://github.com/yyle88/gobtcsign)
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gotrontrx&theme=algolia)](https://github.com/yyle88/gotrontrx)
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormcngen&theme=algolia)](https://github.com/yyle88/gormcngen)
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=reggin&theme=algolia)](https://github.com/yyle88/reggin)
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=syncmap&theme=algolia)](https://github.com/yyle88/syncmap)
+
 | 项目名称 | 项目描述 |
 |-------------------------------------------------|--------|
-| [gobtcsign](https://github.com/yyle88/gobtcsign) | `gobtcsign` simplifies BITCOIN/DOGECOIN transaction signing. Help developers to explore BTC blockchain knowledge. |
-| [gotrontrx](https://github.com/yyle88/gotrontrx) | `gotrontrx` is a Go toolkit exploring TRON blockchain tech without participating in crypto coins. |
-| [gormcngen](https://github.com/yyle88/gormcngen) | `gormcngen`: Provides a Columns() Function to Retrieve Column Names for GORM Models |
-| [reggin](https://github.com/yyle88/reggin) | `reggin` is a pkg for registering and managing Gin HTTP routes. |
-| [syncmap](https://github.com/yyle88/syncmap) | `syncmap` is a type-safe and generic wrapper package around Go's `sync.Map`. |
+| [syntaxgo](https://github.com/yyle88/syntaxgo) | syntaxgo is a wrapper around Go's go/ast Abstract Syntax Tree and Go's reflect package - designed to make it easier to analyze code and ultimately automate the generation. |
+| [gormcnm](https://github.com/yyle88/gormcnm) | `gormcnm` - A Progressive, Type-Safe Approach to GORM Column Names Using Generics |
+| [sortslice](https://github.com/yyle88/sortslice) | `sortslice` is a Go package that provides a simple and flexible way to sort slices using custom comparison functions. |
+| [done](https://github.com/yyle88/done) | Done allows you to focus on your business logic without repetitive if err != nil patterns. |
+| [gormmom](https://github.com/yyle88/gormmom) | Empowering Native Language Programming, Simplifying GORM Tag Generation |
+| [gormcls](https://github.com/yyle88/gormcls) | gormcls - Isolate the scope of temporary variables when using GORM, making the code more concise |
+| [formatgo](https://github.com/yyle88/formatgo) | `formatgo` is a Go package that provides utilities for formatting Go source code |
+| [runpath](https://github.com/yyle88/runpath) | `runpath` package provides func to get the execution location of Go code, including the absolute path of the source file. |
+| [must](https://github.com/yyle88/must) | The must library simplifies assertions and panics on failure. Assert conditions directly, avoiding long checks |
+| [sure](https://github.com/yyle88/sure) | `sure` enhances your existing Go code by adding assertions and crash handling. |
 
 给我星星谢谢。
 
