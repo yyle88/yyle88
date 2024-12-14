@@ -70,7 +70,7 @@ func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
 		ptx.Println()
 	}
 
-	subRepos, repos = splitRepos(repos, 10)
+	subRepos, repos = splitRepos(repos, 5)
 	if len(subRepos) > 0 {
 		ptx.Println(arg.titleLine)
 		ptx.Println("|-------------------------------------------------|--------|")

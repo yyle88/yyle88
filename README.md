@@ -73,11 +73,6 @@ Here are some of my key projects:
 | [sortslice](https://github.com/yyle88/sortslice) | `sortslice` is a Go package that provides a simple and flexible way to sort slices using custom comparison functions. |
 | [done](https://github.com/yyle88/done) | Done allows you to focus on your business logic without repetitive if err != nil patterns. |
 | [gormmom](https://github.com/yyle88/gormmom) | Empowering Native Language Programming, Simplifying GORM Tag Generation |
-| [gormcls](https://github.com/yyle88/gormcls) | gormcls - Isolate the scope of temporary variables when using GORM, making the code more concise |
-| [formatgo](https://github.com/yyle88/formatgo) | `formatgo` is a Go package that provides utilities for formatting Go source code |
-| [runpath](https://github.com/yyle88/runpath) | `runpath` package provides func to get the execution location of Go code, including the absolute path of the source file. |
-| [must](https://github.com/yyle88/must) | The must library simplifies assertions and panics on failure. Assert conditions directly, avoiding long checks |
-| [sure](https://github.com/yyle88/sure) | `sure` enhances your existing Go code by adding assertions and crash handling. |
 
 **Explore and star my projects. Your support means a lot!**
 
