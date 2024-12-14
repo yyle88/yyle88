@@ -2,6 +2,7 @@ package yyle88
 
 import (
 	"net/http"
+	"os"
 	"time"
 
 	restyv2 "github.com/go-resty/resty/v2"
@@ -21,7 +22,16 @@ type Repo struct {
 
 func GetGithubRepos(username string) ([]*Repo, error) {
 	var repos []*Repo
-	response, err := restyv2.New().SetTimeout(time.Minute).R().
+
+	// 从环境变量读取 GitHub Token
+	githubToken := os.Getenv("GITHUB_TOKEN")
+
+	// 使用 Token 添加 Authorization 请求头
+	request := restyv2.New().SetTimeout(time.Minute).R()
+	if githubToken != "" {
+		request = request.SetHeader("Authorization", "token "+githubToken)
+	}
+	response, err := request.
 		SetPathParam("username", username).
 		SetResult(&repos).
 		Get("https://api.github.com/users/{username}/repos")

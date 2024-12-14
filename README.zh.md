@@ -62,10 +62,6 @@
 
 谢谢你，这对于我非常重要。
 
-![给力的朋友](assets/给力的朋友.jpg)
-
-谢谢你，这对于我非常重要。
-
 ## 项目
 
 这是我的项目：
@@ -80,15 +76,43 @@
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=syncmap&theme=algolia)](https://github.com/yyle88/syncmap)
 
+
 | 项目名称 | 项目描述 |
 |-------------------------------------------------|--------|
-| [syntaxgo](https://github.com/yyle88/syntaxgo) | syntaxgo is a wrapper around Go's go/ast Abstract Syntax Tree and Go's reflect package - designed to make it easier to analyze code and ultimately automate the generation. |
-| [gormcnm](https://github.com/yyle88/gormcnm) | `gormcnm` - A Progressive, Type-Safe Approach to GORM Column Names Using Generics |
-| [sortslice](https://github.com/yyle88/sortslice) | `sortslice` is a Go package that provides a simple and flexible way to sort slices using custom comparison functions. |
-| [done](https://github.com/yyle88/done) | Done allows you to focus on your business logic without repetitive if err != nil patterns. |
-| [gormmom](https://github.com/yyle88/gormmom) | Empowering Native Language Programming, Simplifying GORM Tag Generation |
+| [![syntaxgo](https://img.shields.io/badge/syntaxgo-%2335A8D5.svg?style=flat&logoColor=white)](https://github.com/yyle88/syntaxgo) | syntaxgo is a wrapper around Go's go/ast Abstract Syntax Tree and Go's reflect package - designed to make it easier to analyze code and ultimately automate the generation. |
+| [![gormcnm](https://img.shields.io/badge/gormcnm-%2395C59D.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcnm) | `gormcnm` - A Progressive, Type-Safe Approach to GORM Column Names Using Generics |
+| [![sortslice](https://img.shields.io/badge/sortslice-%23F7931E.svg?style=flat&logoColor=white)](https://github.com/yyle88/sortslice) | `sortslice` is a Go package that provides a simple and flexible way to sort slices using custom comparison functions. |
+| [![done](https://img.shields.io/badge/done-%23F2D330.svg?style=flat&logoColor=white)](https://github.com/yyle88/done) | Done allows you to focus on your business logic without repetitive if err != nil patterns. |
+| [![gormmom](https://img.shields.io/badge/gormmom-%23FFD700.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormmom) | Empowering Native Language Programming, Simplifying GORM Tag Generation |
+
+
+其它项目：
+[![gormcls](https://img.shields.io/badge/gormcls-%23FF6347.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcls)
+[![formatgo](https://img.shields.io/badge/formatgo-%2391C4A4.svg?style=flat&logoColor=white)](https://github.com/yyle88/formatgo)
+[![runpath](https://img.shields.io/badge/runpath-%2395C59D.svg?style=flat&logoColor=white)](https://github.com/yyle88/runpath)
+[![must](https://img.shields.io/badge/must-%2332CD32.svg?style=flat&logoColor=white)](https://github.com/yyle88/must)
+[![sure](https://img.shields.io/badge/sure-%23DC143C.svg?style=flat&logoColor=white)](https://github.com/yyle88/sure)
+[![osexistpath](https://img.shields.io/badge/osexistpath-%237D5E7F.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexistpath)
+[![neatjson](https://img.shields.io/badge/neatjson-%23FF1493.svg?style=flat&logoColor=white)](https://github.com/yyle88/neatjson)
+[![erero](https://img.shields.io/badge/erero-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/erero)
+[![zaplog](https://img.shields.io/badge/zaplog-%23F7931E.svg?style=flat&logoColor=white)](https://github.com/yyle88/zaplog)
+[![mutexmap](https://img.shields.io/badge/mutexmap-%23FF5733.svg?style=flat&logoColor=white)](https://github.com/yyle88/mutexmap)
+[![demojavabtcsign](https://img.shields.io/badge/demojavabtcsign-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/demojavabtcsign)
+[![osexec](https://img.shields.io/badge/osexec-%23ADFF2F.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexec)
+[![eroticgo](https://img.shields.io/badge/eroticgo-%2335A8D5.svg?style=flat&logoColor=white)](https://github.com/yyle88/eroticgo)
+[![printgo](https://img.shields.io/badge/printgo-%237D4B91.svg?style=flat&logoColor=white)](https://github.com/yyle88/printgo)
+[![rese](https://img.shields.io/badge/rese-%232E8B57.svg?style=flat&logoColor=white)](https://github.com/yyle88/rese)
+[![tern](https://img.shields.io/badge/tern-%23F2D330.svg?style=flat&logoColor=white)](https://github.com/yyle88/tern)
+[![yyle88](https://img.shields.io/badge/yyle88-%2320B2AA.svg?style=flat&logoColor=white)](https://github.com/yyle88/yyle88)
+
 
 给我星星谢谢。
+
+---
+
+![给力的朋友](assets/给力的朋友.jpg)
+
+谢谢你，这对于我非常重要。
 
 ---
 
@@ -122,5 +146,10 @@
 ---
 
 [![VISIT-COUNT](https://visitcount.itsvg.in/api?id=yyle88&label=profile-views&pretty=true)](https://visitcount.itsvg.in)
+
+---
+
+# 感谢您的阅读！！！
+![68747470733a2f2f63617073756c652d72656e6465722e76657263656c2e6170702f6170693f747970653d776176696e6726636f6c6f723d6772616469656e74266865696768743d3130302673656374696f6e3d666f6f746572 (1)](https://github.com/user-attachments/assets/e599b0c5-b812-4e11-908a-2bdec8c97c5f)
 
 ---

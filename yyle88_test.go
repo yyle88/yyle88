@@ -2,6 +2,8 @@ package yyle88_test
 
 import (
 	"fmt"
+	"math/rand/v2"
+	"net/url"
 	"os"
 	"slices"
 	"strings"
@@ -20,38 +22,31 @@ type DocGenParam struct {
 	shortName string
 	startWith string
 	titleLine string
+	otherDesc string
 	closeWith string
 }
 
 func TestGenMarkdown(t *testing.T) {
 	const username = "yyle88"
 
-	const shortName = "README.md"
-	const startWith = "Here are some of my key projects:"
-	const titleLine = "| **Project Name** | **Description** |"
-	const closeWith = "**Explore and star my projects. Your support means a lot!**"
-
 	GenMarkdownTable(t, username, &DocGenParam{
-		shortName: shortName,
-		startWith: startWith,
-		titleLine: titleLine,
-		closeWith: closeWith,
+		shortName: "README.md",
+		startWith: "Here are some of my key projects:",
+		titleLine: "| **Repo Name** | **Description** |",
+		otherDesc: "OTHER-PROJECTS:",
+		closeWith: "**Explore and star my projects. Your support means a lot!**",
 	})
 }
 
 func TestGenMarkdownZhHans(t *testing.T) {
 	const username = "yyle88"
 
-	const shortName = "README.zh.md"
-	const startWith = "这是我的项目："
-	const titleLine = "| 项目名称 | 项目描述 |"
-	const closeWith = "给我星星谢谢。"
-
 	GenMarkdownTable(t, username, &DocGenParam{
-		shortName: shortName,
-		startWith: startWith,
-		titleLine: titleLine,
-		closeWith: closeWith,
+		shortName: "README.zh.md",
+		startWith: "这是我的项目：",
+		titleLine: "| 项目名称 | 项目描述 |",
+		otherDesc: "其它项目：",
+		closeWith: "给我星星谢谢。",
 	})
 }
 
@@ -70,13 +65,29 @@ func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
 		ptx.Println()
 	}
 
+	colors := []string{"#FF5733", "#91C4A4", "#7D4B91", "#35A8D5", "#F2D330", "#F09F3B", "#F7931E", "#95C59D", "#7D5E7F", "#8A2BE2", "#FF6347", "#FF1493", "#32CD32", "#20B2AA", "#FFD700", "#DC143C", "#FF4500", "#2E8B57", "#3CB371", "#ADFF2F"}
+	rand.Shuffle(len(colors), func(i, j int) {
+		colors[i], colors[j] = colors[j], colors[i]
+	})
+
 	subRepos, repos = splitRepos(repos, 5)
 	if len(subRepos) > 0 {
+		ptx.Println()
 		ptx.Println(arg.titleLine)
 		ptx.Println("|-------------------------------------------------|--------|")
 		for _, repo := range subRepos {
-			ptx.Println(fmt.Sprintf("| [%s](%s) | %s |", repo.Name, repo.Link, strings.ReplaceAll(repo.Desc, "|", "-")))
+			ptx.Println(fmt.Sprintf("| %s | %s |", makeBadge(repo, colors[rand.IntN(len(colors))]), strings.ReplaceAll(repo.Desc, "|", "-")))
 		}
+		ptx.Println()
+	}
+
+	if len(repos) > 0 {
+		ptx.Println()
+		ptx.Println(arg.otherDesc)
+		for idx, repo := range repos {
+			ptx.Println(makeBadge(repo, colors[idx%len(colors)]))
+		}
+		ptx.Println()
 	}
 
 	stb := ptx.String()
@@ -108,4 +119,8 @@ func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
 func splitRepos(repos []*yyle88.Repo, subSize int) ([]*yyle88.Repo, []*yyle88.Repo) {
 	idx := min(subSize, len(repos))
 	return repos[:idx], repos[idx:]
+}
+
+func makeBadge(repo *yyle88.Repo, colorString string) string {
+	return fmt.Sprintf("[![%s](https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white)](%s)", repo.Name, repo.Name, url.QueryEscape(colorString), repo.Link)
 }
