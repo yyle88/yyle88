@@ -26,6 +26,10 @@ jobs:
     permissions:
       contents: write
     timeout-minutes: 5
+
+    # Add the condition for the entire job
+    if: ${{ !github.event.repository.fork }}
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
@@ -44,7 +48,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # show the status of the build. Makes it easier for debugging (if there's any issues).
+      # Show the status of the build. Makes it easier for debugging (if there's any issues).
       - run: git status
 
       # Push the images to the snake branch
