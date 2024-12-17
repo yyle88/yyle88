@@ -22,7 +22,6 @@ type DocGenParam struct {
 	shortName string
 	startWith string
 	titleLine string
-	//otherDesc string
 	closeWith string
 }
 
@@ -32,8 +31,7 @@ func TestGenMarkdown(t *testing.T) {
 	GenMarkdownTable(t, username, &DocGenParam{
 		shortName: "README.md",
 		startWith: "Here are some of my key projects:",
-		titleLine: "| **Repo Name** | **Description** |",
-		//otherDesc: "OTHER-PROJECTS:",
+		titleLine: "| **RepoName** | **Description** |",
 		closeWith: "**Explore and star my projects. Your support means a lot!**",
 	})
 }
@@ -45,7 +43,6 @@ func TestGenMarkdownZhHans(t *testing.T) {
 		shortName: "README.zh.md",
 		startWith: "这是我的项目：",
 		titleLine: "| 项目名称 | 项目描述 |",
-		//otherDesc: "其它项目：",
 		closeWith: "给我星星谢谢。",
 	})
 }
@@ -91,8 +88,6 @@ func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
 
 	if len(repos) > 0 {
 		ptx.Println()
-		//ptx.Println(arg.otherDesc)
-		//ptx.Println()
 		const stepLimit = 4
 		ptx.Println("|" + repeatString(" |", stepLimit))
 		ptx.Println("|" + repeatString(" :--: |", stepLimit))
