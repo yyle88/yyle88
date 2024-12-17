@@ -1,6 +1,6 @@
-[![MasterHead](https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif)](https://judeotine.vercel.app/)
+![MasterHead](https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)](https://git.io/typing-svg)
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)
 
 ---
 
@@ -37,13 +37,9 @@
 
 ---
 
-## 补充说明
-
-[补充说明](OTHERS.zh.md)
-
 ## 语言
 
-[![Top Lang](https://github-readme-stats.vercel.app/api/top-langs/?username=yyle88&hide=html)](https://github.com/anuraghazra/github-readme-stats)
+![Top Lang](https://github-readme-stats.vercel.app/api/top-langs/?username=yyle88&hide=html)
 
 ## 贡献
 
@@ -51,14 +47,14 @@
 
 ## 说明
 
-该文档由 [代码](yyle88.go)[单元测试代码](yyle88_test.go) 自动编写。 给我⭐ ⭐ ⭐谢谢！
+该文档由 [代码](yyle88.go) + [单元测试代码](yyle88_test.go) 自动编写。 给我⭐ ⭐ ⭐谢谢！
 
 ## 给星
 首先请点击这里的[项目仓库列表](https://github.com/yyle88?tab=repositories)
 
 请按照下图的操作，把右边的点为 `Starred` 的状态
 
-![请给我点星](assets/请给我点星.jpg)
+[请仿照这个链接里的操作给我点些星](assets/请给我点星.jpg)
 
 谢谢你，这对于我非常重要。
 
@@ -66,40 +62,40 @@
 
 这是我的项目：
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=radical)](https://github.com/yyle88/gobtcsign)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=midnight-purple)](https://github.com/yyle88/gobtcsign)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gotrontrx&theme=one_dark_pro)](https://github.com/yyle88/gotrontrx)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gotrontrx&theme=monokai)](https://github.com/yyle88/gotrontrx)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=reggin&theme=flag-india)](https://github.com/yyle88/reggin)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=reggin&theme=holi)](https://github.com/yyle88/reggin)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormcngen&theme=tokyonight)](https://github.com/yyle88/gormcngen)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormcngen&theme=monokai)](https://github.com/yyle88/gormcngen)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=syncmap&theme=graywhite)](https://github.com/yyle88/syncmap)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=formatgo&theme=codeSTACKr)](https://github.com/yyle88/formatgo)
 
 
 | 项目名称 | 项目描述 |
 |-------------------------------------------------|--------|
-| [![formatgo](https://img.shields.io/badge/formatgo-%2320B2AA.svg?style=flat&logoColor=white)](https://github.com/yyle88/formatgo) | `formatgo` is a Go package that provides utilities for formatting Go source code |
-| [![syntaxgo](https://img.shields.io/badge/syntaxgo-%2320B2AA.svg?style=flat&logoColor=white)](https://github.com/yyle88/syntaxgo) | syntaxgo is a wrapper around Go's go/ast Abstract Syntax Tree and Go's reflect package - designed to make it easier to analyze code and ultimately automate the generation. |
-| [![gormcnm](https://img.shields.io/badge/gormcnm-%237D5E7F.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcnm) | `gormcnm` - A Progressive, Type-Safe Approach to GORM Column Names Using Generics |
-| [![sortslice](https://img.shields.io/badge/sortslice-%23DC143C.svg?style=flat&logoColor=white)](https://github.com/yyle88/sortslice) | `sortslice` is a Go package that provides a simple and flexible way to sort slices using custom comparison functions. |
-| [![done](https://img.shields.io/badge/done-%237D4B91.svg?style=flat&logoColor=white)](https://github.com/yyle88/done) | Done allows you to focus on your business logic without repetitive if err != nil patterns. |
+| [![syntaxgo](https://img.shields.io/badge/syntaxgo-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/syntaxgo) | syntaxgo is a wrapper around Go's go/ast Abstract Syntax Tree and Go's reflect package - designed to make it easier to analyze code and ultimately automate the generation. |
+| [![syncmap](https://img.shields.io/badge/syncmap-%23FF1493.svg?style=flat&logoColor=white)](https://github.com/yyle88/syncmap) | `syncmap` is a type-safe and generic wrapper package around Go's `sync.Map`. |
+| [![gormcnm](https://img.shields.io/badge/gormcnm-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcnm) | `gormcnm` - A Progressive, Type-Safe Approach to GORM Column Names Using Generics |
+| [![sortslice](https://img.shields.io/badge/sortslice-%237D4B91.svg?style=flat&logoColor=white)](https://github.com/yyle88/sortslice) | `sortslice` is a Go package that provides a simple and flexible way to sort slices using custom comparison functions. |
+| [![done](https://img.shields.io/badge/done-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/done) | Done allows you to focus on your business logic without repetitive if err != nil patterns. |
 
 
 | | | | |
 | :--: | :--: | :--: | :--: |
-|[![must](https://img.shields.io/badge/must-%237D5E7F.svg?style=flat&logoColor=white)](https://github.com/yyle88/must) | [![gormmom](https://img.shields.io/badge/gormmom-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormmom) | [![gormcls](https://img.shields.io/badge/gormcls-%2335A8D5.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcls) | [![sure](https://img.shields.io/badge/sure-%2332CD32.svg?style=flat&logoColor=white)](https://github.com/yyle88/sure) | 
-|[![osexistpath](https://img.shields.io/badge/osexistpath-%2395C59D.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexistpath) | [![neatjson](https://img.shields.io/badge/neatjson-%23FF1493.svg?style=flat&logoColor=white)](https://github.com/yyle88/neatjson) | [![runpath](https://img.shields.io/badge/runpath-%23F09F3B.svg?style=flat&logoColor=white)](https://github.com/yyle88/runpath) | [![demojavabtcsign](https://img.shields.io/badge/demojavabtcsign-%232E8B57.svg?style=flat&logoColor=white)](https://github.com/yyle88/demojavabtcsign) | 
-|[![erero](https://img.shields.io/badge/erero-%237D4B91.svg?style=flat&logoColor=white)](https://github.com/yyle88/erero) | [![zaplog](https://img.shields.io/badge/zaplog-%23FF5733.svg?style=flat&logoColor=white)](https://github.com/yyle88/zaplog) | [![mutexmap](https://img.shields.io/badge/mutexmap-%2391C4A4.svg?style=flat&logoColor=white)](https://github.com/yyle88/mutexmap) | [![osexec](https://img.shields.io/badge/osexec-%2320B2AA.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexec) | 
-|[![eroticgo](https://img.shields.io/badge/eroticgo-%233CB371.svg?style=flat&logoColor=white)](https://github.com/yyle88/eroticgo) | [![printgo](https://img.shields.io/badge/printgo-%23F7931E.svg?style=flat&logoColor=white)](https://github.com/yyle88/printgo) | [![rese](https://img.shields.io/badge/rese-%23ADFF2F.svg?style=flat&logoColor=white)](https://github.com/yyle88/rese) | [![tern](https://img.shields.io/badge/tern-%23F2D330.svg?style=flat&logoColor=white)](https://github.com/yyle88/tern) | 
-|[![yyle88](https://img.shields.io/badge/yyle88-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/yyle88) | - | - | - | 
+|[![must](https://img.shields.io/badge/must-%237D5E7F.svg?style=flat&logoColor=white)](https://github.com/yyle88/must) | [![gormmom](https://img.shields.io/badge/gormmom-%2395C59D.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormmom) | [![gormcls](https://img.shields.io/badge/gormcls-%23DC143C.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcls) | [![sure](https://img.shields.io/badge/sure-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/sure) | 
+|[![erero](https://img.shields.io/badge/erero-%2332CD32.svg?style=flat&logoColor=white)](https://github.com/yyle88/erero) | [![osexistpath](https://img.shields.io/badge/osexistpath-%23F09F3B.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexistpath) | [![neatjson](https://img.shields.io/badge/neatjson-%23ADFF2F.svg?style=flat&logoColor=white)](https://github.com/yyle88/neatjson) | [![runpath](https://img.shields.io/badge/runpath-%23FFD700.svg?style=flat&logoColor=white)](https://github.com/yyle88/runpath) | 
+|[![demojavabtcsign](https://img.shields.io/badge/demojavabtcsign-%23F2D330.svg?style=flat&logoColor=white)](https://github.com/yyle88/demojavabtcsign) | [![zaplog](https://img.shields.io/badge/zaplog-%23FF1493.svg?style=flat&logoColor=white)](https://github.com/yyle88/zaplog) | [![mutexmap](https://img.shields.io/badge/mutexmap-%232E8B57.svg?style=flat&logoColor=white)](https://github.com/yyle88/mutexmap) | [![osexec](https://img.shields.io/badge/osexec-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexec) | 
+|[![eroticgo](https://img.shields.io/badge/eroticgo-%23F7931E.svg?style=flat&logoColor=white)](https://github.com/yyle88/eroticgo) | [![rese](https://img.shields.io/badge/rese-%2391C4A4.svg?style=flat&logoColor=white)](https://github.com/yyle88/rese) | [![printgo](https://img.shields.io/badge/printgo-%233CB371.svg?style=flat&logoColor=white)](https://github.com/yyle88/printgo) | [![tern](https://img.shields.io/badge/tern-%237D4B91.svg?style=flat&logoColor=white)](https://github.com/yyle88/tern) | 
+|[![yyle88](https://img.shields.io/badge/yyle88-%2320B2AA.svg?style=flat&logoColor=white)](https://github.com/yyle88/yyle88) | - | - | - | 
 
 
 给我星星谢谢。
 
 ---
 
-![给力的朋友](assets/给力的朋友.jpg)
+[请仿照链接里的操作做个给力的朋友](assets/给力的朋友.jpg)
 
 谢谢你，这对于我非常重要。
 
@@ -120,15 +116,15 @@
 ## 其他
 
 ### 自拍
-![我的自拍照](assets/我的自拍照.jpg)
+[我的自拍照](assets/我的自拍照.jpg)
 
 ### 象棋
-![象棋战绩图](assets/象棋战绩图.jpg)
+[象棋战绩图](assets/象棋战绩图.jpg)
 
 ### 投资
-![投资收益图](assets/投资收益图.jpg)
+[投资收益图](assets/投资收益图.jpg)
 
-## 我的链接
+## 链接
 
 [![Telegram](https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yyle88)
 [![YouTube](https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000)](https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos)
