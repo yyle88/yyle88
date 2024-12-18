@@ -7,6 +7,7 @@ import (
 	"os"
 	"slices"
 	"strings"
+	"sync"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -18,6 +19,10 @@ import (
 	"github.com/yyle88/yyle88/internal/utils"
 )
 
+const username = "yyle88"
+
+var mutexRewriteFp sync.Mutex //write file one by one
+
 type DocGenParam struct {
 	shortName string
 	startWith string
@@ -27,9 +32,7 @@ type DocGenParam struct {
 }
 
 func TestGenMarkdown(t *testing.T) {
-	const username = "yyle88"
-
-	GenMarkdownTable(t, username, &DocGenParam{
+	GenMarkdownTable(t, &DocGenParam{
 		shortName: "README.md",
 		startWith: "Here are some of my key projects:",
 		titleLine: "| **RepoName** | **Description** |",
@@ -39,9 +42,7 @@ func TestGenMarkdown(t *testing.T) {
 }
 
 func TestGenMarkdownZhHans(t *testing.T) {
-	const username = "yyle88"
-
-	GenMarkdownTable(t, username, &DocGenParam{
+	GenMarkdownTable(t, &DocGenParam{
 		shortName: "README.zh.md",
 		startWith: "这是我的项目：",
 		titleLine: "| 项目名称 | 项目描述 |",
@@ -51,9 +52,7 @@ func TestGenMarkdownZhHans(t *testing.T) {
 }
 
 func TestGenMarkdownJapanese(t *testing.T) {
-	const username = "yyle88"
-
-	GenMarkdownTable(t, username, &DocGenParam{
+	GenMarkdownTable(t, &DocGenParam{
 		shortName: "README.ja.md",
 		startWith: "以下は私の主なプロジェクトです：",
 		titleLine: "| **リポ名** | **説明** |",
@@ -62,8 +61,22 @@ func TestGenMarkdownJapanese(t *testing.T) {
 	})
 }
 
-func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
-	repos := done.VAE(yyle88.GetGithubRepos(username)).Nice()
+func TestGenMarkdownZhHant(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.zh-Hant.md",
+		startWith: "以下是我的一些主要項目：",
+		titleLine: "| 倉庫名稱 | 描述 |",
+		repoTitle: "倉庫",
+		closeWith: "**探索並為我的項目點贊。您的支持對我意義重大！**",
+	})
+}
+
+func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
+	mutexRewriteFp.Lock()
+	defer mutexRewriteFp.Unlock()
+
+	repos := fetchRepos()
+	require.NotEmpty(t, repos)
 
 	ptx := utils.NewPTX()
 
@@ -129,21 +142,31 @@ func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
 	text := string(done.VAE(os.ReadFile(path)).Nice())
 	t.Log(text)
 
-	sLns := strings.Split(text, "\n")
-	sIdx := slices.Index(sLns, arg.startWith)
+	contentLines := strings.Split(text, "\n")
+	sIdx := slices.Index(contentLines, arg.startWith)
 	require.Positive(t, sIdx)
-	eIdx := slices.Index(sLns, arg.closeWith)
+	eIdx := slices.Index(contentLines, arg.closeWith)
 	require.Positive(t, eIdx)
 
 	require.Less(t, sIdx, eIdx)
 
-	content := strings.Join(sLns[:sIdx+1], "\n") + "\n" + "\n" +
+	content := strings.Join(contentLines[:sIdx+1], "\n") + "\n" + "\n" +
 		stb + "\n" +
-		strings.Join(sLns[eIdx:], "\n")
+		strings.Join(contentLines[eIdx:], "\n")
 	t.Log(content)
 
 	must.Done(os.WriteFile(path, []byte(content), 0666))
 	t.Log("success")
+}
+
+var reposSingleton []*yyle88.Repo
+var onceFetchRepos sync.Once
+
+func fetchRepos() []*yyle88.Repo {
+	onceFetchRepos.Do(func() {
+		reposSingleton = done.VAE(yyle88.GetGithubRepos(username)).Nice()
+	})
+	return reposSingleton
 }
 
 func splitRepos(repos []*yyle88.Repo, subSize int) ([]*yyle88.Repo, []*yyle88.Repo) {

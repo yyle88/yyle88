@@ -4,7 +4,11 @@
 
 ---
 
-<h4 align="center"><a href="./README.md">English</a> | <a href="./README.zh.md">简体中文</a> | <strong>日本語</strong></h4>
+<!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的起始位置 -->
+
+<h4 align="center"><a href="./README.md">English</a> | <a href="./README.zh.md">简体中文</a> | <a href="./README.zh-Hant.md">繁體中文</a> | <strong>日本語</strong></h4>
+
+<!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的终止位置 -->
 
 ---
 

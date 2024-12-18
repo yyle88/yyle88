@@ -11,6 +11,7 @@ require (
 	github.com/yyle88/neatjson v0.0.10
 	github.com/yyle88/osexistpath v0.0.13
 	github.com/yyle88/printgo v1.0.1
+	github.com/yyle88/rese v0.0.2
 	github.com/yyle88/runpath v1.0.22
 	github.com/yyle88/sortslice v1.0.6
 	github.com/yyle88/zaplog v0.0.16
