@@ -89,7 +89,7 @@ func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
 	if len(repos) > 0 {
 		ptx.Println()
 		const stepLimit = 4
-		ptx.Println("|" + repeatString(" |", stepLimit))
+		ptx.Println("|" + repeatString(" "+"repo"+" |", stepLimit))
 		ptx.Println("|" + repeatString(" :--: |", stepLimit))
 		for start := 0; start < len(repos); start += stepLimit {
 			ptx.Print("|")
