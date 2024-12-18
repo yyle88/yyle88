@@ -23,6 +23,7 @@ type DocGenParam struct {
 	startWith string
 	titleLine string
 	closeWith string
+	repoTitle string
 }
 
 func TestGenMarkdown(t *testing.T) {
@@ -32,6 +33,7 @@ func TestGenMarkdown(t *testing.T) {
 		shortName: "README.md",
 		startWith: "Here are some of my key projects:",
 		titleLine: "| **RepoName** | **Description** |",
+		repoTitle: "repo",
 		closeWith: "**Explore and star my projects. Your support means a lot!**",
 	})
 }
@@ -43,7 +45,20 @@ func TestGenMarkdownZhHans(t *testing.T) {
 		shortName: "README.zh.md",
 		startWith: "这是我的项目：",
 		titleLine: "| 项目名称 | 项目描述 |",
+		repoTitle: "项目",
 		closeWith: "给我星星谢谢。",
+	})
+}
+
+func TestGenMarkdownJapanese(t *testing.T) {
+	const username = "yyle88"
+
+	GenMarkdownTable(t, username, &DocGenParam{
+		shortName: "README.ja.md",
+		startWith: "以下は私の主なプロジェクトです：",
+		titleLine: "| **リポ名** | **説明** |",
+		repoTitle: "リポ",
+		closeWith: "**私のプロジェクトを探索してスターを付けてください。サポートは大変感謝します！**",
 	})
 }
 
@@ -89,7 +104,7 @@ func GenMarkdownTable(t *testing.T, username string, arg *DocGenParam) {
 	if len(repos) > 0 {
 		ptx.Println()
 		const stepLimit = 4
-		ptx.Println("|" + repeatString(" "+"repo"+" |", stepLimit))
+		ptx.Println("|" + repeatString(" "+arg.repoTitle+" |", stepLimit))
 		ptx.Println("|" + repeatString(" :--: |", stepLimit))
 		for start := 0; start < len(repos); start += stepLimit {
 			ptx.Print("|")
