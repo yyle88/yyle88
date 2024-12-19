@@ -79,6 +79,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	ptx := utils.NewPTX()
 
 	cardThemes := utils.GetReadmeCardThemes()
+	require.NotEmpty(t, cardThemes)
 
 	subRepos, repos := splitRepos(repos, 5)
 	for _, repo := range subRepos {
@@ -95,7 +96,9 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		ptx.Println()
 	}
 
-	colors := []string{"#FF5733", "#91C4A4", "#7D4B91", "#35A8D5", "#F2D330", "#F09F3B", "#F7931E", "#95C59D", "#7D5E7F", "#8A2BE2", "#FF6347", "#FF1493", "#32CD32", "#20B2AA", "#FFD700", "#DC143C", "#FF4500", "#2E8B57", "#3CB371", "#ADFF2F"}
+	colors := utils.GetBadgeColors()
+	require.NotEmpty(t, colors)
+
 	rand.Shuffle(len(colors), func(i, j int) {
 		colors[i], colors[j] = colors[j], colors[i]
 	})
@@ -104,7 +107,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	if len(subRepos) > 0 {
 		ptx.Println()
 		ptx.Println(arg.titleLine)
-		ptx.Println("|-------------------------------------------------|--------|")
+		ptx.Println("|--------|--------|")
 		for _, repo := range subRepos {
 			ptx.Println(fmt.Sprintf("| %s | %s |", makeBadge(repo, colors[rand.IntN(len(colors))]), strings.ReplaceAll(repo.Desc, "|", "-")))
 		}

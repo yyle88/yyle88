@@ -21,7 +21,7 @@
 
 ---
 
-<h4 align="center"><strong>My Projects</strong> | <a href="./profile/README.md">Organization Projects</a></h4>
+<h4 align="center"><strong>My Projects</strong> | <a href="./profile/README.zh.md">Organization Projects</a></h4>
 
 ---
 
@@ -64,33 +64,33 @@ Here are some of my key projects:
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的起始位置 -->
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=slateorange)](https://github.com/yyle88/gobtcsign)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=chartreuse-dark)](https://github.com/yyle88/gobtcsign)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=sure&theme=jolly)](https://github.com/yyle88/sure)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=sure&theme=gruvbox_light)](https://github.com/yyle88/sure)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormmom&theme=nord)](https://github.com/yyle88/gormmom)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormmom&theme=aura)](https://github.com/yyle88/gormmom)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=osexec&theme=great-gatsby)](https://github.com/yyle88/osexec)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=osexec&theme=graywhite)](https://github.com/yyle88/osexec)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gotrontrx&theme=gruvbox)](https://github.com/yyle88/gotrontrx)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gotrontrx&theme=panda)](https://github.com/yyle88/gotrontrx)
 
 
 | **RepoName** | **Description** |
-|-------------------------------------------------|--------|
-| [![done](https://img.shields.io/badge/done-%23F7931E.svg?style=flat&logoColor=white)](https://github.com/yyle88/done) | Done allows you to focus on your business logic without repetitive if err != nil patterns. |
-| [![formatgo](https://img.shields.io/badge/formatgo-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/formatgo) | `formatgo` is a Go package that provides utilities for formatting Go source code |
-| [![syntaxgo](https://img.shields.io/badge/syntaxgo-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/syntaxgo) | syntaxgo is a wrapper around Go's go/ast Abstract Syntax Tree and Go's reflect package - designed to make it easier to analyze code and ultimately automate the generation. |
-| [![must](https://img.shields.io/badge/must-%233CB371.svg?style=flat&logoColor=white)](https://github.com/yyle88/must) | The must library simplifies assertions and panics on failure. Assert conditions directly, avoiding long checks |
-| [![reggin](https://img.shields.io/badge/reggin-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/reggin) | `reggin` is a pkg for registering and managing Gin HTTP routes. |
+|--------|--------|
+| [![done](https://img.shields.io/badge/done-%233CB371.svg?style=flat&logoColor=white)](https://github.com/yyle88/done) | Done allows you to focus on your business logic without repetitive if err != nil patterns. |
+| [![formatgo](https://img.shields.io/badge/formatgo-%23FF5733.svg?style=flat&logoColor=white)](https://github.com/yyle88/formatgo) | `formatgo` is a Go package that provides utilities for formatting Go source code |
+| [![syntaxgo](https://img.shields.io/badge/syntaxgo-%237D4B91.svg?style=flat&logoColor=white)](https://github.com/yyle88/syntaxgo) | syntaxgo is a wrapper around Go's go/ast Abstract Syntax Tree and Go's reflect package - designed to make it easier to analyze code and ultimately automate the generation. |
+| [![erero](https://img.shields.io/badge/erero-%23FFD700.svg?style=flat&logoColor=white)](https://github.com/yyle88/erero) | erero is a simple error-handling package designed to log errors along with their context and location. |
+| [![must](https://img.shields.io/badge/must-%23F2D330.svg?style=flat&logoColor=white)](https://github.com/yyle88/must) | The must library simplifies assertions and panics on failure. Assert conditions directly, avoiding long checks |
 
 
 | repo | repo | repo | repo |
 | :--: | :--: | :--: | :--: |
-|[![tern](https://img.shields.io/badge/tern-%23DC143C.svg?style=flat&logoColor=white)](https://github.com/yyle88/tern) | [![erero](https://img.shields.io/badge/erero-%23F09F3B.svg?style=flat&logoColor=white)](https://github.com/yyle88/erero) | [![gormcngen](https://img.shields.io/badge/gormcngen-%237D4B91.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcngen) | [![gormcls](https://img.shields.io/badge/gormcls-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcls) | 
-|[![syncmap](https://img.shields.io/badge/syncmap-%232E8B57.svg?style=flat&logoColor=white)](https://github.com/yyle88/syncmap) | [![gormcnm](https://img.shields.io/badge/gormcnm-%23FF5733.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcnm) | [![sortslice](https://img.shields.io/badge/sortslice-%23ADFF2F.svg?style=flat&logoColor=white)](https://github.com/yyle88/sortslice) | [![eroticgo](https://img.shields.io/badge/eroticgo-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/eroticgo) | 
-|[![rese](https://img.shields.io/badge/rese-%23FF6347.svg?style=flat&logoColor=white)](https://github.com/yyle88/rese) | [![osexistpath](https://img.shields.io/badge/osexistpath-%2332CD32.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexistpath) | [![runpath](https://img.shields.io/badge/runpath-%237D5E7F.svg?style=flat&logoColor=white)](https://github.com/yyle88/runpath) | [![demojavabtcsign](https://img.shields.io/badge/demojavabtcsign-%2335A8D5.svg?style=flat&logoColor=white)](https://github.com/yyle88/demojavabtcsign) | 
-|[![neatjson](https://img.shields.io/badge/neatjson-%2320B2AA.svg?style=flat&logoColor=white)](https://github.com/yyle88/neatjson) | [![zaplog](https://img.shields.io/badge/zaplog-%2395C59D.svg?style=flat&logoColor=white)](https://github.com/yyle88/zaplog) | [![mutexmap](https://img.shields.io/badge/mutexmap-%23FFD700.svg?style=flat&logoColor=white)](https://github.com/yyle88/mutexmap) | [![printgo](https://img.shields.io/badge/printgo-%23FF1493.svg?style=flat&logoColor=white)](https://github.com/yyle88/printgo) | 
-|[![yyle88](https://img.shields.io/badge/yyle88-%23F7931E.svg?style=flat&logoColor=white)](https://github.com/yyle88/yyle88) | - | - | - | 
+|[![reggin](https://img.shields.io/badge/reggin-%23F09F3B.svg?style=flat&logoColor=white)](https://github.com/yyle88/reggin) | [![tern](https://img.shields.io/badge/tern-%2320B2AA.svg?style=flat&logoColor=white)](https://github.com/yyle88/tern) | [![gormcngen](https://img.shields.io/badge/gormcngen-%23ADFF2F.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcngen) | [![eroticgo](https://img.shields.io/badge/eroticgo-%23FFD700.svg?style=flat&logoColor=white)](https://github.com/yyle88/eroticgo) | 
+|[![gormcls](https://img.shields.io/badge/gormcls-%23FF1493.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcls) | [![syncmap](https://img.shields.io/badge/syncmap-%23F7931E.svg?style=flat&logoColor=white)](https://github.com/yyle88/syncmap) | [![gormcnm](https://img.shields.io/badge/gormcnm-%23FF6347.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcnm) | [![sortslice](https://img.shields.io/badge/sortslice-%23F2D330.svg?style=flat&logoColor=white)](https://github.com/yyle88/sortslice) | 
+|[![rese](https://img.shields.io/badge/rese-%233CB371.svg?style=flat&logoColor=white)](https://github.com/yyle88/rese) | [![demojavabtcsign](https://img.shields.io/badge/demojavabtcsign-%2335A8D5.svg?style=flat&logoColor=white)](https://github.com/yyle88/demojavabtcsign) | [![osexistpath](https://img.shields.io/badge/osexistpath-%2395C59D.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexistpath) | [![runpath](https://img.shields.io/badge/runpath-%23DC143C.svg?style=flat&logoColor=white)](https://github.com/yyle88/runpath) | 
+|[![neatjson](https://img.shields.io/badge/neatjson-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/neatjson) | [![zaplog](https://img.shields.io/badge/zaplog-%2391C4A4.svg?style=flat&logoColor=white)](https://github.com/yyle88/zaplog) | [![mutexmap](https://img.shields.io/badge/mutexmap-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/mutexmap) | [![printgo](https://img.shields.io/badge/printgo-%237D5E7F.svg?style=flat&logoColor=white)](https://github.com/yyle88/printgo) | 
+|[![yyle88](https://img.shields.io/badge/yyle88-%23FF5733.svg?style=flat&logoColor=white)](https://github.com/yyle88/yyle88) | - | - | - | 
 
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的终止位置 -->
