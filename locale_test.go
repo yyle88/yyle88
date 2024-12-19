@@ -17,15 +17,17 @@ import (
 )
 
 var supportedLanguages = []*yyle88.LanguageLink{
-	{Name: "English", URL: "./README.md"},      // 英语
-	{Name: "简体中文", URL: "./README.zh.md"},      // 简体中文
-	{Name: "繁體中文", URL: "./README.zh-Hant.md"}, // 繁体中文
-	{Name: "日本語", URL: "./README.ja.md"},       // 日语
-	{Name: "Deutsch", URL: "./README.de.md"},   // 德语
-	{Name: "Français", URL: "./README.fr.md"},  // 法语
-	{Name: "Español", URL: "./README.es.md"},   // 西班牙语
-	{Name: "Português", URL: "./README.pt.md"}, // 葡萄牙语
-	{Name: "ខ្មែរ", URL: "./README.kh.md"},     // 高棉语
+	{Name: "English", URL: "./README.md"},       // 英语
+	{Name: "简体中文", URL: "./README.zh.md"},       // 简体中文
+	{Name: "繁體中文", URL: "./README.zh-Hant.md"},  // 繁体中文
+	{Name: "日本語", URL: "./README.ja.md"},        // 日语
+	{Name: "Русский", URL: "./README.ru.md"},    // 俄语
+	{Name: "Deutsch", URL: "./README.de.md"},    // 德语
+	{Name: "Français", URL: "./README.fr.md"},   // 法语
+	{Name: "Español", URL: "./README.es.md"},    // 西班牙语
+	{Name: "Português", URL: "./README.pt.md"},  // 葡萄牙语
+	{Name: "ខ្មែរ", URL: "./README.kh.md"},      // 高棉语
+	{Name: "Tiếng Việt", URL: "./README.vi.md"}, // 越南语
 }
 
 func TestGenLanguageLinkMarkdown(t *testing.T) {

@@ -4,10 +4,10 @@
 
 ---
 
-<h4 align="center"><strong>English</strong> | <a href="./README.zh.md">简体中文</a></h4>
+<h4 align="center"><a href="./README.md">English</a> | <strong>简体中文</strong></h4>
 
 ---
 
-<h4 align="center"><strong>Organization Projects</strong> | <a href="../README.md">My Projects</a></h4>
+<h4 align="center"><strong>组织项目</strong> | <a href="../README.md">我的项目</a></h4>
 
 ---

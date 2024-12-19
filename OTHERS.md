@@ -1,4 +1,12 @@
-## Hi there 👋 Welcome to my Page 👋 I'm yyle88
+![MASTER-HEAD](https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif)
+
+![TYPING-SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)
+
+---
+
+<h4 align="center"><strong>English</strong> | <a href="./OTHERS.zh.md">简体中文</a> | <strong>My Projects</strong> | <a href="./profile/README.md">Organization Projects</a></h4>
+
+---
 
 ## Accounts
 
@@ -13,31 +21,6 @@
 ---
 
 So, you know, if you give me([yyle88](https://github.com/yyle88)) 1 star, I can give your project up to 5 stars in return.
-
----
-
-## Organizations
-
-| **Organization Name**                                       | **Description**                                                                                        | **Core Features**                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|-------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [go-xlan](https://github.com/orgs/go-xlan/repositories)     | Integrates Go with various languages, environments, networks, services, clients, protocols, and tools. | Provides cross-language, cross-protocol, and cross-service integration solutions, including communication with other language services via gRPC, REST, and WebSocket, cloud platform integration (e.g., AWS, GCP), supporting protocols like MQTT, Kafka, AMQP for data exchange and processing, and client libraries to simplify cross-language communication.                                                                                       |
-| [go-mate](https://github.com/orgs/go-mate/repositories)     | Providing Go developers with 'partner'/'assistant' tools.                                              | Offers development tools such as a code generator (auto-generating CRUD code from proto files or JSON), dependency management tools (optimizing go.mod and go.sum parsing and conflict resolution), configuration management libraries (supporting multi-environment hot updates and unified config management), and performance analysis tools (lightweight API call chain analyzer to help identify performance bottlenecks).                       |
-| [orzkratos](https://github.com/orgs/orzkratos/repositories) | Experiences with Go-Kratos framework, documenting best practices and learnings.                        | Focused on Go-Kratos framework applications and learning, including summarizing experiences with large-scale microservice projects using Kratos, providing solutions for common business scenarios (e.g., user authentication, order processing), and extending the Kratos framework by developing general plugins (e.g., custom middleware, service discovery adapters).                                                                             |
-| [go-legs](https://github.com/orgs/go-legs/repositories)     | Go Legs — Provides lightweight, fun development tools.                                                 | Offers lightweight and fun development tools, including project initialization tools (one-click project templates supporting multiple frameworks like Gin, Echo, Fiber), task scheduling libraries (cron-based task scheduler supporting dynamic task management), runtime monitoring tools (real-time monitoring of memory, CPU, Goroutines, etc., for quick issue identification), and simple script tools (e.g., file migration, data conversion). |
-
----
-
-## Some Repos
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=tern&theme=algolia)](https://github.com/yyle88/tern)
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=rese&theme=algolia)](https://github.com/yyle88/rese)
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=must&theme=algolia)](https://github.com/yyle88/must)
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=done&theme=algolia)](https://github.com/yyle88/done)
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=sure&theme=algolia)](https://github.com/yyle88/sure)
 
 ---
 
