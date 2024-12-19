@@ -40,10 +40,10 @@ func TestFetchOrganizations(t *testing.T) {
 }
 
 var organizationNames = []string{
-	"go-legs",
-	"go-mate",
 	"go-xlan",
+	"go-mate",
 	"orzkratos",
+	"go-legs",
 }
 
 var mapOrganizationRepos = mutexmap.NewMap[string, []*yyle88.Repo](10)
@@ -69,7 +69,7 @@ type DocGenParam struct {
 func TestGenMarkdown(t *testing.T) {
 	GenMarkdownTable(t, &DocGenParam{
 		shortName: "README.md",
-		titleLine: "| **Organization** | **Repo** |",
+		titleLine: `| **<span style="font-size: 10px;">organization</span>** | **repo** |`,
 	})
 }
 
@@ -121,8 +121,13 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	})
 
 	ptx := utils.NewPTX()
+	for _, orgName := range organizationNames {
+		ptx.Println(makeCustomHeightBadge(orgName, fmt.Sprintf("https://github.com/orgs/%s/repositories", orgName), colors[rand.IntN(len(colors))], 40))
+	}
+	ptx.Println()
+
 	ptx.Println(arg.titleLine)
-	ptx.Println("|------------------|----------|")
+	ptx.Println("|----------|----------|")
 
 	for idx, one := range results {
 		const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme={{ card_theme }})]({{ repo_link }})"
@@ -135,10 +140,9 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		)
 		repoCardLink := rep.Replace(templateLine)
 
-		ptx.Println(fmt.Sprintf("| %s | %s |", makeBadge(&yyle88.Organization{
-			Name: one.orgName,
-			Link: "https://github.com/" + one.orgName,
-		}, colors[rand.IntN(len(colors))]), repoCardLink))
+		orgBadgeLink := makeBadge(one.orgName, "https://github.com/"+one.orgName, colors[rand.IntN(len(colors))])
+
+		ptx.Println(fmt.Sprintf("| %s | %s |", orgBadgeLink, repoCardLink))
 	}
 
 	stb := ptx.String()
@@ -167,6 +171,10 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	t.Log("success")
 }
 
-func makeBadge(organization *yyle88.Organization, colorString string) string {
-	return fmt.Sprintf("[![%s](https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white)](%s)", organization.Name, strings.ReplaceAll(organization.Name, "-", "+"), url.QueryEscape(colorString), organization.Link)
+func makeBadge(name string, link string, colorString string) string {
+	return fmt.Sprintf("[![%s](https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white)](%s)", name, strings.ReplaceAll(name, "-", "+"), url.QueryEscape(colorString), link)
+}
+
+func makeCustomHeightBadge(name string, link string, colorString string, height int) string {
+	return fmt.Sprintf(`<a href="%s"><img src="https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white" height="%d"></a>`, link, strings.ReplaceAll(name, "-", "+"), url.QueryEscape(colorString), height)
 }

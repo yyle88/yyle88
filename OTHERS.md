@@ -4,7 +4,7 @@
 
 ---
 
-<h4 align="center"><strong>English</strong> | <a href="./OTHERS.zh.md">简体中文</a> | <strong>My Projects</strong> | <a href="./profile/README.md">Organization Projects</a></h4>
+<h4 align="center" style="font-size: 2.0em;"><strong>English</strong> | <a href="./OTHERS.zh.md">简体中文</a> | <strong>My Projects</strong> | <a href="./profile/README.md">Organization Projects</a></h4>
 
 ---
 

@@ -69,6 +69,54 @@ func TestGenMarkdownRussian(t *testing.T) {
 	})
 }
 
+func TestGenMarkdownDeutsch(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.de.md",
+		titleLine: "| **RepoName** | **Beschreibung** |",
+		repoTitle: "Repo",
+	})
+}
+
+func TestGenMarkdownFrançais(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.fr.md",
+		titleLine: "| **Nom du dépôt** | **Description** |",
+		repoTitle: "Dépôt",
+	})
+}
+
+func TestGenMarkdownEspañol(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.es.md",
+		titleLine: "| **Nombre del repositorio** | **Descripción** |",
+		repoTitle: "Repositorio",
+	})
+}
+
+func TestGenMarkdownPortuguês(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.pt.md",
+		titleLine: "| **Nome do repositório** | **Descrição** |",
+		repoTitle: "Repositório",
+	})
+}
+
+func TestGenMarkdownKhmer(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.kh.md",
+		titleLine: "| **ឈ្មោះរ៉េបូ** | **ការពិពណ៌នា** |",
+		repoTitle: "រ៉េបូ",
+	})
+}
+
+func TestGenMarkdownVietnamese(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.vi.md",
+		titleLine: "| **Tên Repo** | **Mô tả** |",
+		repoTitle: "Repo",
+	})
+}
+
 func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	mutexRewriteFp.Lock()
 	defer mutexRewriteFp.Unlock()
