@@ -21,7 +21,7 @@
 
 ---
 
-<h4 align="center"><strong>My Projects</strong> | <a href="./profile/README.zh.md">Organization Projects</a></h4>
+<h4 align="center"><strong>My Projects</strong> | <a href="./profile/README.md">Organization Projects</a></h4>
 
 ---
 

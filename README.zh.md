@@ -12,7 +12,7 @@
 
 ---
 
-<h4 align="center"><strong>我的项目</strong> | <a href="./profile/README.md">组织项目</a></h4>
+<h4 align="center"><strong>我的项目</strong> | <a href="./profile/README.zh.md">组织项目</a></h4>
 
 ---
 
@@ -149,6 +149,16 @@
 ## 感谢
 
 给我⭐ ⭐ ⭐我们携手暴富，谢谢您！！！
+
+---
+
+[![CURRENT-PROFILE-TROPHY](https://github-profile-trophy.vercel.app/?username=yyle88)](https://github.com/yyle88)
+
+---
+
+![github contribution grid snake animation](https://raw.githubusercontent.com/yyle88/yyle88/snake/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
+
+![github contribution grid snake animation](https://raw.githubusercontent.com/yyle88/yyle88/snake/github-contribution-grid-snake.svg#gh-light-mode-only)
 
 ---
 

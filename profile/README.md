@@ -2,7 +2,7 @@
 
 ---
 
-<div style="margin-left:auto; margin-right:auto;">
+<div align="center">
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的起始位置 -->
 
