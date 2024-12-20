@@ -17,34 +17,44 @@
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的起始位置 -->
 
-
-| Language |
-| -------- |
-| <a href="README.md">English</a> |
-| <a href="README.zh.md">简体中文</a> |
-| <a href="locales/README.zh-Hant.md">繁體中文</a> |
-| <a href="locales/README.ja.md">日本語</a> |
-| <a href="locales/README.ru.md">Русский</a> |
-| <a href="locales/README.de.md">Deutsch</a> |
-| <a href="locales/README.fr.md">Français</a> |
-| <a href="locales/README.es.md">Español</a> |
-| <a href="locales/README.pt.md">Português</a> |
+| Language                                      |
+|-----------------------------------------------|
+| <a href="README.md">English</a>               |
+| <a href="README.zh.md">简体中文</a>               |
+| <a href="locales/README.zh-Hant.md">繁體中文</a>  |
+| <a href="locales/README.ja.md">日本語</a>        |
+| <a href="locales/README.ru.md">Русский</a>    |
+| <a href="locales/README.de.md">Deutsch</a>    |
+| <a href="locales/README.fr.md">Français</a>   |
+| <a href="locales/README.es.md">Español</a>    |
+| <a href="locales/README.pt.md">Português</a>  |
 | <a href="locales/README.vi.md">Tiếng Việt</a> |
-| <a href="locales/README.kh.md">ខ្មែរ</a> |
-| <a href="locales/README.ko.md">한국어</a> |
-| <a href="locales/README.tr.md">Türkçe</a> |
-| <a href="locales/README.pl.md">Polski</a> |
-| <a href="locales/README.it.md">Italiano</a> |
-| <a href="locales/README.ar.md">العربية</a> |
-| <a href="locales/README.fa.md">فارسی</a> |
-| <a href="locales/README.cs.md">Čeština</a> |
+| <a href="locales/README.kh.md">ខ្មែរ</a>      |
+| <a href="locales/README.ko.md">한국어</a>        |
+| <a href="locales/README.tr.md">Türkçe</a>     |
+| <a href="locales/README.pl.md">Polski</a>     |
+| <a href="locales/README.it.md">Italiano</a>   |
+| <a href="locales/README.ar.md">العربية</a>    |
+| <a href="locales/README.fa.md">فارسی</a>      |
+| <a href="locales/README.cs.md">Čeština</a>    |
 | <a href="locales/README.uk.md">Українська</a> |
 | <a href="locales/README.nl.md">Nederlands</a> |
-
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的终止位置 -->
 
 </div>
+
+---
+
+---
+
+## Language Support
+
+If you couldn't find your desired language or wish to add a new language, please submit an [ISSUE](https://github.com/yyle88/yyle88/issues) or open a [MERGE REQUEST](https://github.com/yyle88/yyle88/pulls) to this project.
+
+We will process your suggestions as soon as possible and incorporate new language support into the project!
+
+Thank you for your contribution and support!
 
 ---
 

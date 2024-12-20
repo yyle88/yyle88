@@ -205,17 +205,9 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	subRepos, repos := splitRepos(repos, 5)
 	for _, repo := range subRepos {
-		const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme={{ card_theme }}&unique={{ unique_uuid }})]({{ repo_link }})"
+		cardLine := makeCardLine(repo, cardThemes[rand.IntN(len(cardThemes))])
 
-		rep := strings.NewReplacer(
-			"{{ username }}", username,
-			"{{ repo_name }}", repo.Name,
-			"{{ card_theme }}", cardThemes[rand.IntN(len(cardThemes))],
-			"{{ unique_uuid }}", uuid.New().String(),
-			"{{ repo_link }}", repo.Link,
-		)
-
-		ptx.Println(rep.Replace(templateLine))
+		ptx.Println(cardLine)
 		ptx.Println()
 	}
 
@@ -232,7 +224,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		ptx.Println(arg.titleLine)
 		ptx.Println("|--------|--------|")
 		for _, repo := range subRepos {
-			ptx.Println(fmt.Sprintf("| %s | %s |", makeBadge(repo, colors[rand.IntN(len(colors))]), strings.ReplaceAll(repo.Desc, "|", "-")))
+			ptx.Println(fmt.Sprintf("| %s | %s |", makeCustomHeightBadge(repo.Name, repo.Link, colors[rand.IntN(len(colors))], 30), makeCardLine(repo, cardThemes[rand.IntN(len(cardThemes))])))
 		}
 		ptx.Println()
 	}
@@ -304,10 +296,28 @@ func makeBadge(repo *yyle88.Repo, colorString string) string {
 	return fmt.Sprintf("[![%s](https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white)](%s)", repo.Name, repo.Name, url.QueryEscape(colorString), repo.Link)
 }
 
+func makeCustomHeightBadge(name string, link string, colorString string, height int) string {
+	return fmt.Sprintf(`<a href="%s"><img src="https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white" height="%d"></a>`, link, strings.ReplaceAll(name, "-", "+"), url.QueryEscape(colorString), height)
+}
+
 func repeatString(s string, n int) string {
 	var res string
 	for i := 0; i < n; i++ {
 		res += s
 	}
 	return res
+}
+
+func makeCardLine(repo *yyle88.Repo, cardTheme string) string {
+	const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme={{ card_theme }}&unique={{ unique_uuid }})]({{ repo_link }})"
+
+	rep := strings.NewReplacer(
+		"{{ username }}", username,
+		"{{ repo_name }}", repo.Name,
+		"{{ card_theme }}", cardTheme,
+		"{{ unique_uuid }}", uuid.New().String(),
+		"{{ repo_link }}", repo.Link,
+	)
+	cardLine := rep.Replace(templateLine)
+	return cardLine
 }

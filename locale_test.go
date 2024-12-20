@@ -129,6 +129,8 @@ func TestGenLanguageLinkMarkdown(t *testing.T) {
 
 	matchedLanguages := caseGetMatchedLanguages(t)
 
+	const maxOutLangCount = 12
+
 	for _, lang := range matchedLanguages {
 		var radioLinks []string
 
@@ -138,7 +140,7 @@ func TestGenLanguageLinkMarkdown(t *testing.T) {
 				radioLinks = append(radioLinks, next.LangLink.Strong())
 				meetSamePath = true
 			} else {
-				if len(radioLinks)+tern.BVV(meetSamePath, 0, 1) < 10 {
+				if len(radioLinks)+tern.BVV(meetSamePath, 0, 1) < maxOutLangCount {
 					relativePath := rese.V1(filepath.Rel(filepath.Dir(lang.Path), filepath.Dir(next.Path)))
 					newLinkString := next.CreateLink(filepath.Join(".", relativePath))
 					radioLinks = append(radioLinks, newLinkString)
@@ -148,7 +150,7 @@ func TestGenLanguageLinkMarkdown(t *testing.T) {
 
 		relativePath := rese.V1(filepath.Rel(filepath.Dir(lang.Path), menuRoot))
 
-		radioLinks = append(radioLinks, yyle88.CreateLink(filepath.Join(relativePath, menuShortName), "**...** "))
+		radioLinks = append(radioLinks, yyle88.CreateLink(filepath.Join(relativePath, menuShortName), "<b>...</b>"))
 
 		stb := `<h4 align="center" style="font-size: 2.0em;">` + strings.Join(radioLinks, " | ") + `</h4>`
 
