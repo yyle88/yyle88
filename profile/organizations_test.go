@@ -142,7 +142,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		)
 		repoCardLink := rep.Replace(templateLine)
 
-		orgBadgeLink := makeBadge(one.orgName, "https://github.com/"+one.orgName, colors[rand.IntN(len(colors))])
+		orgBadgeLink := makeCustomHeightBadge(one.orgName, "https://github.com/"+one.orgName, colors[rand.IntN(len(colors))], 30)
 
 		ptx.Println(fmt.Sprintf("| %s | %s |", orgBadgeLink, repoCardLink))
 	}
@@ -157,9 +157,9 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	t.Log(text)
 
 	contentLines := strings.Split(text, "\n")
-	sIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的起始位置 -->")
+	sIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是组织项目列表的起始位置 -->")
 	require.Positive(t, sIdx)
-	eIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的终止位置 -->")
+	eIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是组织项目列表的终止位置 -->")
 	require.Positive(t, eIdx)
 
 	require.Less(t, sIdx, eIdx)
@@ -171,10 +171,6 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	must.Done(os.WriteFile(path, []byte(content), 0666))
 	t.Log("success")
-}
-
-func makeBadge(name string, link string, colorString string) string {
-	return fmt.Sprintf("[![%s](https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white)](%s)", name, strings.ReplaceAll(name, "-", "+"), url.QueryEscape(colorString), link)
 }
 
 func makeCustomHeightBadge(name string, link string, colorString string, height int) string {

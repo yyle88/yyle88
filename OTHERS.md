@@ -4,23 +4,39 @@
 
 ---
 
-<h4 align="center" style="font-size: 2.0em;"><strong>English</strong> | <a href="./OTHERS.zh.md">简体中文</a> | <strong>My Projects</strong> | <a href="./profile/README.md">Organization Projects</a></h4>
+<h4 align="center" style="font-size: 2.0em;"><strong>English</strong> | <a href="./OTHERS.zh.md">简体中文</a></h4>
+
+---
+
+<h4 align="center" style="font-size: 2.0em;"><a href="./profile/README.md">Organization Projects</a></h4>
+
+<div align="center">
+
+<!-- 这是一个注释，它不会在渲染时显示出来，这是组织列表的起始位置 -->
+
+<a href="https://github.com/orgs/go-xlan/repositories"><img src="https://img.shields.io/badge/go+xlan-%23ADFF2F.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/orgs/go-mate/repositories"><img src="https://img.shields.io/badge/go+mate-%238A2BE2.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/orgs/orzkratos/repositories"><img src="https://img.shields.io/badge/orzkratos-%2335A8D5.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/orgs/go-legs/repositories"><img src="https://img.shields.io/badge/go+legs-%2335A8D5.svg?style=flat&logoColor=white" height="40"></a>
+
+<!-- 这是一个注释，它不会在渲染时显示出来，这是组织列表的终止位置 -->
+
+</div>
 
 ---
 
 ## Accounts
 
-| Account Name                                    | Account Description                      |
-|-------------------------------------------------|------------------------------------------|
-| [yyle66](https://github.com/yyle66)             | Backup open-source account               |
-| [yyle77](https://github.com/yyle77)             | Backup open-source account               |
-| [yyle88](https://github.com/yyle88)             | Primary open-source account (Auspicious) |
-| [yyle99](https://github.com/yyle99)             | Backup open-source account               |
-| [yangyile1990](https://github.com/yangyile1990) | Backup open-source account               |
+<div align="center">
 
----
+| Account Name                        | Account Description                      | Github Profile            |
+|-------------------------------------|------------------------------------------|---------------------------|
+| [yyle88](https://github.com/yyle88) | Primary open-source account (Auspicious) | https://github.com/yyle88 |
 
-So, you know, if you give me([yyle88](https://github.com/yyle88)) 1 star, I can give your project up to 5 stars in return.
+[![Telegram](https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yyle88)
+[![YouTube](https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000)](https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos)
+
+</div>
 
 ---
 

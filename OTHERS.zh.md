@@ -4,23 +4,39 @@
 
 ---
 
-<h4 align="center" style="font-size: 2.0em;"><a href="./OTHERS.md">English</a> | <strong>简体中文</strong> | <strong>我的项目</strong> | <a href="./profile/README.zh.md">组织项目</a></h4>
+<h4 align="center" style="font-size: 2.0em;"><a href="./OTHERS.md">English</a> | <strong>简体中文</strong></h4>
+
+---
+
+<h4 align="center" style="font-size: 2.0em;"><a href="./profile/README.zh.md">组织项目</a></h4>
+
+<div align="center">
+
+<!-- 这是一个注释，它不会在渲染时显示出来，这是组织列表的起始位置 -->
+
+<a href="https://github.com/orgs/go-xlan/repositories"><img src="https://img.shields.io/badge/go+xlan-%2395C59D.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/orgs/go-mate/repositories"><img src="https://img.shields.io/badge/go+mate-%2320B2AA.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/orgs/orzkratos/repositories"><img src="https://img.shields.io/badge/orzkratos-%23F2D330.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/orgs/go-legs/repositories"><img src="https://img.shields.io/badge/go+legs-%238A2BE2.svg?style=flat&logoColor=white" height="40"></a>
+
+<!-- 这是一个注释，它不会在渲染时显示出来，这是组织列表的终止位置 -->
+
+</div>
 
 ---
 
 ## 账号
 
-| 账号名称                                            | 账号描述         |
-|-------------------------------------------------|--------------|
-| [yyle66](https://github.com/yyle66)             | 备用开源账号       |
-| [yyle77](https://github.com/yyle77)             | 备用开源账号       |
-| [yyle88](https://github.com/yyle88)             | 主要开源账号（恭喜发财） |
-| [yyle99](https://github.com/yyle99)             | 备用开源账号       |
-| [yangyile1990](https://github.com/yangyile1990) | 备用开源账号       |
+<div align="center">
 
----
+| 账号名称                                | 账号描述         | 账号主页                      |
+|-------------------------------------|--------------|---------------------------|
+| [yyle88](https://github.com/yyle88) | 主要开源账号（恭喜发财） | https://github.com/yyle88 |
 
-因此你懂的，您给我([yyle88](https://github.com/yyle88))1个星，我可以给您的项目各点5个星。
+[![Telegram](https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yyle88)
+[![YouTube](https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000)](https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos)
+
+</div>
 
 ---
 
