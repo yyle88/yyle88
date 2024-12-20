@@ -8,8 +8,10 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
+	"github.com/yyle88/done"
 	"github.com/yyle88/must"
 	"github.com/yyle88/neatjson/neatjsons"
+	"github.com/yyle88/osexec"
 	"github.com/yyle88/osexistpath/osomitexist"
 	"github.com/yyle88/rese"
 	"github.com/yyle88/runpath"
@@ -43,6 +45,26 @@ var supportedLanguages = []*yyle88.LanguageLink{
 	{Name: "Bahasa Melayu", URL: "./README.ms.md"},    // 马来语
 	{Name: "Filipino", URL: "./README.ph.md"},         // 菲律宾语
 	{Name: "বাংলা", URL: "./README.bn.md"},            // 孟加拉语
+}
+
+func TestMoveReadmeIntoLocales(t *testing.T) {
+	mutexRewriteFp.Lock()
+	defer mutexRewriteFp.Unlock()
+
+	root := runpath.PARENT.Path()
+	for idx, lang := range supportedLanguages {
+		readmePath := filepath.Join(root, lang.URL)
+		localePath := filepath.Join(root, "locales", lang.URL)
+		if idx < 2 {
+			if osomitexist.IsFile(localePath) {
+				done.VAE(osexec.Exec("mv", localePath, readmePath)).Done()
+			}
+		} else {
+			if osomitexist.IsFile(readmePath) {
+				done.VAE(osexec.Exec("mv", readmePath, localePath)).Done()
+			}
+		}
+	}
 }
 
 func TestGenLanguageLinkMarkdown(t *testing.T) {
