@@ -73,29 +73,41 @@ func TestGenLanguageLinkMarkdown(t *testing.T) {
 
 	root := runpath.PARENT.Path()
 
-	var matchedLanguages []*yyle88.LanguageLink
+	var matchedLanguages []*yyle88.LangLinkPath
 	for _, lang := range supportedLanguages {
-		if osomitexist.IsFile(filepath.Join(root, lang.URL)) {
-			t.Log(neatjsons.S(lang))
-			matchedLanguages = append(matchedLanguages, lang)
+		for _, path := range []string{
+			filepath.Join(root, lang.URL),
+			filepath.Join(root, "locales", lang.URL),
+		} {
+			if osomitexist.IsFile(path) {
+				t.Log(neatjsons.S(lang))
+				matchedLanguages = append(matchedLanguages, &yyle88.LangLinkPath{
+					LangLink: lang,
+					Path:     path,
+				})
+				break
+			}
 		}
 	}
 
 	for _, lang := range matchedLanguages {
-		path := filepath.Join(root, lang.URL)
+		path := lang.Path
 		t.Log(path)
 
 		text := string(rese.V1(os.ReadFile(path)))
 		t.Log(text)
 
 		var radioLinks []string
-		for _, lang2 := range matchedLanguages {
-			if lang2.URL == lang.URL {
-				radioLinks = append(radioLinks, lang2.Strong())
+		for _, next := range matchedLanguages {
+			if next.Path == lang.Path {
+				radioLinks = append(radioLinks, next.LangLink.Strong())
 			} else {
-				radioLinks = append(radioLinks, lang2.String())
+				relativePath := rese.V1(filepath.Rel(filepath.Dir(lang.Path), filepath.Dir(next.Path)))
+				newLinkString := next.CreateLink(filepath.Join(".", relativePath))
+				radioLinks = append(radioLinks, newLinkString)
 			}
 		}
+		//panic(1)
 
 		contentLines := strings.Split(text, "\n")
 		sIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的起始位置 -->")

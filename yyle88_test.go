@@ -15,6 +15,7 @@ import (
 	"github.com/yyle88/done"
 	"github.com/yyle88/must"
 	"github.com/yyle88/osexistpath/osmustexist"
+	"github.com/yyle88/osexistpath/osomitexist"
 	"github.com/yyle88/runpath"
 	"github.com/yyle88/yyle88"
 	"github.com/yyle88/yyle88/internal/utils"
@@ -258,8 +259,11 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	stb := ptx.String()
 	t.Log(stb)
 
-	path := osmustexist.PATH(runpath.PARENT.Join(arg.shortName))
-	t.Log(path)
+	path := runpath.PARENT.Join(arg.shortName)
+	if !osomitexist.IsFile(path) {
+		path = runpath.PARENT.Join("locales", arg.shortName)
+	}
+	t.Log(osmustexist.PATH(path))
 
 	text := string(done.VAE(os.ReadFile(path)).Nice())
 	t.Log(text)
