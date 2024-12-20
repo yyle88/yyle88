@@ -205,7 +205,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	subRepos, repos := splitRepos(repos, 5)
 
-	ptx.Println(`<div align="center">`)
+	ptx.Println(`<div align="left">`)
 	ptx.Println()
 	for _, repo := range subRepos {
 		cardLine := makeCardLine(repo, cardThemes[rand.IntN(len(cardThemes))])
@@ -226,7 +226,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	subRepos, repos = splitRepos(repos, 5)
 	if len(subRepos) > 0 {
 		ptx.Println()
-		ptx.Println(`<div align="center">`)
+		ptx.Println(`<div align="left">`)
 		ptx.Println()
 		ptx.Println(arg.titleLine)
 		ptx.Println("|--------|--------|")
@@ -240,7 +240,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	if len(repos) > 0 {
 		ptx.Println()
-		ptx.Println(`<div align="center">`)
+		ptx.Println(`<div align="left">`)
 		ptx.Println()
 		const stepLimit = 4
 		ptx.Println("|" + repeatString(" "+arg.repoTitle+" |", stepLimit))
