@@ -12,10 +12,13 @@ import (
 	"github.com/yyle88/must"
 	"github.com/yyle88/neatjson/neatjsons"
 	"github.com/yyle88/osexec"
+	"github.com/yyle88/osexistpath/osmustexist"
 	"github.com/yyle88/osexistpath/osomitexist"
 	"github.com/yyle88/rese"
 	"github.com/yyle88/runpath"
+	"github.com/yyle88/tern"
 	"github.com/yyle88/yyle88"
+	"github.com/yyle88/yyle88/internal/utils"
 )
 
 var supportedLanguages = []*yyle88.LanguageLink{
@@ -67,10 +70,32 @@ func TestMoveReadmeIntoLocales(t *testing.T) {
 	}
 }
 
-func TestGenLanguageLinkMarkdown(t *testing.T) {
+func TestWriteLocaleMenu(t *testing.T) {
 	mutexRewriteFp.Lock()
 	defer mutexRewriteFp.Unlock()
 
+	const menuShortName = "LOCALE-MENU.md"
+	menuPath := osmustexist.PATH(runpath.PARENT.Join(menuShortName))
+	t.Log(menuPath)
+
+	matchedLanguages := caseGetMatchedLanguages(t)
+
+	ptx := utils.NewPTX()
+	ptx.Println()
+	ptx.Println("| Language |")
+	ptx.Println("| -------- |")
+	for _, next := range matchedLanguages {
+		relativePath := rese.V1(filepath.Rel(filepath.Dir(menuPath), filepath.Dir(next.Path)))
+		newLinkString := next.CreateLink(filepath.Join(".", relativePath))
+		ptx.Println("|", newLinkString, "|")
+	}
+	stb := ptx.String()
+	t.Log(stb)
+
+	rewriteLanguageTable(t, menuPath, stb)
+}
+
+func caseGetMatchedLanguages(t *testing.T) []*yyle88.LangLinkPath {
 	root := runpath.PARENT.Path()
 
 	var matchedLanguages []*yyle88.LangLinkPath
@@ -89,40 +114,67 @@ func TestGenLanguageLinkMarkdown(t *testing.T) {
 			}
 		}
 	}
+	return matchedLanguages
+}
+
+func TestGenLanguageLinkMarkdown(t *testing.T) {
+	mutexRewriteFp.Lock()
+	defer mutexRewriteFp.Unlock()
+
+	menuRoot := runpath.PARENT.Path()
+
+	const menuShortName = "LOCALE-MENU.md"
+	menuPath := osmustexist.PATH(filepath.Join(menuRoot, menuShortName))
+	t.Log(menuPath)
+
+	matchedLanguages := caseGetMatchedLanguages(t)
 
 	for _, lang := range matchedLanguages {
-		path := lang.Path
-		t.Log(path)
-
-		text := string(rese.V1(os.ReadFile(path)))
-		t.Log(text)
-
 		var radioLinks []string
+
+		var meetSamePath = false
 		for _, next := range matchedLanguages {
 			if next.Path == lang.Path {
 				radioLinks = append(radioLinks, next.LangLink.Strong())
+				meetSamePath = true
 			} else {
-				relativePath := rese.V1(filepath.Rel(filepath.Dir(lang.Path), filepath.Dir(next.Path)))
-				newLinkString := next.CreateLink(filepath.Join(".", relativePath))
-				radioLinks = append(radioLinks, newLinkString)
+				if len(radioLinks)+tern.BVV(meetSamePath, 0, 1) < 10 {
+					relativePath := rese.V1(filepath.Rel(filepath.Dir(lang.Path), filepath.Dir(next.Path)))
+					newLinkString := next.CreateLink(filepath.Join(".", relativePath))
+					radioLinks = append(radioLinks, newLinkString)
+				}
 			}
 		}
-		//panic(1)
 
-		contentLines := strings.Split(text, "\n")
-		sIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的起始位置 -->")
-		require.Positive(t, sIdx)
-		eIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的终止位置 -->")
-		require.Positive(t, eIdx)
+		relativePath := rese.V1(filepath.Rel(filepath.Dir(lang.Path), menuRoot))
 
-		require.Less(t, sIdx, eIdx)
+		radioLinks = append(radioLinks, yyle88.CreateLink(filepath.Join(relativePath, menuShortName), "**...** "))
 
-		content := strings.Join(contentLines[:sIdx+1], "\n") + "\n" + "\n" +
-			`<h4 align="center" style="font-size: 2.0em;">` + strings.Join(radioLinks, " | ") + `</h4>` + "\n" + "\n" +
-			strings.Join(contentLines[eIdx:], "\n")
-		t.Log(content)
+		stb := `<h4 align="center" style="font-size: 2.0em;">` + strings.Join(radioLinks, " | ") + `</h4>`
 
-		must.Done(os.WriteFile(path, []byte(content), 0666))
-		t.Log("success")
+		rewriteLanguageTable(t, lang.Path, stb)
 	}
+}
+
+func rewriteLanguageTable(t *testing.T, path string, stb string) {
+	t.Log(path)
+
+	text := string(rese.V1(os.ReadFile(path)))
+	t.Log(text)
+
+	contentLines := strings.Split(text, "\n")
+	sIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的起始位置 -->")
+	require.Positive(t, sIdx)
+	eIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的终止位置 -->")
+	require.Positive(t, eIdx)
+
+	require.Less(t, sIdx, eIdx)
+
+	content := strings.Join(contentLines[:sIdx+1], "\n") + "\n" + "\n" +
+		stb + "\n" + "\n" +
+		strings.Join(contentLines[eIdx:], "\n")
+	t.Log(content)
+
+	must.Done(os.WriteFile(path, []byte(content), 0666))
+	t.Log("success")
 }

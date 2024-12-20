@@ -11,7 +11,7 @@ type LanguageLink struct {
 }
 
 func (lang *LanguageLink) String() string {
-	return fmt.Sprintf("<a href=\"%s\">%s</a>", lang.URL, lang.Name)
+	return CreateLink(lang.URL, lang.Name)
 }
 
 func (lang *LanguageLink) Strong() string {
@@ -24,5 +24,9 @@ type LangLinkPath struct {
 }
 
 func (a *LangLinkPath) CreateLink(parentPath string) string {
-	return fmt.Sprintf("<a href=\"%s\">%s</a>", filepath.Join(parentPath, a.LangLink.URL), a.LangLink.Name)
+	return CreateLink(filepath.Join(parentPath, a.LangLink.URL), a.LangLink.Name)
+}
+
+func CreateLink(link string, name string) string {
+	return fmt.Sprintf("<a href=\"%s\">%s</a>", link, name)
 }
