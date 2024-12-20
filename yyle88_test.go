@@ -10,6 +10,7 @@ import (
 	"sync"
 	"testing"
 
+	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 	"github.com/yyle88/done"
 	"github.com/yyle88/must"
@@ -131,12 +132,13 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	subRepos, repos := splitRepos(repos, 5)
 	for _, repo := range subRepos {
-		const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme={{ card_theme }})]({{ repo_link }})"
+		const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme={{ card_theme }}&unique={{ unique_uuid }})]({{ repo_link }})"
 
 		rep := strings.NewReplacer(
 			"{{ username }}", username,
 			"{{ repo_name }}", repo.Name,
 			"{{ card_theme }}", cardThemes[rand.IntN(len(cardThemes))],
+			"{{ unique_uuid }}", uuid.New().String(),
 			"{{ repo_link }}", repo.Link,
 		)
 

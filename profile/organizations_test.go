@@ -11,6 +11,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 	"github.com/yyle88/done"
 	"github.com/yyle88/must"
@@ -130,12 +131,13 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	ptx.Println("|----------|----------|")
 
 	for idx, one := range results {
-		const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme={{ card_theme }})]({{ repo_link }})"
+		const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme={{ card_theme }}&unique={{ unique_uuid }})]({{ repo_link }})"
 
 		rep := strings.NewReplacer(
 			"{{ username }}", one.orgName,
 			"{{ repo_name }}", one.repo.Name,
 			"{{ card_theme }}", cardThemes[idx%len(cardThemes)],
+			"{{ unique_uuid }}", uuid.New().String(),
 			"{{ repo_link }}", one.repo.Link,
 		)
 		repoCardLink := rep.Replace(templateLine)
