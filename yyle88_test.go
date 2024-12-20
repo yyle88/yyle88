@@ -118,6 +118,78 @@ func TestGenMarkdownVietnamese(t *testing.T) {
 	})
 }
 
+func TestGenMarkdownKorean(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.ko.md",
+		titleLine: "| **레포 이름** | **설명** |",
+		repoTitle: "레포",
+	})
+}
+
+func TestGenMarkdownTurkish(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.tr.md",
+		titleLine: "| **Repo Adı** | **Açıklama** |",
+		repoTitle: "Repo",
+	})
+}
+
+func TestGenMarkdownPolish(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.pl.md",
+		titleLine: "| **Nazwa repozytorium** | **Opis** |",
+		repoTitle: "Repozytorium",
+	})
+}
+
+func TestGenMarkdownItalian(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.it.md",
+		titleLine: "| **Nome del repository** | **Descrizione** |",
+		repoTitle: "Repository",
+	})
+}
+
+func TestGenMarkdownArabic(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.ar.md",
+		titleLine: "| **اسم المستودع** | **الوصف** |",
+		repoTitle: "مستودع",
+	})
+}
+
+func TestGenMarkdownPersian(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.fa.md",
+		titleLine: "| **نام مخزن** | **توضیحات** |",
+		repoTitle: "مخزن",
+	})
+}
+
+func TestGenMarkdownCzech(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.cs.md",
+		titleLine: "| **Název repozitáře** | **Popis** |",
+		repoTitle: "Repozitář",
+	})
+}
+
+func TestGenMarkdownUkrainian(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.uk.md",
+		titleLine: "| **Назва репозиторію** | **Опис** |",
+		repoTitle: "Репозиторій",
+	})
+}
+
+func TestGenMarkdownDutch(t *testing.T) {
+	GenMarkdownTable(t, &DocGenParam{
+		shortName: "README.nl.md",
+		titleLine: "| **RepoNaam** | **Beschrijving** |",
+		repoTitle: "Repo",
+	})
+}
+
 func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	mutexRewriteFp.Lock()
 	defer mutexRewriteFp.Unlock()

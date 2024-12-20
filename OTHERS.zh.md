@@ -25,13 +25,13 @@
 
 ---
 
-## 账号
+## 开发者主页
 
 <div align="center">
 
-| 账号名称                                | 账号描述         | 账号主页                      |
-|-------------------------------------|--------------|---------------------------|
-| [yyle88](https://github.com/yyle88) | 主要开源账号（恭喜发财） | https://github.com/yyle88 |
+| 开发者名称                               | 开发者主页                     |
+|-------------------------------------|---------------------------|
+| [yyle88](https://github.com/yyle88) | https://github.com/yyle88 |
 
 [![Telegram](https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yyle88)
 [![YouTube](https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000)](https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos)

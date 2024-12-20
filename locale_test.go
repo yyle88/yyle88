@@ -26,8 +26,8 @@ var supportedLanguages = []*yyle88.LanguageLink{
 	{Name: "Français", URL: "./README.fr.md"},         // 法语
 	{Name: "Español", URL: "./README.es.md"},          // 西班牙语
 	{Name: "Português", URL: "./README.pt.md"},        // 葡萄牙语
-	{Name: "ខ្មែរ", URL: "./README.kh.md"},            // 高棉语
 	{Name: "Tiếng Việt", URL: "./README.vi.md"},       // 越南语
+	{Name: "ខ្មែរ", URL: "./README.kh.md"},            // 高棉语
 	{Name: "한국어", URL: "./README.ko.md"},              // 韩国语
 	{Name: "Türkçe", URL: "./README.tr.md"},           // 土耳其语
 	{Name: "Polski", URL: "./README.pl.md"},           // 波兰语

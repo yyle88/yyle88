@@ -25,13 +25,13 @@
 
 ---
 
-## Accounts
+## Owner Account
 
 <div align="center">
 
-| Account Name                        | Account Description                      | Github Profile            |
-|-------------------------------------|------------------------------------------|---------------------------|
-| [yyle88](https://github.com/yyle88) | Primary open-source account (Auspicious) | https://github.com/yyle88 |
+| Account Name                        | Github Profile            |
+|-------------------------------------|---------------------------|
+| [yyle88](https://github.com/yyle88) | https://github.com/yyle88 |
 
 [![Telegram](https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yyle88)
 [![YouTube](https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000)](https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos)
