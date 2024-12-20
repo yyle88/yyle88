@@ -204,12 +204,17 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	require.NotEmpty(t, cardThemes)
 
 	subRepos, repos := splitRepos(repos, 5)
+
+	ptx.Println(`<div align="center">`)
+	ptx.Println()
 	for _, repo := range subRepos {
 		cardLine := makeCardLine(repo, cardThemes[rand.IntN(len(cardThemes))])
 
 		ptx.Println(cardLine)
 		ptx.Println()
 	}
+	ptx.Println(`</div>`)
+	ptx.Println()
 
 	colors := utils.GetBadgeColors()
 	require.NotEmpty(t, colors)
@@ -221,15 +226,21 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	subRepos, repos = splitRepos(repos, 5)
 	if len(subRepos) > 0 {
 		ptx.Println()
+		ptx.Println(`<div align="center">`)
+		ptx.Println()
 		ptx.Println(arg.titleLine)
 		ptx.Println("|--------|--------|")
 		for _, repo := range subRepos {
 			ptx.Println(fmt.Sprintf("| %s | %s |", makeCustomHeightBadge(repo.Name, repo.Link, colors[rand.IntN(len(colors))], 30), makeCardLine(repo, cardThemes[rand.IntN(len(cardThemes))])))
 		}
 		ptx.Println()
+		ptx.Println(`</div>`)
+		ptx.Println()
 	}
 
 	if len(repos) > 0 {
+		ptx.Println()
+		ptx.Println(`<div align="center">`)
 		ptx.Println()
 		const stepLimit = 4
 		ptx.Println("|" + repeatString(" "+arg.repoTitle+" |", stepLimit))
@@ -245,6 +256,8 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 			}
 			ptx.Println()
 		}
+		ptx.Println()
+		ptx.Println(`</div>`)
 		ptx.Println()
 	}
 
