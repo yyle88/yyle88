@@ -33,8 +33,8 @@
 |-------------------------------------|---------------------------|
 | [yyle88](https://github.com/yyle88) | https://github.com/yyle88 |
 
-[![Telegram](https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yyle88)
-[![YouTube](https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000)](https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos)
+<a href="https://t.me/yyle88"><img src="https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9" height="30" width="150"></a>
+<a href="https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos"><img src="https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000" height="30" width="150"></a>
 
 </div>
 

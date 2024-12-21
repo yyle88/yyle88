@@ -112,14 +112,18 @@
 
 ---
 
-다른 프로젝트 보기: [OTHER-PROJECTS](https://github.com/yyle88/yyle88/blob/main/OTHERS.md)
+<!-- 这是一个注释，它不会在渲染时显示出来，这是其它项目的起始位置 -->
+
+<a href="https://github.com/yyle88/yyle88/blob/main/OTHERS.md"><img src="https://img.shields.io/badge/MY+ORGANIZATIONS-%2320B2AA.svg?style=flat&logoColor=white" height="30" width="150"></a>
+
+<!-- 这是一个注释，它不会在渲染时显示出来，这是其它项目的终止位置 -->
 
 ---
 
 ## 링크
 
-[![Telegram](https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yyle88)
-[![YouTube](https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000)](https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos)
+<a href="https://t.me/yyle88"><img src="https://img.shields.io/badge/-Telegram-f5e0dc?style=for-the-badge&logo=telegram&logoColor=27A0D9" height="30" width="150"></a>
+<a href="https://www.youtube.com/@%E6%9D%A8%E4%BA%A6%E4%B9%901990/videos"><img src="https://img.shields.io/badge/-YouTube-f2cdcd?style=for-the-badge&logo=YouTube&logoColor=FF0000" height="30" width="150"></a>
 
 ---
 

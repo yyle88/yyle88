@@ -55,7 +55,7 @@
 
 ## Language Support
 
-If you couldn't find your desired language or wish to add a new language, please submit an [ISSUE](https://github.com/yyle88/yyle88/issues) or open a [MERGE/PULL-REQUEST](https://github.com/yyle88/yyle88/pulls) to this project.
+If you wish to add a new language, please submit an [ISSUE](https://github.com/yyle88/yyle88/issues) / open a [MERGE/PULL REQUEST](https://github.com/yyle88/yyle88/pulls).
 
 We will process your suggestions as soon as possible and incorporate new language support into the project!
 
