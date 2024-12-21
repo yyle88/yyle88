@@ -88,16 +88,24 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	}
 
 	var results []*orgRepo
+	var meaninglessRepos []*orgRepo
 	for idx := 0; idx < 100; idx++ {
 		var pieces = make([]*orgRepo, 0, len(organizationNames))
 		for _, organizationName := range organizationNames {
 			repos := fetchOrganizationReposWithCache(organizationName)
 
 			if idx < len(repos) {
-				pieces = append(pieces, &orgRepo{
-					orgName: organizationName,
-					repo:    repos[idx],
-				})
+				if repo := repos[idx]; repo.Name == ".github" {
+					meaninglessRepos = append(meaninglessRepos, &orgRepo{
+						orgName: organizationName,
+						repo:    repo,
+					})
+				} else {
+					pieces = append(pieces, &orgRepo{
+						orgName: organizationName,
+						repo:    repo,
+					})
+				}
 			}
 		}
 		rand.Shuffle(len(pieces), func(i, j int) {
@@ -106,6 +114,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 		results = append(results, pieces...)
 	}
+	results = append(results, meaninglessRepos...)
 
 	cardThemes := utils.GetReadmeCardThemes()
 	require.NotEmpty(t, cardThemes)
@@ -123,7 +132,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	ptx := utils.NewPTX()
 	for _, orgName := range organizationNames {
-		ptx.Println(makeCustomHeightBadge(orgName, fmt.Sprintf("https://github.com/orgs/%s/repositories", orgName), colors[rand.IntN(len(colors))], 40))
+		ptx.Println(makeCustomHeightBadge(orgName, fmt.Sprintf("https://github.com/%s", orgName), colors[rand.IntN(len(colors))], 40))
 	}
 	ptx.Println()
 

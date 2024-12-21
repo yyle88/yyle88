@@ -82,13 +82,16 @@ func TestWriteLocaleMenu(t *testing.T) {
 
 	ptx := utils.NewPTX()
 	ptx.Println()
-	ptx.Println("| Language |")
-	ptx.Println("| -------- |")
+	ptx.Println("<div style=\"text-align: center;\">")
+	ptx.Println("<table style=\"margin: 0 auto; text-align: center;\">")
+	ptx.Println("<tr><th><strong>LANGUAGE</strong></th></tr>")
 	for _, next := range matchedLanguages {
 		relativePath := rese.V1(filepath.Rel(filepath.Dir(menuPath), filepath.Dir(next.Path)))
 		newLinkString := next.CreateLink(filepath.Join(".", relativePath))
-		ptx.Println("|", newLinkString, "|")
+		ptx.Println("<tr><td>" + newLinkString + "</td></tr>")
 	}
+	ptx.Println("</table>")
+	ptx.Println("</div>")
 	stb := ptx.String()
 	t.Log(stb)
 
@@ -129,7 +132,7 @@ func TestGenLanguageLinkMarkdown(t *testing.T) {
 
 	matchedLanguages := caseGetMatchedLanguages(t)
 
-	const maxOutLangCount = 12
+	const maxOutLangCount = 10
 
 	for _, lang := range matchedLanguages {
 		var radioLinks []string

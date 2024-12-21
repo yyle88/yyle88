@@ -15,7 +15,7 @@
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的起始位置 -->
 
-<h4 align="center" style="font-size: 2.0em;"><a href="../README.md">English</a> | <a href="../README.zh.md">简体中文</a> | <a href="README.zh-Hant.md">繁體中文</a> | <a href="README.ja.md">日本語</a> | <a href="README.ru.md">Русский</a> | <a href="README.de.md">Deutsch</a> | <a href="README.fr.md">Français</a> | <a href="README.es.md">Español</a> | <a href="README.pt.md">Português</a> | <a href="README.vi.md">Tiếng Việt</a> | <a href="README.kh.md">ខ្មែរ</a> | <strong>Čeština</strong> | <a href="../LOCALE-MENU.md"><b>...</b></a></h4>
+<h4 align="center" style="font-size: 2.0em;"><a href="../README.md">English</a> | <a href="../README.zh.md">简体中文</a> | <a href="README.zh-Hant.md">繁體中文</a> | <a href="README.ja.md">日本語</a> | <a href="README.ru.md">Русский</a> | <a href="README.de.md">Deutsch</a> | <a href="README.fr.md">Français</a> | <a href="README.es.md">Español</a> | <a href="README.pt.md">Português</a> | <strong>Čeština</strong> | <a href="../LOCALE-MENU.md"><b>...</b></a></h4>
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是语言选择的终止位置 -->
 
@@ -62,28 +62,15 @@ Zde jsou některé z mých hlavních projektů:
 
 <div align="left">
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=sure&theme=nord&unique=55323523-23c2-48dc-b2c9-8fc248bb0933)](https://github.com/yyle88/sure)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=sure&theme=omni&unique=51354d56-ff37-4c3a-9955-2475582c6051)](https://github.com/yyle88/sure)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=slateorange&unique=83f55ccd-5a8f-415b-a39f-38ce239935e8)](https://github.com/yyle88/gobtcsign)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=ambient_gradient&unique=4623c291-d86a-4e52-83e2-ab7f9ca86e93)](https://github.com/yyle88/gobtcsign)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=osexec&theme=calm&unique=2f1f7e9e-0456-45da-9196-49926c3cf57d)](https://github.com/yyle88/osexec)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=osexec&theme=cobalt2&unique=b32e2bb4-14dd-4eb2-88de-093367b70dbf)](https://github.com/yyle88/osexec)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormmom&theme=noctis_minimus&unique=265ec3a6-8d6c-43b5-b06f-320570a2c00a)](https://github.com/yyle88/gormmom)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=must&theme=blueberry&unique=a54fc17e-f023-4ef2-9723-3338c16c50f8)](https://github.com/yyle88/must)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=must&theme=tokyonight&unique=413ced28-f511-4dc1-a428-0507a905d2c0)](https://github.com/yyle88/must)
-
-</div>
-
-
-<div align="left">
-
-| **Název repozitáře** | **Popis** |
-|--------|--------|
-| <a href="https://github.com/yyle88/done"><img src="https://img.shields.io/badge/done-%237D5E7F.svg?style=flat&logoColor=white" height="30"></a> | [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=done&theme=aura_dark&unique=20ec05d5-63b8-484e-b1a6-69c8eb90ac68)](https://github.com/yyle88/done) |
-| <a href="https://github.com/yyle88/formatgo"><img src="https://img.shields.io/badge/formatgo-%2332CD32.svg?style=flat&logoColor=white" height="30"></a> | [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=formatgo&theme=catppuccin_latte&unique=b9fb17eb-a02b-438e-a989-c116180134f5)](https://github.com/yyle88/formatgo) |
-| <a href="https://github.com/yyle88/syntaxgo"><img src="https://img.shields.io/badge/syntaxgo-%237D4B91.svg?style=flat&logoColor=white" height="30"></a> | [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=syntaxgo&theme=noctis_minimus&unique=96453c55-2d3e-4fc0-91e5-249d97b036ed)](https://github.com/yyle88/syntaxgo) |
-| <a href="https://github.com/yyle88/gotrontrx"><img src="https://img.shields.io/badge/gotrontrx-%23FF6347.svg?style=flat&logoColor=white" height="30"></a> | [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gotrontrx&theme=shadow_blue&unique=40eb3d28-7622-48a3-aebc-6d6d5ad38a2f)](https://github.com/yyle88/gotrontrx) |
-| <a href="https://github.com/yyle88/erero"><img src="https://img.shields.io/badge/erero-%238A2BE2.svg?style=flat&logoColor=white" height="30"></a> | [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=erero&theme=shades-of-purple&unique=961886c4-ce0c-4cb7-8bf5-f9637ba48b17)](https://github.com/yyle88/erero) |
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormmom&theme=calm&unique=ae09d143-98c1-41a6-b92e-dd31754831b1)](https://github.com/yyle88/gormmom)
 
 </div>
 
@@ -92,11 +79,12 @@ Zde jsou některé z mých hlavních projektů:
 
 | Repozitář | Repozitář | Repozitář | Repozitář |
 | :--: | :--: | :--: | :--: |
-|[![tern](https://img.shields.io/badge/tern-%238A2BE2.svg?style=flat&logoColor=white)](https://github.com/yyle88/tern) | [![eroticgo](https://img.shields.io/badge/eroticgo-%237D4B91.svg?style=flat&logoColor=white)](https://github.com/yyle88/eroticgo) | [![reggin](https://img.shields.io/badge/reggin-%2332CD32.svg?style=flat&logoColor=white)](https://github.com/yyle88/reggin) | [![gormcngen](https://img.shields.io/badge/gormcngen-%23FF6347.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcngen) | 
-|[![rese](https://img.shields.io/badge/rese-%23F2D330.svg?style=flat&logoColor=white)](https://github.com/yyle88/rese) | [![gormcls](https://img.shields.io/badge/gormcls-%2320B2AA.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcls) | [![syncmap](https://img.shields.io/badge/syncmap-%23FF4500.svg?style=flat&logoColor=white)](https://github.com/yyle88/syncmap) | [![gormcnm](https://img.shields.io/badge/gormcnm-%23FF5733.svg?style=flat&logoColor=white)](https://github.com/yyle88/gormcnm) | 
-|[![sortslice](https://img.shields.io/badge/sortslice-%237D5E7F.svg?style=flat&logoColor=white)](https://github.com/yyle88/sortslice) | [![demojavabtcsign](https://img.shields.io/badge/demojavabtcsign-%23DC143C.svg?style=flat&logoColor=white)](https://github.com/yyle88/demojavabtcsign) | [![osexistpath](https://img.shields.io/badge/osexistpath-%23FFD700.svg?style=flat&logoColor=white)](https://github.com/yyle88/osexistpath) | [![runpath](https://img.shields.io/badge/runpath-%23FF1493.svg?style=flat&logoColor=white)](https://github.com/yyle88/runpath) | 
-|[![zaplog](https://img.shields.io/badge/zaplog-%232E8B57.svg?style=flat&logoColor=white)](https://github.com/yyle88/zaplog) | [![neatjson](https://img.shields.io/badge/neatjson-%2335A8D5.svg?style=flat&logoColor=white)](https://github.com/yyle88/neatjson) | [![mutexmap](https://img.shields.io/badge/mutexmap-%23F7931E.svg?style=flat&logoColor=white)](https://github.com/yyle88/mutexmap) | [![printgo](https://img.shields.io/badge/printgo-%2391C4A4.svg?style=flat&logoColor=white)](https://github.com/yyle88/printgo) | 
-|[![yyle88](https://img.shields.io/badge/yyle88-%23ADFF2F.svg?style=flat&logoColor=white)](https://github.com/yyle88/yyle88) | - | - | - | 
+|<a href="https://github.com/yyle88/done"><img src="https://img.shields.io/badge/done-%23FF6347.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/formatgo"><img src="https://img.shields.io/badge/formatgo-%23F09F3B.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/syntaxgo"><img src="https://img.shields.io/badge/syntaxgo-%2395C59D.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gotrontrx"><img src="https://img.shields.io/badge/gotrontrx-%23DC143C.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/tern"><img src="https://img.shields.io/badge/tern-%23ADFF2F.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/erero"><img src="https://img.shields.io/badge/erero-%23F2D330.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/eroticgo"><img src="https://img.shields.io/badge/eroticgo-%23FF4500.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/reggin"><img src="https://img.shields.io/badge/reggin-%2335A8D5.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/gormcngen"><img src="https://img.shields.io/badge/gormcngen-%2391C4A4.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/rese"><img src="https://img.shields.io/badge/rese-%237D5E7F.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gormcls"><img src="https://img.shields.io/badge/gormcls-%23FF1493.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/syncmap"><img src="https://img.shields.io/badge/syncmap-%2332CD32.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/demojavabtcsign"><img src="https://img.shields.io/badge/demojavabtcsign-%23FFD700.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gormcnm"><img src="https://img.shields.io/badge/gormcnm-%232E8B57.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/sortslice"><img src="https://img.shields.io/badge/sortslice-%2320B2AA.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/osexistpath"><img src="https://img.shields.io/badge/osexistpath-%237D4B91.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/runpath"><img src="https://img.shields.io/badge/runpath-%23F7931E.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/zaplog"><img src="https://img.shields.io/badge/zaplog-%23FF5733.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/neatjson"><img src="https://img.shields.io/badge/neatjson-%238A2BE2.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/mutexmap"><img src="https://img.shields.io/badge/mutexmap-%233CB371.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/printgo"><img src="https://img.shields.io/badge/printgo-%23FF6347.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/yyle88"><img src="https://img.shields.io/badge/yyle88-%23F09F3B.svg?style=flat&logoColor=white" height="24"></a> | - | - | 
 
 </div>
 
@@ -107,7 +95,7 @@ Zde jsou některé z mých hlavních projektů:
 
 ---
 
-![TIME-GRAPH](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yyle88&theme=radical&utcOffset=8.00)
+<img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yyle88&theme=radical&utcOffset=8.00" alt="TIME-GRAPH" width="465">
 
 ---
 
@@ -115,7 +103,7 @@ Zde jsou některé z mých hlavních projektů:
 
 ---
 
-HERE-ARE-OTHER-PROJECTS: [OTHER-PROJECTS](OTHERS.md)
+HERE-ARE-OTHER-PROJECTS: [OTHER-PROJECTS](https://github.com/yyle88/yyle88/blob/main/OTHERS.md)
 
 ---
 

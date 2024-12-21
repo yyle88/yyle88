@@ -8,16 +8,16 @@
 
 ---
 
-<h4 align="center" style="font-size: 2.0em;"><a href="./profile/README.zh.md">组织项目</a></h4>
+<h4 align="center" style="font-size: 2.0em;"><a href="./profile/README.zh.md">组织</a></h4>
 
 <div align="center">
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是组织列表的起始位置 -->
 
-<a href="https://github.com/orgs/go-xlan/repositories"><img src="https://img.shields.io/badge/go+xlan-%2395C59D.svg?style=flat&logoColor=white" height="40"></a>
-<a href="https://github.com/orgs/go-mate/repositories"><img src="https://img.shields.io/badge/go+mate-%2320B2AA.svg?style=flat&logoColor=white" height="40"></a>
-<a href="https://github.com/orgs/orzkratos/repositories"><img src="https://img.shields.io/badge/orzkratos-%23F2D330.svg?style=flat&logoColor=white" height="40"></a>
-<a href="https://github.com/orgs/go-legs/repositories"><img src="https://img.shields.io/badge/go+legs-%238A2BE2.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/go-xlan"><img src="https://img.shields.io/badge/go+xlan-%2395C59D.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/go-mate"><img src="https://img.shields.io/badge/go+mate-%2320B2AA.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/orzkratos"><img src="https://img.shields.io/badge/orzkratos-%23F2D330.svg?style=flat&logoColor=white" height="40"></a>
+<a href="https://github.com/go-legs"><img src="https://img.shields.io/badge/go+legs-%238A2BE2.svg?style=flat&logoColor=white" height="40"></a>
 
 <!-- 这是一个注释，它不会在渲染时显示出来，这是组织列表的终止位置 -->
 

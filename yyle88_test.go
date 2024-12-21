@@ -223,21 +223,6 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		colors[i], colors[j] = colors[j], colors[i]
 	})
 
-	subRepos, repos = splitRepos(repos, 5)
-	if len(subRepos) > 0 {
-		ptx.Println()
-		ptx.Println(`<div align="left">`)
-		ptx.Println()
-		ptx.Println(arg.titleLine)
-		ptx.Println("|--------|--------|")
-		for _, repo := range subRepos {
-			ptx.Println(fmt.Sprintf("| %s | %s |", makeCustomHeightBadge(repo.Name, repo.Link, colors[rand.IntN(len(colors))], 30), makeCardLine(repo, cardThemes[rand.IntN(len(cardThemes))])))
-		}
-		ptx.Println()
-		ptx.Println(`</div>`)
-		ptx.Println()
-	}
-
 	if len(repos) > 0 {
 		ptx.Println()
 		ptx.Println(`<div align="left">`)
@@ -249,7 +234,8 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 			ptx.Print("|")
 			for num := 0; num < stepLimit; num++ {
 				if idx := start + num; idx < len(repos) {
-					ptx.Print(makeBadge(repos[idx], colors[idx%len(colors)]), " | ")
+					repo := repos[idx]
+					ptx.Print(makeCustomHeightBadge(repo.Name, repo.Link, colors[idx%len(colors)], 24), " | ")
 				} else {
 					ptx.Print("-", " | ")
 				}
@@ -305,9 +291,9 @@ func splitRepos(repos []*yyle88.Repo, subSize int) ([]*yyle88.Repo, []*yyle88.Re
 	return repos[:idx], repos[idx:]
 }
 
-func makeBadge(repo *yyle88.Repo, colorString string) string {
-	return fmt.Sprintf("[![%s](https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white)](%s)", repo.Name, repo.Name, url.QueryEscape(colorString), repo.Link)
-}
+//func makeBadge(repo *yyle88.Repo, colorString string) string {
+//	return fmt.Sprintf("[![%s](https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white)](%s)", repo.Name, repo.Name, url.QueryEscape(colorString), repo.Link)
+//}
 
 func makeCustomHeightBadge(name string, link string, colorString string, height int) string {
 	return fmt.Sprintf(`<a href="%s"><img src="https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white" height="%d"></a>`, link, strings.ReplaceAll(name, "-", "+"), url.QueryEscape(colorString), height)
