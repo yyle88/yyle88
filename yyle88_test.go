@@ -203,7 +203,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	cardThemes := utils.GetReadmeCardThemes()
 	require.NotEmpty(t, cardThemes)
 
-	subRepos, repos := splitRepos(repos, 5)
+	subRepos, repos := splitRepos(repos, 10)
 
 	ptx.Println(`<div align="left">`)
 	ptx.Println()
