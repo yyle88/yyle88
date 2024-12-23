@@ -32,8 +32,7 @@ func GetGithubRepos(username string) ([]*Repo, error) {
 	if githubToken != "" {
 		request = request.SetHeader("Authorization", "token "+githubToken)
 	}
-	response, err := request.
-		SetPathParam("username", username).
+	response, err := request.SetPathParam("username", username).
 		SetResult(&repos).
 		Get("https://api.github.com/users/{username}/repos")
 	if err != nil {
@@ -42,6 +41,7 @@ func GetGithubRepos(username string) ([]*Repo, error) {
 	if response.StatusCode() != http.StatusOK {
 		return nil, erero.New(response.Status())
 	}
+	zaplog.SUG.Debugln(neatjsons.SxB(response.Body()))
 
 	sortslice.SortVStable(repos, func(a, b *Repo) bool {
 		if strings.HasPrefix(a.Name, ".") || strings.HasPrefix(b.Name, ".") {
@@ -56,16 +56,18 @@ func GetGithubRepos(username string) ([]*Repo, error) {
 			return a.PushedAt.After(b.PushedAt) //同样星星时最近有更新的排前面
 		}
 	})
-	zaplog.SUG.Info(neatjsons.S(repos))
+
+	zaplog.SUG.Debugln(neatjsons.S(repos))
 	return repos, nil
 }
 
 type Organization struct {
-	Name string `json:"login"`    // 组织名称
-	Link string `json:"html_url"` // 组织链接
+	Name      string `json:"login"`     // 组织名称
+	Link      string `json:"url"`       // 组织链接
+	ReposLink string `json:"repos_url"` // 组织链接
 }
 
-func GetGithubOrganizations(username string) ([]*Organization, error) {
+func GetOrganizations(username string) ([]*Organization, error) {
 	var organizations []*Organization
 
 	// 从环境变量读取 GitHub Token
@@ -78,17 +80,17 @@ func GetGithubOrganizations(username string) ([]*Organization, error) {
 	}
 
 	// 请求获取用户的组织信息
-	response, err := request.
-		SetPathParam("username", username).
+	response, err := request.SetPathParam("username", username).
 		SetResult(&organizations).
 		Get("https://api.github.com/users/{username}/orgs")
-
 	if err != nil {
 		return nil, erero.Wro(err)
 	}
 	if response.StatusCode() != http.StatusOK {
 		return nil, erero.New(response.Status())
 	}
+	zaplog.SUG.Debugln(neatjsons.SxB(response.Body()))
 
+	zaplog.SUG.Debugln(neatjsons.S(organizations))
 	return organizations, nil
 }

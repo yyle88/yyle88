@@ -3,7 +3,6 @@ package profile
 import (
 	"fmt"
 	"math/rand/v2"
-	"net/url"
 	"os"
 	"slices"
 	"strings"
@@ -29,36 +28,31 @@ const username = "yyle88"
 var organizationsSingleton []*yyle88.Organization
 var onceFetchOrganizations sync.Once
 
-func fetchOrganizations() []*yyle88.Organization {
+func onceGetOrganizations() []*yyle88.Organization {
 	onceFetchOrganizations.Do(func() {
-		organizationsSingleton = done.VAE(yyle88.GetGithubOrganizations(username)).Done() //TODO 没有结果
+		organizationsSingleton = done.VAE(yyle88.GetOrganizations(username)).Nice()
 	})
 	return organizationsSingleton
 }
 
-func TestFetchOrganizations(t *testing.T) {
-	t.Log(neatjsons.S(fetchOrganizations()))
-}
-
-var organizationNames = []string{
-	"go-xlan",
-	"go-mate",
-	"orzkratos",
-	"go-legs",
+func TestGetOrganizations(t *testing.T) {
+	t.Log(neatjsons.S(onceGetOrganizations()))
 }
 
 var mapOrganizationRepos = mutexmap.NewMap[string, []*yyle88.Repo](10)
 
-func fetchOrganizationReposWithCache(orgName string) []*yyle88.Repo {
-	repos, _ := mapOrganizationRepos.Getset(orgName, func() []*yyle88.Repo {
+func onceGetOrgRepos(organization *yyle88.Organization) []*yyle88.Repo {
+	repos, _ := mapOrganizationRepos.Getset(organization.Name, func() []*yyle88.Repo {
 		time.Sleep(time.Millisecond * 500)
-		return rese.V1(yyle88.GetGithubRepos(orgName))
+		return rese.V1(yyle88.GetGithubRepos(organization.Name))
 	})
 	return repos
 }
 
 func TestFetchOrganizationRepos(t *testing.T) {
-	repos := fetchOrganizationReposWithCache("go-xlan")
+	organizations := onceGetOrganizations()
+	require.NotEmpty(t, organizations)
+	repos := onceGetOrgRepos(organizations[rand.IntN(len(organizations))])
 	t.Log(neatjsons.S(repos))
 }
 
@@ -87,22 +81,24 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		repo    *yyle88.Repo
 	}
 
+	organizations := onceGetOrganizations()
+
 	var results []*orgRepo
 	var meaninglessRepos []*orgRepo
 	for idx := 0; idx < 100; idx++ {
-		var pieces = make([]*orgRepo, 0, len(organizationNames))
-		for _, organizationName := range organizationNames {
-			repos := fetchOrganizationReposWithCache(organizationName)
+		var pieces = make([]*orgRepo, 0, len(organizations))
+		for _, organization := range organizations {
+			repos := onceGetOrgRepos(organization)
 
 			if idx < len(repos) {
 				if repo := repos[idx]; repo.Name == ".github" {
 					meaninglessRepos = append(meaninglessRepos, &orgRepo{
-						orgName: organizationName,
+						orgName: organization.Name,
 						repo:    repo,
 					})
 				} else {
 					pieces = append(pieces, &orgRepo{
-						orgName: organizationName,
+						orgName: organization.Name,
 						repo:    repo,
 					})
 				}
@@ -116,7 +112,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	}
 	results = append(results, meaninglessRepos...)
 
-	cardThemes := utils.GetReadmeCardThemes()
+	cardThemes := utils.GetRepoCardThemes()
 	require.NotEmpty(t, cardThemes)
 
 	rand.Shuffle(len(cardThemes), func(i, j int) {
@@ -131,8 +127,8 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	})
 
 	ptx := utils.NewPTX()
-	for _, orgName := range organizationNames {
-		ptx.Println(makeCustomHeightBadge(orgName, fmt.Sprintf("https://github.com/%s", orgName), colors[rand.IntN(len(colors))], 40))
+	for _, organization := range organizations {
+		ptx.Println(utils.MakeCustomSizeBadge(organization.Name, fmt.Sprintf("https://github.com/%s", organization.Name), colors[rand.IntN(len(colors))], 40, 125))
 	}
 	ptx.Println()
 
@@ -151,7 +147,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		)
 		repoCardLink := rep.Replace(templateLine)
 
-		orgBadgeLink := makeCustomHeightBadge(one.orgName, "https://github.com/"+one.orgName, colors[rand.IntN(len(colors))], 30)
+		orgBadgeLink := utils.MakeCustomSizeBadge(one.orgName, "https://github.com/"+one.orgName, colors[rand.IntN(len(colors))], 30, 80)
 
 		ptx.Println(fmt.Sprintf("| %s | %s |", orgBadgeLink, repoCardLink))
 	}
@@ -180,8 +176,4 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	must.Done(os.WriteFile(path, []byte(content), 0666))
 	t.Log("success")
-}
-
-func makeCustomHeightBadge(name string, link string, colorString string, height int) string {
-	return fmt.Sprintf(`<a href="%s"><img src="https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white" height="%d"></a>`, link, strings.ReplaceAll(name, "-", "+"), url.QueryEscape(colorString), height)
 }

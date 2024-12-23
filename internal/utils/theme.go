@@ -1,6 +1,6 @@
 package utils
 
-func GetReadmeCardThemes() []string {
+func GetRepoCardThemes() []string {
 	// collect themes from: https://github.com/anuraghazra/github-readme-stats/blob/0810a1d8446902f0267a151302388e5ed8373aa2/themes/README.md?plain=1#L50
 	return []string{
 		"default_repocard",
@@ -77,30 +77,5 @@ func GetReadmeCardThemes() []string {
 		"blue_navy",
 		"calm_pink",
 		"ambient_gradient",
-	}
-}
-
-func GetBadgeColors() []string {
-	return []string{
-		"#FF5733",
-		"#91C4A4",
-		"#7D4B91",
-		"#35A8D5",
-		"#F2D330",
-		"#F09F3B",
-		"#F7931E",
-		"#95C59D",
-		"#7D5E7F",
-		"#8A2BE2",
-		"#FF6347",
-		"#FF1493",
-		"#32CD32",
-		"#20B2AA",
-		"#FFD700",
-		"#DC143C",
-		"#FF4500",
-		"#2E8B57",
-		"#3CB371",
-		"#ADFF2F",
 	}
 }

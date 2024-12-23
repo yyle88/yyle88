@@ -200,7 +200,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	ptx := utils.NewPTX()
 
-	cardThemes := utils.GetReadmeCardThemes()
+	cardThemes := utils.GetRepoCardThemes()
 	require.NotEmpty(t, cardThemes)
 
 	subRepos, repos := splitRepos(repos, 10)
