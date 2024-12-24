@@ -26,8 +26,8 @@ github.com/yyle88/formatgo v1.0.21 h1:YPhZf63/f+R1JayJ0Cbnqbc9P/9OJOaYJJpwAhMNdt
 github.com/yyle88/formatgo v1.0.21/go.mod h1:6lkm0Jk3XfDKIMtcUqc01DcLVXcKaLTYIkWbQbsDCzU=
 github.com/yyle88/must v0.0.11 h1:GTDpRMX1wKOkl93C8yQkzKsmrRitmfIdl1cG1siGx38=
 github.com/yyle88/must v0.0.11/go.mod h1:5Ur4BKRx6GuW4gCZNx8Hf+iRS9lVmywSkCpxun/f+Do=
-github.com/yyle88/mutexmap v1.0.8 h1:VntAdXID5wbk211LZEPVK96jQBxIcfVIbQuk9cv3P/8=
-github.com/yyle88/mutexmap v1.0.8/go.mod h1:QUYDuARLPlGj414kHewQ5tt8jkDxQXoai8H3C4Gg+yc=
+github.com/yyle88/mutexmap v1.0.9 h1:g1nfNmsReU/AgcGkLgPEKrBeMThJJBrJuvU7i3DOVC0=
+github.com/yyle88/mutexmap v1.0.9/go.mod h1:QUYDuARLPlGj414kHewQ5tt8jkDxQXoai8H3C4Gg+yc=
 github.com/yyle88/neatjson v0.0.10 h1:JrBsSWnEu6vqObFT8bUJE83HDb7xYScuEiz/RZp15pM=
 github.com/yyle88/neatjson v0.0.10/go.mod h1:4ENPBNVvTIB6iLv3mM02Jv/OEXANZNYDGXynSSt4kcc=
 github.com/yyle88/osexec v0.0.13 h1:vFsjBpAdlJjPrjjrKWorIJ/ZlZq7Jw01fF53dZp2TlE=

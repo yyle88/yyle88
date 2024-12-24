@@ -9,7 +9,7 @@ require (
 	github.com/yyle88/done v1.0.18
 	github.com/yyle88/erero v1.0.15
 	github.com/yyle88/must v0.0.11
-	github.com/yyle88/mutexmap v1.0.8
+	github.com/yyle88/mutexmap v1.0.9
 	github.com/yyle88/neatjson v0.0.10
 	github.com/yyle88/osexec v0.0.13
 	github.com/yyle88/osexistpath v0.0.14
