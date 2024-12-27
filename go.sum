@@ -30,8 +30,8 @@ github.com/yyle88/mutexmap v1.0.9 h1:g1nfNmsReU/AgcGkLgPEKrBeMThJJBrJuvU7i3DOVC0
 github.com/yyle88/mutexmap v1.0.9/go.mod h1:QUYDuARLPlGj414kHewQ5tt8jkDxQXoai8H3C4Gg+yc=
 github.com/yyle88/neatjson v0.0.10 h1:JrBsSWnEu6vqObFT8bUJE83HDb7xYScuEiz/RZp15pM=
 github.com/yyle88/neatjson v0.0.10/go.mod h1:4ENPBNVvTIB6iLv3mM02Jv/OEXANZNYDGXynSSt4kcc=
-github.com/yyle88/osexec v0.0.13 h1:vFsjBpAdlJjPrjjrKWorIJ/ZlZq7Jw01fF53dZp2TlE=
-github.com/yyle88/osexec v0.0.13/go.mod h1:ZetRlbRM0xcxoSD4ucD6HqsklvKKpszGPP1pvHRrG3A=
+github.com/yyle88/osexec v0.0.14 h1:Wkpr/PC3K9bUMGApX9+3pHishBmuo+hcB4764OJFe8k=
+github.com/yyle88/osexec v0.0.14/go.mod h1:MWKiPyuH+xGs7JtdKsEzg+JqpHf84MOe/6OzuefFYQw=
 github.com/yyle88/osexistpath v0.0.14 h1:FhyErsLM5dmGwXjl/ln1zSfprKFyEvNEXsaZwGeohdo=
 github.com/yyle88/osexistpath v0.0.14/go.mod h1:wSF+3MC6st2nOBS4qBcRklZ5vwrdlaNzIBrsOeShQlU=
 github.com/yyle88/printgo v1.0.1 h1:0lCpq28Tlf0jmYhSIlDQ7A3hAqVYswhBuURLR9xbmsw=
