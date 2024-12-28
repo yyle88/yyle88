@@ -1,6 +1,13 @@
-<div align="center">
-  <img src="assets/三团表情包.gif" alt="Go-Go-Go"/>
-</div>
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/yyle88/yyle88/release.yml?branch=main&label=BUILD)](https://github.com/yyle88/yyle88/actions/workflows/release.yml?query=branch%3Amain)
+[![GoDoc](https://pkg.go.dev/badge/github.com/yyle88/yyle88)](https://pkg.go.dev/github.com/yyle88/yyle88)
+[![Coverage Status](https://img.shields.io/coveralls/github/yyle88/yyle88/master.svg)](https://coveralls.io/github/yyle88/yyle88?branch=main)
+![Supported Go Versions](https://img.shields.io/badge/Go-1.22%2C%201.23-lightgrey.svg)
+[![GitHub Release](https://img.shields.io/github/release/yyle88/yyle88.svg)](https://github.com/yyle88/yyle88/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/yyle88/yyle88)](https://goreportcard.com/report/github.com/yyle88/yyle88)
+
+---
+
+![MASTER-HEAD](https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif)
 
 ![TYPING-SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)
 
