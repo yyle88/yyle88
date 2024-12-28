@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../assets/Go吉祥宠物.gif" alt="Go-Go-Go"/>
+  <img src="https://raw.githubusercontent.com/yyle88/yyle88/main/assets/go-mascot-animation.gif" alt="Go-Go-Go"/>
 </div>
 
 ![TYPING-SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)
