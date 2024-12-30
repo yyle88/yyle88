@@ -94,3 +94,43 @@ func GetOrganizations(username string) ([]*Organization, error) {
 	zaplog.SUG.Debugln(neatjsons.S(organizations))
 	return organizations, nil
 }
+
+func GetOrganizationRepos(orgName string) ([]*Repo, error) {
+	var repos []*Repo
+
+	// 从环境变量读取 GitHub Token
+	githubToken := os.Getenv("GITHUB_TOKEN")
+
+	// 使用 Token 添加 Authorization 请求头
+	request := restyv2.New().SetTimeout(time.Minute).R()
+	if githubToken != "" {
+		request = request.SetHeader("Authorization", "token "+githubToken)
+	}
+	response, err := request.SetPathParam("org", orgName).
+		SetResult(&repos).
+		Get("https://api.github.com/orgs/{org}/repos")
+	if err != nil {
+		return nil, erero.Wro(err)
+	}
+	if response.StatusCode() != http.StatusOK {
+		return nil, erero.New(response.Status())
+	}
+	zaplog.SUG.Debugln(neatjsons.SxB(response.Body()))
+
+	sortslice.SortVStable(repos, func(a, b *Repo) bool {
+		if strings.HasPrefix(a.Name, ".") || strings.HasPrefix(b.Name, ".") {
+			return !strings.HasPrefix(a.Name, ".")
+		} else if a.Name == orgName || b.Name == orgName {
+			return a.Name == orgName //当项目名称与组织名称相同时，说明是主项目，因此需要放在前面
+		} else if a.Stargazers > b.Stargazers {
+			return true //星多者排前面
+		} else if a.Stargazers < b.Stargazers {
+			return false //星少者排后面
+		} else {
+			return a.PushedAt.After(b.PushedAt) //同样星星时最近有更新的排前面
+		}
+	})
+
+	zaplog.SUG.Debugln(neatjsons.S(repos))
+	return repos, nil
+}

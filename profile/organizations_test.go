@@ -41,10 +41,10 @@ func TestGetOrganizations(t *testing.T) {
 
 var mapOrganizationRepos = mutexmap.NewMap[string, []*yyle88.Repo](10)
 
-func onceGetOrgRepos(organization *yyle88.Organization) []*yyle88.Repo {
+func onceGetOrganizationRepos(organization *yyle88.Organization) []*yyle88.Repo {
 	repos, _ := mapOrganizationRepos.Getset(organization.Name, func() []*yyle88.Repo {
 		time.Sleep(time.Millisecond * 500)
-		return rese.V1(yyle88.GetGithubRepos(organization.Name))
+		return rese.V1(yyle88.GetOrganizationRepos(organization.Name))
 	})
 	return repos
 }
@@ -52,8 +52,11 @@ func onceGetOrgRepos(organization *yyle88.Organization) []*yyle88.Repo {
 func TestFetchOrganizationRepos(t *testing.T) {
 	organizations := onceGetOrganizations()
 	require.NotEmpty(t, organizations)
-	repos := onceGetOrgRepos(organizations[rand.IntN(len(organizations))])
+	repos := onceGetOrganizationRepos(organizations[rand.IntN(len(organizations))])
 	t.Log(neatjsons.S(repos))
+	for _, repo := range repos {
+		t.Log(repo.Name, repo.Stargazers)
+	}
 }
 
 type DocGenParam struct {
@@ -88,7 +91,7 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	for idx := 0; idx < 100; idx++ {
 		var pieces = make([]*orgRepo, 0, len(organizations))
 		for _, organization := range organizations {
-			repos := onceGetOrgRepos(organization)
+			repos := onceGetOrganizationRepos(organization)
 
 			if idx < len(repos) {
 				if repo := repos[idx]; repo.Name == ".github" {
