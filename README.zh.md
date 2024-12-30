@@ -37,39 +37,6 @@
 
 ---
 
-## 技能
-
-<table style="width: 465px; border-collapse: collapse; border: 1px solid #ddd; table-layout: fixed; text-align: center;">
-  <thead>
-    <tr style="background-color: #f4f4f4;">
-      <th style="width: 33.33%;">前端</th>
-      <th style="width: 33.33%;">后端</th>
-      <th style="width: 33.33%;">其它</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="height: 100px;">
-      <td style="text-align: center;">
-        <a href="https://vuejs.org/" target="_blank">
-          <img src="https://vuejs.org/logo.svg" alt="Vue.js" style="height: 150px;" />
-        </a>
-      </td>
-      <td style="text-align: center;">
-        <a href="https://go.dev/" target="_blank">
-          <img src="https://profilinator.rishav.dev/skills-assets/go-original.svg" alt="Go" style="height: auto;" />
-        </a>
-      </td>
-      <td style="text-align: center;">
-        <a href="https://www.python.org/" target="_blank">
-          <img src="https://www.python.org/static/favicon.ico" alt="Python" style="height: 120px;" />
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
----
-
 ## 语言
 
 ![Top Lang](https://github-readme-stats.vercel.app/api/top-langs/?username=yyle88&hide=html&card_width=465)
