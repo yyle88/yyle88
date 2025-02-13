@@ -36,6 +36,3 @@
 
 ---
 
-[![VISIT-COUNT](https://visitcount.itsvg.in/api?id=yyle88&label=profile-views&pretty=true)](https://visitcount.itsvg.in)
-
----
