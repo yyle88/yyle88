@@ -36,8 +36,8 @@ github.com/yyle88/osexistpath v0.0.16 h1:hCWUA6W13bP3TUWVgfTtxkYDEq6riQjKs78ufeR
 github.com/yyle88/osexistpath v0.0.16/go.mod h1:6C6ogrtGUalb0DkANfpbv3WhHsLNTHffIUtIfObNIxQ=
 github.com/yyle88/printgo v1.0.2 h1:SpRXNh1YGvcIDpi6fJHCD9r2znewaW/rVi2nqu65XOk=
 github.com/yyle88/printgo v1.0.2/go.mod h1:M1rjoy58Q+wXBuzTNJJ0pGEwS+fV8lH7FID5qCVzHGY=
-github.com/yyle88/rese v0.0.3 h1:zKlzEz9sr6MZxl5sZO4QprgD6WgDe00NOZKEOhe5D9o=
-github.com/yyle88/rese v0.0.3/go.mod h1:Z/Ktyy1QNj+sksotAu8iOZZqCyuBjbY7UJU+2ou67z8=
+github.com/yyle88/rese v0.0.4 h1:BJ/FZ5NvwXoz1w77xAS0/0USADyCFWoUFW/TNsjyQ2w=
+github.com/yyle88/rese v0.0.4/go.mod h1:VaK79xhAW1ak1FdXR1CF6aZELTyJMnfLZg1J3eK6XKs=
 github.com/yyle88/runpath v1.0.23 h1:VEdeaMXfvFY7CuF9Nceuxb6HSNDcmiSSGEf+zT7O900=
 github.com/yyle88/runpath v1.0.23/go.mod h1:JRGxn/0Ytg6CvGoE2VrO74oX8Lu4jbOPZDKxr8tzPEg=
 github.com/yyle88/sortslice v1.0.7 h1:eb7ObwPO+zaAAayqrGqcMMa3DtgxbSMV1zjYEVN1vg8=

@@ -14,7 +14,7 @@ require (
 	github.com/yyle88/osexec v0.0.22
 	github.com/yyle88/osexistpath v0.0.16
 	github.com/yyle88/printgo v1.0.2
-	github.com/yyle88/rese v0.0.3
+	github.com/yyle88/rese v0.0.4
 	github.com/yyle88/runpath v1.0.23
 	github.com/yyle88/sortslice v1.0.7
 	github.com/yyle88/tern v0.0.5
