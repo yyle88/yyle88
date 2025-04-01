@@ -18,7 +18,7 @@ require (
 	github.com/yyle88/runpath v1.0.23
 	github.com/yyle88/sortslice v1.0.7
 	github.com/yyle88/tern v0.0.6
-	github.com/yyle88/zaplog v0.0.20
+	github.com/yyle88/zaplog v0.0.21
 )
 
 require (
