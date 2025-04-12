@@ -62,25 +62,25 @@ Ecco alcuni dei miei progetti principali:
 
 <div align="left">
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=sure&theme=bear&unique=55192849-918c-47c4-9370-22c0dddd166f)](https://github.com/yyle88/sure)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=sure&theme=panda&unique=ec8a097e-31a0-416b-85d2-37e8d13e7252)](https://github.com/yyle88/sure)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=must&theme=blue-green&unique=1ab2913f-c0ae-45a6-b6f7-dd5aaf628858)](https://github.com/yyle88/must)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=must&theme=dark&unique=4b670c3e-bd34-4d45-b5e5-d268f51a722a)](https://github.com/yyle88/must)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=osexec&theme=highcontrast&unique=f63393e8-f1e3-4d9b-8cb4-9d3b3abe4a26)](https://github.com/yyle88/osexec)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=osexec&theme=tokyonight&unique=c593fb50-99ee-443f-892a-e101055427d6)](https://github.com/yyle88/osexec)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=slateorange&unique=453e1d5c-03be-4baf-bf04-bef05cd5e27d)](https://github.com/yyle88/gobtcsign)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gobtcsign&theme=gruvbox_light&unique=572ee133-4692-49a3-b5ee-9318e9bff079)](https://github.com/yyle88/gobtcsign)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=done&theme=catppuccin_mocha&unique=d943784f-d3ee-49ac-a515-1c1f8c5b2a85)](https://github.com/yyle88/done)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=done&theme=blue_navy&unique=aa5d8135-d449-4bfc-9a2c-cac48462b1b7)](https://github.com/yyle88/done)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormmom&theme=buefy&unique=067f3e3a-0f09-4628-87bc-9b825186e444)](https://github.com/yyle88/gormmom)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=gormmom&theme=rose&unique=ca7a0bd2-007b-48d7-bed3-6b1be1c70831)](https://github.com/yyle88/gormmom)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=tern&theme=great-gatsby&unique=cea2cebb-9245-481c-a4dd-15d361f58ae5)](https://github.com/yyle88/tern)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=tern&theme=blue_navy&unique=3f5d3fa7-ea6a-4f5a-a7fd-0cff76724317)](https://github.com/yyle88/tern)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=formatgo&theme=github_dark&unique=1792abdb-6b20-484f-be7e-e9af45b8eff0)](https://github.com/yyle88/formatgo)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=formatgo&theme=solarized-light&unique=6c082a23-4389-44de-8e8f-99fbbb9d0619)](https://github.com/yyle88/formatgo)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=syntaxgo&theme=outrun&unique=c68492bd-3073-4183-ab89-c609338a1b23)](https://github.com/yyle88/syntaxgo)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=syntaxgo&theme=omni&unique=ec7113a2-1c5d-428b-8a8c-b9c1ecd4c2dd)](https://github.com/yyle88/syntaxgo)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=erero&theme=merko&unique=684803b9-caa1-4ae9-a342-b9f167a84c6c)](https://github.com/yyle88/erero)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=yyle88&repo=erero&theme=catppuccin_latte&unique=383d6562-04ab-496c-a6ea-5f92dfb2ffdf)](https://github.com/yyle88/erero)
 
 </div>
 
@@ -89,11 +89,11 @@ Ecco alcuni dei miei progetti principali:
 
 | Repository | Repository | Repository | Repository |
 | :--: | :--: | :--: | :--: |
-|<a href="https://github.com/yyle88/eroticgo"><img src="https://img.shields.io/badge/eroticgo-%2332CD32.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gotrontrx"><img src="https://img.shields.io/badge/gotrontrx-%238A2BE2.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/rese"><img src="https://img.shields.io/badge/rese-%23F09F3B.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/osexistpath"><img src="https://img.shields.io/badge/osexistpath-%2320B2AA.svg?style=flat&logoColor=white" height="24"></a> | 
-|<a href="https://github.com/yyle88/reggin"><img src="https://img.shields.io/badge/reggin-%237D5E7F.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/syncmap"><img src="https://img.shields.io/badge/syncmap-%233CB371.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/demojavabtcsign"><img src="https://img.shields.io/badge/demojavabtcsign-%23DC143C.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gormcngen"><img src="https://img.shields.io/badge/gormcngen-%237D4B91.svg?style=flat&logoColor=white" height="24"></a> | 
-|<a href="https://github.com/yyle88/gormrepo"><img src="https://img.shields.io/badge/gormrepo-%23F7931E.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/mutexmap"><img src="https://img.shields.io/badge/mutexmap-%23ADFF2F.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/zaplog"><img src="https://img.shields.io/badge/zaplog-%23FF5733.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gormcnm"><img src="https://img.shields.io/badge/gormcnm-%2391C4A4.svg?style=flat&logoColor=white" height="24"></a> | 
-|<a href="https://github.com/yyle88/sortslice"><img src="https://img.shields.io/badge/sortslice-%232E8B57.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/neatjson"><img src="https://img.shields.io/badge/neatjson-%23FF6347.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/runpath"><img src="https://img.shields.io/badge/runpath-%2395C59D.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/simplejsonx"><img src="https://img.shields.io/badge/simplejsonx-%23FF1493.svg?style=flat&logoColor=white" height="24"></a> | 
-|<a href="https://github.com/yyle88/printgo"><img src="https://img.shields.io/badge/printgo-%23F2D330.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/grpt"><img src="https://img.shields.io/badge/grpt-%23FFD700.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/yyle88"><img src="https://img.shields.io/badge/yyle88-%2335A8D5.svg?style=flat&logoColor=white" height="24"></a> | - | 
+|<a href="https://github.com/yyle88/eroticgo"><img src="https://img.shields.io/badge/eroticgo-%237D5E7F.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gotrontrx"><img src="https://img.shields.io/badge/gotrontrx-%238A2BE2.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/rese"><img src="https://img.shields.io/badge/rese-%23FF4500.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/osexistpath"><img src="https://img.shields.io/badge/osexistpath-%23FF1493.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/reggin"><img src="https://img.shields.io/badge/reggin-%23F09F3B.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/syncmap"><img src="https://img.shields.io/badge/syncmap-%2391C4A4.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/demojavabtcsign"><img src="https://img.shields.io/badge/demojavabtcsign-%23FFD700.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gormcngen"><img src="https://img.shields.io/badge/gormcngen-%2320B2AA.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/gormrepo"><img src="https://img.shields.io/badge/gormrepo-%23FF5733.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/mutexmap"><img src="https://img.shields.io/badge/mutexmap-%23DC143C.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/zaplog"><img src="https://img.shields.io/badge/zaplog-%23F2D330.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/gormcnm"><img src="https://img.shields.io/badge/gormcnm-%237D4B91.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/sortslice"><img src="https://img.shields.io/badge/sortslice-%23FF6347.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/neatjson"><img src="https://img.shields.io/badge/neatjson-%2332CD32.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/runpath"><img src="https://img.shields.io/badge/runpath-%233CB371.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/simplejsonx"><img src="https://img.shields.io/badge/simplejsonx-%23ADFF2F.svg?style=flat&logoColor=white" height="24"></a> | 
+|<a href="https://github.com/yyle88/printgo"><img src="https://img.shields.io/badge/printgo-%23F7931E.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/grpt"><img src="https://img.shields.io/badge/grpt-%2335A8D5.svg?style=flat&logoColor=white" height="24"></a> | <a href="https://github.com/yyle88/yyle88"><img src="https://img.shields.io/badge/yyle88-%2395C59D.svg?style=flat&logoColor=white" height="24"></a> | - | 
 
 </div>
 

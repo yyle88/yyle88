@@ -6,19 +6,19 @@ require (
 	github.com/go-resty/resty/v2 v2.16.5
 	github.com/google/uuid v1.6.0
 	github.com/stretchr/testify v1.10.0
-	github.com/yyle88/done v1.0.24
+	github.com/yyle88/done v1.0.25
 	github.com/yyle88/erero v1.0.20
-	github.com/yyle88/must v0.0.20
-	github.com/yyle88/mutexmap v1.0.11
+	github.com/yyle88/must v0.0.21
+	github.com/yyle88/mutexmap v1.0.12
 	github.com/yyle88/neatjson v0.0.12
-	github.com/yyle88/osexec v0.0.24
+	github.com/yyle88/osexec v0.0.25
 	github.com/yyle88/osexistpath v0.0.17
 	github.com/yyle88/printgo v1.0.5
 	github.com/yyle88/rese v0.0.9
 	github.com/yyle88/runpath v1.0.23
 	github.com/yyle88/sortslice v1.0.7
 	github.com/yyle88/tern v0.0.6
-	github.com/yyle88/zaplog v0.0.21
+	github.com/yyle88/zaplog v0.0.22
 )
 
 require (
