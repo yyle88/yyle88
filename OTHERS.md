@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/yyle88/yyle88/main/assets/sticker-eating-rice.gif" alt="Luo-Luo"/>
+  <img src="https://raw.githubusercontent.com/yyle88/yyle88/main/assets/吃米饭的动图.gif" alt="Luo-Luo"/>
 </div>
 
 ![TYPING-SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&pause=1000&color=EBE912&width=999&lines=Hi+there+%F0%9F%91%8B%2C+Welcome+to+my+Page+%F0%9F%91%8B%2C+I'm+yyle88)
