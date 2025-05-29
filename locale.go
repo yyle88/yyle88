@@ -6,16 +6,13 @@ import (
 )
 
 type LanguageLink struct {
-	Name string
-	URL  string
+	LangName       string
+	ReadmeFileName string
+	LangCode       string
 }
 
-func (lang *LanguageLink) String() string {
-	return CreateLink(lang.URL, lang.Name)
-}
-
-func (lang *LanguageLink) Strong() string {
-	return fmt.Sprintf("<strong>%s</strong>", lang.Name)
+func (lang *LanguageLink) StrongLangName() string {
+	return fmt.Sprintf("<strong>%s</strong>", lang.LangName)
 }
 
 type LangLinkPath struct {
@@ -24,7 +21,7 @@ type LangLinkPath struct {
 }
 
 func (a *LangLinkPath) CreateLink(parentPath string) string {
-	return CreateLink(filepath.Join(parentPath, a.LangLink.URL), a.LangLink.Name)
+	return CreateLink(filepath.Join(parentPath, a.LangLink.ReadmeFileName), a.LangLink.LangName)
 }
 
 func CreateLink(link string, name string) string {

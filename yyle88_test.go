@@ -11,14 +11,17 @@ import (
 	"testing"
 
 	"github.com/google/uuid"
+	"github.com/nicksnyder/go-i18n/v2/i18n"
 	"github.com/stretchr/testify/require"
 	"github.com/yyle88/done"
 	"github.com/yyle88/must"
 	"github.com/yyle88/osexistpath/osmustexist"
 	"github.com/yyle88/osexistpath/osomitexist"
+	"github.com/yyle88/rese"
 	"github.com/yyle88/runpath"
 	"github.com/yyle88/yyle88"
 	"github.com/yyle88/yyle88/internal/utils"
+	"github.com/yyle88/yyle88/locales/i18n_message"
 )
 
 const username = "yyle88"
@@ -26,169 +29,33 @@ const username = "yyle88"
 var mutexRewriteFp sync.Mutex //write file one by one
 
 type DocGenParam struct {
-	shortName string
-	titleLine string
-	repoTitle string
+	readmeFileName string
+	tableTitle     string
+	repoTitle      string
 }
 
-func TestGenMarkdown(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.md",
-		titleLine: "| **RepoName** | **Description** |",
-		repoTitle: "repo",
-	})
-}
+func TestGenMarkdownTable(t *testing.T) {
+	i18nBundle, messageFiles := i18n_message.LoadI18nFiles()
+	require.NotEmpty(t, messageFiles)
+	require.NotEmpty(t, i18nBundle.LanguageTags())
 
-func TestGenMarkdownZhHans(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.zh.md",
-		titleLine: "| 项目名称 | 项目描述 |",
-		repoTitle: "项目",
-	})
-}
+	for idx, one := range supportedLanguages {
+		caseName := fmt.Sprintf("%d-%s", idx, one.LangCode)
 
-func TestGenMarkdownJapanese(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.ja.md",
-		titleLine: "| **リポ名** | **説明** |",
-		repoTitle: "リポ",
-	})
-}
+		t.Run(caseName, func(t *testing.T) {
+			localizer := i18n.NewLocalizer(i18nBundle, one.LangCode)
 
-func TestGenMarkdownZhHant(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.zh-Hant.md",
-		titleLine: "| 倉庫名稱 | 描述 |",
-		repoTitle: "倉庫",
-	})
-}
-
-func TestGenMarkdownRussian(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.ru.md",
-		titleLine: "| Название проекта | Описание проекта |",
-		repoTitle: "Проект",
-	})
-}
-
-func TestGenMarkdownDeutsch(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.de.md",
-		titleLine: "| **RepoName** | **Beschreibung** |",
-		repoTitle: "Repo",
-	})
-}
-
-func TestGenMarkdownFrançais(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.fr.md",
-		titleLine: "| **Nom du dépôt** | **Description** |",
-		repoTitle: "Dépôt",
-	})
-}
-
-func TestGenMarkdownEspañol(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.es.md",
-		titleLine: "| **Nombre del repositorio** | **Descripción** |",
-		repoTitle: "Repositorio",
-	})
-}
-
-func TestGenMarkdownPortuguês(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.pt.md",
-		titleLine: "| **Nome do repositório** | **Descrição** |",
-		repoTitle: "Repositório",
-	})
-}
-
-func TestGenMarkdownKhmer(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.kh.md",
-		titleLine: "| **ឈ្មោះរ៉េបូ** | **ការពិពណ៌នា** |",
-		repoTitle: "រ៉េបូ",
-	})
-}
-
-func TestGenMarkdownVietnamese(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.vi.md",
-		titleLine: "| **Tên Repo** | **Mô tả** |",
-		repoTitle: "Repo",
-	})
-}
-
-func TestGenMarkdownKorean(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.ko.md",
-		titleLine: "| **레포 이름** | **설명** |",
-		repoTitle: "레포",
-	})
-}
-
-func TestGenMarkdownTurkish(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.tr.md",
-		titleLine: "| **Repo Adı** | **Açıklama** |",
-		repoTitle: "Repo",
-	})
-}
-
-func TestGenMarkdownPolish(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.pl.md",
-		titleLine: "| **Nazwa repozytorium** | **Opis** |",
-		repoTitle: "Repozytorium",
-	})
-}
-
-func TestGenMarkdownItalian(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.it.md",
-		titleLine: "| **Nome del repository** | **Descrizione** |",
-		repoTitle: "Repository",
-	})
-}
-
-func TestGenMarkdownArabic(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.ar.md",
-		titleLine: "| **اسم المستودع** | **الوصف** |",
-		repoTitle: "مستودع",
-	})
-}
-
-func TestGenMarkdownPersian(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.fa.md",
-		titleLine: "| **نام مخزن** | **توضیحات** |",
-		repoTitle: "مخزن",
-	})
-}
-
-func TestGenMarkdownCzech(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.cs.md",
-		titleLine: "| **Název repozitáře** | **Popis** |",
-		repoTitle: "Repozitář",
-	})
-}
-
-func TestGenMarkdownUkrainian(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.uk.md",
-		titleLine: "| **Назва репозиторію** | **Опис** |",
-		repoTitle: "Репозиторій",
-	})
-}
-
-func TestGenMarkdownDutch(t *testing.T) {
-	GenMarkdownTable(t, &DocGenParam{
-		shortName: "README.nl.md",
-		titleLine: "| **RepoNaam** | **Beschrijving** |",
-		repoTitle: "Repo",
-	})
+			GenMarkdownTable(t, &DocGenParam{
+				readmeFileName: one.ReadmeFileName,
+				tableTitle: fmt.Sprintf(
+					"| **%s** | **%s** |",
+					rese.C1(localizer.Localize(i18n_message.I18nRepoTableTitleName())),
+					rese.C1(localizer.Localize(i18n_message.I18nRepoTableTitleDesc())),
+				),
+				repoTitle: rese.C1(localizer.Localize(i18n_message.I18nRepoTableRepoTitle())),
+			})
+		})
+	}
 }
 
 func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
@@ -250,9 +117,12 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	stb := ptx.String()
 	t.Log(stb)
 
-	path := runpath.PARENT.Join(arg.shortName)
+	path := runpath.PARENT.Join(arg.readmeFileName)
 	if !osomitexist.IsFile(path) {
-		path = runpath.PARENT.Join("locales", arg.shortName)
+		path = runpath.PARENT.Join("locales", arg.readmeFileName)
+	}
+	if !osomitexist.IsFile(path) {
+		return
 	}
 	t.Log(osmustexist.PATH(path))
 

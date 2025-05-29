@@ -22,32 +22,32 @@ import (
 )
 
 var supportedLanguages = []*yyle88.LanguageLink{
-	{Name: "English", URL: "./README.md"},             // 英语
-	{Name: "简体中文", URL: "./README.zh.md"},             // 简体中文
-	{Name: "繁體中文", URL: "./README.zh-Hant.md"},        // 繁体中文
-	{Name: "日本語", URL: "./README.ja.md"},              // 日语
-	{Name: "Русский", URL: "./README.ru.md"},          // 俄语
-	{Name: "Deutsch", URL: "./README.de.md"},          // 德语
-	{Name: "Français", URL: "./README.fr.md"},         // 法语
-	{Name: "Español", URL: "./README.es.md"},          // 西班牙语
-	{Name: "Português", URL: "./README.pt.md"},        // 葡萄牙语
-	{Name: "Tiếng Việt", URL: "./README.vi.md"},       // 越南语
-	{Name: "ខ្មែរ", URL: "./README.kh.md"},            // 高棉语
-	{Name: "한국어", URL: "./README.ko.md"},              // 韩国语
-	{Name: "Türkçe", URL: "./README.tr.md"},           // 土耳其语
-	{Name: "Polski", URL: "./README.pl.md"},           // 波兰语
-	{Name: "Italiano", URL: "./README.it.md"},         // 意大利语
-	{Name: "العربية", URL: "./README.ar.md"},          // 阿拉伯语
-	{Name: "فارسی", URL: "./README.fa.md"},            // 波斯语
-	{Name: "Čeština", URL: "./README.cs.md"},          // 捷克语
-	{Name: "Українська", URL: "./README.uk.md"},       // 乌克兰语
-	{Name: "Nederlands", URL: "./README.nl.md"},       // 荷兰语
-	{Name: "हिन्दी", URL: "./README.hi.md"},           // 印地语
-	{Name: "ภาษาไทย", URL: "./README.th.md"},          // 泰语
-	{Name: "Bahasa Indonesia", URL: "./README.id.md"}, // 印尼语
-	{Name: "Bahasa Melayu", URL: "./README.ms.md"},    // 马来语
-	{Name: "Filipino", URL: "./README.ph.md"},         // 菲律宾语
-	{Name: "বাংলা", URL: "./README.bn.md"},            // 孟加拉语
+	{LangName: "English", ReadmeFileName: "./README.md", LangCode: "en"},             // 英语
+	{LangName: "简体中文", ReadmeFileName: "./README.zh.md", LangCode: "zh"},             // 简体中文
+	{LangName: "繁體中文", ReadmeFileName: "./README.zh-Hant.md", LangCode: "zh-Hant"},   // 繁体中文
+	{LangName: "日本語", ReadmeFileName: "./README.ja.md", LangCode: "ja"},              // 日语
+	{LangName: "Русский", ReadmeFileName: "./README.ru.md", LangCode: "ru"},          // 俄语
+	{LangName: "Deutsch", ReadmeFileName: "./README.de.md", LangCode: "de"},          // 德语
+	{LangName: "Français", ReadmeFileName: "./README.fr.md", LangCode: "fr"},         // 法语
+	{LangName: "Español", ReadmeFileName: "./README.es.md", LangCode: "es"},          // 西班牙语
+	{LangName: "Português", ReadmeFileName: "./README.pt.md", LangCode: "pt"},        // 葡萄牙语
+	{LangName: "Tiếng Việt", ReadmeFileName: "./README.vi.md", LangCode: "vi"},       // 越南语
+	{LangName: "ខ្មែរ", ReadmeFileName: "./README.kh.md", LangCode: "kh"},            // 高棉语
+	{LangName: "한국어", ReadmeFileName: "./README.ko.md", LangCode: "ko"},              // 韩语
+	{LangName: "Türkçe", ReadmeFileName: "./README.tr.md", LangCode: "tr"},           // 土耳其语
+	{LangName: "Polski", ReadmeFileName: "./README.pl.md", LangCode: "pl"},           // 波兰语
+	{LangName: "Italiano", ReadmeFileName: "./README.it.md", LangCode: "it"},         // 意大利语
+	{LangName: "العربية", ReadmeFileName: "./README.ar.md", LangCode: "ar"},          // 阿拉伯语
+	{LangName: "فارسی", ReadmeFileName: "./README.fa.md", LangCode: "fa"},            // 波斯语
+	{LangName: "Čeština", ReadmeFileName: "./README.cs.md", LangCode: "cs"},          // 捷克语
+	{LangName: "Українська", ReadmeFileName: "./README.uk.md", LangCode: "uk"},       // 乌克兰语
+	{LangName: "Nederlands", ReadmeFileName: "./README.nl.md", LangCode: "nl"},       // 荷兰语
+	{LangName: "हिन्दी", ReadmeFileName: "./README.hi.md", LangCode: "hi"},           // 印地语
+	{LangName: "ภาษาไทย", ReadmeFileName: "./README.th.md", LangCode: "th"},          // 泰语
+	{LangName: "Bahasa Indonesia", ReadmeFileName: "./README.id.md", LangCode: "id"}, // 印尼语
+	{LangName: "Bahasa Melayu", ReadmeFileName: "./README.ms.md", LangCode: "ms"},    // 马来语
+	{LangName: "Filipino", ReadmeFileName: "./README.ph.md", LangCode: "ph"},         // 菲律宾语
+	{LangName: "বাংলা", ReadmeFileName: "./README.bn.md", LangCode: "bn"},            // 孟加拉语
 }
 
 func TestMoveReadmeIntoLocales(t *testing.T) {
@@ -56,8 +56,8 @@ func TestMoveReadmeIntoLocales(t *testing.T) {
 
 	root := runpath.PARENT.Path()
 	for idx, lang := range supportedLanguages {
-		readmePath := filepath.Join(root, lang.URL)
-		localePath := filepath.Join(root, "locales", lang.URL)
+		readmePath := filepath.Join(root, lang.ReadmeFileName)
+		localePath := filepath.Join(root, "locales", lang.ReadmeFileName)
 		if idx < 2 {
 			if osomitexist.IsFile(localePath) {
 				done.VAE(osexec.Exec("mv", localePath, readmePath)).Done()
@@ -104,8 +104,8 @@ func caseGetMatchedLanguages(t *testing.T) []*yyle88.LangLinkPath {
 	var matchedLanguages []*yyle88.LangLinkPath
 	for _, lang := range supportedLanguages {
 		for _, path := range []string{
-			filepath.Join(root, lang.URL),
-			filepath.Join(root, "locales", lang.URL),
+			filepath.Join(root, lang.ReadmeFileName),
+			filepath.Join(root, "locales", lang.ReadmeFileName),
 		} {
 			if osomitexist.IsFile(path) {
 				t.Log(neatjsons.S(lang))
@@ -140,7 +140,7 @@ func TestGenLanguageLinkMarkdown(t *testing.T) {
 		var meetSamePath = false
 		for _, next := range matchedLanguages {
 			if next.Path == lang.Path {
-				radioLinks = append(radioLinks, next.LangLink.Strong())
+				radioLinks = append(radioLinks, next.LangLink.StrongLangName())
 				meetSamePath = true
 			} else {
 				if len(radioLinks)+tern.BVV(meetSamePath, 0, 1) < maxOutLangCount {
