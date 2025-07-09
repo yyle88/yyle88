@@ -1,0 +1,32 @@
+[AboutMe]
+other = "自我介绍"
+
+[Name]
+other = "姓名"
+
+[Born]
+other = "出生年份"
+
+[Gender]
+other = "性别"
+
+[Education]
+other = "教育背景"
+
+[WorkExperience]
+other = "工作经历"
+
+[MainLanguage]
+other = "主要语言"
+
+[Interests]
+other = "兴趣爱好"
+
+[Github]
+other = "GitHub 链接"
+
+[Note]
+other = "备注"
+
+[Thanks]
+other = "谢谢"

@@ -17,16 +17,72 @@ import (
 	"github.com/yyle88/must"
 	"github.com/yyle88/osexistpath/osmustexist"
 	"github.com/yyle88/osexistpath/osomitexist"
+	"github.com/yyle88/printgo"
 	"github.com/yyle88/rese"
 	"github.com/yyle88/runpath"
 	"github.com/yyle88/yyle88"
 	"github.com/yyle88/yyle88/internal/utils"
+	"github.com/yyle88/yyle88/locales/i18n_aboutmekeys"
+	"github.com/yyle88/yyle88/locales/i18n_aboutmevals"
 	"github.com/yyle88/yyle88/locales/i18n_message"
 )
 
 const username = "yyle88"
 
 var mutexRewriteFp sync.Mutex //write file one by one
+
+func TestGenAboutMe(t *testing.T) {
+	mutexRewriteFp.Lock()
+	defer mutexRewriteFp.Unlock()
+
+	keysBundle, _ := i18n_aboutmekeys.LoadI18nFiles()
+	require.NotEmpty(t, keysBundle.LanguageTags())
+
+	valsBundle, _ := i18n_aboutmevals.LoadI18nFiles()
+	require.NotEmpty(t, valsBundle.LanguageTags())
+
+	for idx, one := range supportedLanguages {
+		caseName := fmt.Sprintf("%d-%s", idx, one.LangCode)
+
+		t.Run(caseName, func(t *testing.T) {
+			keysLocalizer := i18n.NewLocalizer(keysBundle, one.LangCode)
+			valsLocalizer := i18n.NewLocalizer(valsBundle, one.LangCode)
+
+			ptx := printgo.NewPTS()
+			ptx.Println("##", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nAboutMe()))
+			ptx.Println()
+			ptx.Fprintf("- 😄 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nName()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nName()))
+			ptx.Fprintf("- 🔭 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nBorn()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nBorn()))
+			ptx.Fprintf("- 🌱 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nGender()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nGender()))
+			ptx.Fprintf("- 👯 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nEducation()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nEducation()))
+			ptx.Fprintf("- 💼 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nWorkExperience()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nWorkExperience()))
+			ptx.Fprintf("- 📫 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nMainLanguage()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nMainLanguage()))
+			ptx.Fprintf("- 💬 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nInterests()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nInterests()))
+			ptx.Fprintf("- 🔗 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nGithub()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nGithub()))
+			ptx.Fprintf("- 🌟 **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nNote()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nNote()))
+			ptx.Fprintf("- ⬆️ **%s:** %s\n", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nThanks()), valsLocalizer.MustLocalize(i18n_aboutmevals.I18nThanks()))
+
+			t.Log(ptx.String())
+
+			path, ok := obtainFilename(one.ReadmeFileName)
+			if ok {
+				return
+			}
+			t.Log(osmustexist.PATH(path))
+
+			if !slices.Contains([]string{"en", "zh"}, one.LangCode) {
+				return //还没写翻译继续保持原状等有空再写
+			}
+
+			replaceBetween(t, &replaceBetweenParam{
+				path:      path,
+				startLine: "<!-- 这是一个注释，它不会在渲染时显示出来，这是自我介绍的起始位置 -->",
+				closeLine: "<!-- 这是一个注释，它不会在渲染时显示出来，这是自我介绍的终止位置 -->",
+				newString: ptx.String(),
+			})
+		})
+	}
+}
 
 type DocGenParam struct {
 	readmeFileName string
@@ -114,36 +170,59 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		ptx.Println()
 	}
 
-	stb := ptx.String()
-	t.Log(stb)
+	t.Log(ptx.String())
 
-	path := runpath.PARENT.Join(arg.readmeFileName)
-	if !osomitexist.IsFile(path) {
-		path = runpath.PARENT.Join("locales", arg.readmeFileName)
-	}
-	if !osomitexist.IsFile(path) {
+	path, ok := obtainFilename(arg.readmeFileName)
+	if ok {
 		return
 	}
 	t.Log(osmustexist.PATH(path))
 
-	text := string(done.VAE(os.ReadFile(path)).Nice())
+	replaceBetween(t, &replaceBetweenParam{
+		path:      path,
+		startLine: "<!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的起始位置 -->",
+		closeLine: "<!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的终止位置 -->",
+		newString: ptx.String(),
+	})
+}
+
+type replaceBetweenParam struct {
+	path      string
+	startLine string
+	closeLine string
+	newString string
+}
+
+func replaceBetween(t *testing.T, param *replaceBetweenParam) {
+	text := string(done.VAE(os.ReadFile(param.path)).Nice())
 	t.Log(text)
 
 	contentLines := strings.Split(text, "\n")
-	sIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的起始位置 -->")
+	sIdx := slices.Index(contentLines, param.startLine)
 	require.Positive(t, sIdx)
-	eIdx := slices.Index(contentLines, "<!-- 这是一个注释，它不会在渲染时显示出来，这是项目列表的终止位置 -->")
+	eIdx := slices.Index(contentLines, param.closeLine)
 	require.Positive(t, eIdx)
 
 	require.Less(t, sIdx, eIdx)
 
 	content := strings.Join(contentLines[:sIdx+1], "\n") + "\n" + "\n" +
-		stb + "\n" +
+		param.newString + "\n" +
 		strings.Join(contentLines[eIdx:], "\n")
 	t.Log(content)
 
-	must.Done(os.WriteFile(path, []byte(content), 0666))
+	must.Done(os.WriteFile(param.path, []byte(content), 0666))
 	t.Log("success")
+}
+
+func obtainFilename(shortName string) (string, bool) {
+	path := runpath.PARENT.Join(shortName)
+	if !osomitexist.IsFile(path) {
+		path = runpath.PARENT.Join("locales", shortName)
+	}
+	if !osomitexist.IsFile(path) {
+		return "", true
+	}
+	return path, false
 }
 
 var reposSingleton []*yyle88.Repo
