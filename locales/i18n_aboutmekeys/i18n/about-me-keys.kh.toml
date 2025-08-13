@@ -1,0 +1,32 @@
+[AboutMe]
+other = "អំពីខ្ញុំ"
+
+[Name]
+other = "ឈ្មោះ"
+
+[Born]
+other = "កើតនៅ"
+
+[Gender]
+other = "ភេទ"
+
+[Education]
+other = "ការអប់រំ"
+
+[WorkExperience]
+other = "បទពិសោធន៍ការងារ"
+
+[MainLanguage]
+other = "ភាសាសរសេរកម្មវិធីចម្បង"
+
+[Interests]
+other = "ចំណាប់អារម្មណ៍"
+
+[Github]
+other = "តំណ GitHub"
+
+[Note]
+other = "ចំណាំ"
+
+[Thanks]
+other = "សូមអរគុណ"

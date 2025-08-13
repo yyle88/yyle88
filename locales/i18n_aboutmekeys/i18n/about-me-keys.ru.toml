@@ -1,0 +1,32 @@
+[AboutMe]
+other = "Обо мне"
+
+[Name]
+other = "Имя"
+
+[Born]
+other = "Родился в"
+
+[Gender]
+other = "Пол"
+
+[Education]
+other = "Образование"
+
+[WorkExperience]
+other = "Опыт работы"
+
+[MainLanguage]
+other = "Основной язык программирования"
+
+[Interests]
+other = "Интересы"
+
+[Github]
+other = "Ссылка на GitHub"
+
+[Note]
+other = "Заметка"
+
+[Thanks]
+other = "Спасибо"

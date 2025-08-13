@@ -1,0 +1,32 @@
+[AboutMe]
+other = "O mně"
+
+[Name]
+other = "Jméno"
+
+[Born]
+other = "Narozen v"
+
+[Gender]
+other = "Pohlaví"
+
+[Education]
+other = "Vzdělání"
+
+[WorkExperience]
+other = "Pracovní zkušenosti"
+
+[MainLanguage]
+other = "Hlavní programovací jazyk"
+
+[Interests]
+other = "Zájmy"
+
+[Github]
+other = "GitHub odkaz"
+
+[Note]
+other = "Poznámka"
+
+[Thanks]
+other = "Děkuji"

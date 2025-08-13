@@ -1,0 +1,32 @@
+[AboutMe]
+other = "Sobre mim"
+
+[Name]
+other = "Nome"
+
+[Born]
+other = "Nascido em"
+
+[Gender]
+other = "Gênero"
+
+[Education]
+other = "Educação"
+
+[WorkExperience]
+other = "Experiência de trabalho"
+
+[MainLanguage]
+other = "Linguagem de programação principal"
+
+[Interests]
+other = "Interesses"
+
+[Github]
+other = "Link do GitHub"
+
+[Note]
+other = "Nota"
+
+[Thanks]
+other = "Obrigado"

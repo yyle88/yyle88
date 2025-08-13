@@ -1,0 +1,32 @@
+[AboutMe]
+other = "درباره من"
+
+[Name]
+other = "نام"
+
+[Born]
+other = "متولد شده در"
+
+[Gender]
+other = "جنسیت"
+
+[Education]
+other = "تحصیلات"
+
+[WorkExperience]
+other = "تجربه کاری"
+
+[MainLanguage]
+other = "زبان برنامه‌نویسی اصلی"
+
+[Interests]
+other = "علاقه‌مندی‌ها"
+
+[Github]
+other = "لینک GitHub"
+
+[Note]
+other = "یادداشت"
+
+[Thanks]
+other = "متشکرم"

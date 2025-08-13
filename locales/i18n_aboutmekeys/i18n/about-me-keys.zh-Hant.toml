@@ -1,0 +1,32 @@
+[AboutMe]
+other = "關於我"
+
+[Name]
+other = "姓名"
+
+[Born]
+other = "出生於"
+
+[Gender]
+other = "性別"
+
+[Education]
+other = "教育"
+
+[WorkExperience]
+other = "工作經驗"
+
+[MainLanguage]
+other = "主要程式語言"
+
+[Interests]
+other = "興趣"
+
+[Github]
+other = "GitHub 連結"
+
+[Note]
+other = "備註"
+
+[Thanks]
+other = "謝謝"

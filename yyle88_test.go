@@ -70,10 +70,6 @@ func TestGenAboutMe(t *testing.T) {
 			}
 			t.Log(osmustexist.PATH(path))
 
-			if !slices.Contains([]string{"en", "zh"}, one.LangCode) {
-				return //还没写翻译继续保持原状等有空再写
-			}
-
 			replaceBetween(t, &replaceBetweenParam{
 				path:      path,
 				startLine: "<!-- 这是一个注释，它不会在渲染时显示出来，这是自我介绍的起始位置 -->",

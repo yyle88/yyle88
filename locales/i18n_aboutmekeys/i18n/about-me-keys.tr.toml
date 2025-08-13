@@ -1,0 +1,32 @@
+[AboutMe]
+other = "Hakkımda"
+
+[Name]
+other = "İsim"
+
+[Born]
+other = "Doğum"
+
+[Gender]
+other = "Cinsiyet"
+
+[Education]
+other = "Eğitim"
+
+[WorkExperience]
+other = "İş Deneyimi"
+
+[MainLanguage]
+other = "Ana Programlama Dili"
+
+[Interests]
+other = "İlgi Alanları"
+
+[Github]
+other = "GitHub Bağlantısı"
+
+[Note]
+other = "Not"
+
+[Thanks]
+other = "Teşekkürler"

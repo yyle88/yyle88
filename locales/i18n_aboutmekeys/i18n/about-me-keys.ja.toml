@@ -1,0 +1,32 @@
+[AboutMe]
+other = "私について"
+
+[Name]
+other = "名前"
+
+[Born]
+other = "生年"
+
+[Gender]
+other = "性別"
+
+[Education]
+other = "学歴"
+
+[WorkExperience]
+other = "職歴"
+
+[MainLanguage]
+other = "主なプログラミング言語"
+
+[Interests]
+other = "興味"
+
+[Github]
+other = "GitHubリンク"
+
+[Note]
+other = "注記"
+
+[Thanks]
+other = "ありがとう"

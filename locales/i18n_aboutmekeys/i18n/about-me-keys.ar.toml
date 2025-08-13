@@ -1,0 +1,32 @@
+[AboutMe]
+other = "عني"
+
+[Name]
+other = "الاسم"
+
+[Born]
+other = "مولود في"
+
+[Gender]
+other = "الجنس"
+
+[Education]
+other = "التعليم"
+
+[WorkExperience]
+other = "الخبرة المهنية"
+
+[MainLanguage]
+other = "لغة البرمجة الرئيسية"
+
+[Interests]
+other = "الاهتمامات"
+
+[Github]
+other = "رابط GitHub"
+
+[Note]
+other = "ملاحظة"
+
+[Thanks]
+other = "شكرا"

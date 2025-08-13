@@ -1,0 +1,32 @@
+[AboutMe]
+other = "소개"
+
+[Name]
+other = "이름"
+
+[Born]
+other = "출생"
+
+[Gender]
+other = "성별"
+
+[Education]
+other = "학력"
+
+[WorkExperience]
+other = "경력"
+
+[MainLanguage]
+other = "주요 프로그래밍 언어"
+
+[Interests]
+other = "관심사"
+
+[Github]
+other = "GitHub 링크"
+
+[Note]
+other = "참고"
+
+[Thanks]
+other = "감사합니다"

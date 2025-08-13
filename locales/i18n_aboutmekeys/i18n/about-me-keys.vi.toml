@@ -1,0 +1,32 @@
+[AboutMe]
+other = "Về tôi"
+
+[Name]
+other = "Tên"
+
+[Born]
+other = "Sinh năm"
+
+[Gender]
+other = "Giới tính"
+
+[Education]
+other = "Học vấn"
+
+[WorkExperience]
+other = "Kinh nghiệm làm việc"
+
+[MainLanguage]
+other = "Ngôn ngữ lập trình chính"
+
+[Interests]
+other = "Sở thích"
+
+[Github]
+other = "Liên kết GitHub"
+
+[Note]
+other = "Ghi chú"
+
+[Thanks]
+other = "Cảm ơn"

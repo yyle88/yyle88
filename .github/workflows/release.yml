@@ -12,29 +12,47 @@ jobs:
     name: lint
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version: "1.23.x"
-      - uses: actions/checkout@v4
+          go-version: stable
+          cache: true
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v8
         with:
           version: latest
+          args: --timeout=5m
 
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: [ "1.22.x", "1.23.x" ]
+        go: [ "1.22.x", "1.23.x", "1.24.x", "stable" ]
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-go@v5
         with:
           go-version: ${{ matrix.go }}
+          cache: true
+
+      - name: Run govulncheck
+        uses: golang/govulncheck-action@v1
+        with:
+          go-version-input: ${{ matrix.go }}
+          go-package: ./...
+        continue-on-error: true  # 报错时允许工作流继续执行，因为项目依赖的底层包也会有错，很难做到百分百没问题，只打印检测结果就行
 
       - name: Run test
         run: make test COVERAGE_DIR=/tmp/coverage
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ matrix.go }}
+          path: /tmp/coverage/
+          retention-days: 30
 
       - name: Send goveralls coverage
         uses: shogo82148/actions-goveralls@v1
@@ -54,10 +72,33 @@ jobs:
           parallel-finished: true
         if: ${{ github.event.repository.fork == false }}  # 仅在非 fork 时检查覆盖率
 
+  # 代码质量分析
+  code-analysis:
+    name: CodeQL Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: go
+
+      - name: Auto Build
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+
   # 发布 Release
   release:
     name: Release a new version
-    needs: [ lint, test ]
+    needs: [ lint, test, check-coverage, code-analysis ]
     runs-on: ubuntu-latest
     # 仅在推送标签时执行 - && - 仅在非 fork 时执行发布
     if: ${{ github.event.repository.fork == false && success() && startsWith(github.ref, 'refs/tags/v') }}
@@ -65,6 +106,8 @@ jobs:
       # 1. 检出代码
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整历史用于生成更好的 release notes
 
       # 2. 创建 Release 和上传源码包
       - name: Create Release
