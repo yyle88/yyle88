@@ -67,8 +67,44 @@ type Organization struct {
 	ReposLink string `json:"repos_url"` // 组织链接
 }
 
+type Membership struct {
+	Role  string `json:"role"`  // "admin", "member"
+	State string `json:"state"` // "active", "pending"
+}
+
+func checkOrganizationOwnership(orgName, username string) (bool, error) {
+	// 从环境变量读取 GitHub Token
+	githubToken := os.Getenv("GITHUB_TOKEN")
+
+	// 使用 Token 添加 Authorization 请求头
+	request := restyv2.New().SetTimeout(time.Minute).R()
+	if githubToken != "" {
+		request = request.SetHeader("Authorization", "token "+githubToken)
+	}
+
+	var membership Membership
+	response, err := request.SetPathParams(map[string]string{
+		"org":      orgName,
+		"username": username,
+	}).SetResult(&membership).
+		Get("https://api.github.com/orgs/{org}/memberships/{username}")
+
+	if err != nil {
+		return false, erero.Wro(err)
+	}
+
+	// 如果状态码是200且role是admin，说明用户是owner
+	if response.StatusCode() == http.StatusOK {
+		zaplog.SUG.Debugf("Organization %s membership for %s: role=%s, state=%s", orgName, username, membership.Role, membership.State)
+		return membership.Role == "admin" && membership.State == "active", nil
+	}
+
+	// 其他状态码表示不是成员或无权限
+	return false, nil
+}
+
 func GetOrganizations(username string) ([]*Organization, error) {
-	var organizations []*Organization
+	var allOrganizations []*Organization
 
 	// 从环境变量读取 GitHub Token
 	githubToken := os.Getenv("GITHUB_TOKEN")
@@ -81,7 +117,7 @@ func GetOrganizations(username string) ([]*Organization, error) {
 
 	// 请求获取用户的组织信息
 	response, err := request.SetPathParam("username", username).
-		SetResult(&organizations).
+		SetResult(&allOrganizations).
 		Get("https://api.github.com/users/{username}/orgs")
 	if err != nil {
 		return nil, erero.Wro(err)
@@ -91,8 +127,9 @@ func GetOrganizations(username string) ([]*Organization, error) {
 	}
 	zaplog.SUG.Debugln(neatjsons.SxB(response.Body()))
 
-	zaplog.SUG.Debugln(neatjsons.S(organizations))
-	return organizations, nil
+	// 暂时返回所有组织以测试其他功能
+	zaplog.SUG.Debugln(neatjsons.S(allOrganizations))
+	return allOrganizations, nil
 }
 
 func GetOrganizationRepos(orgName string) ([]*Repo, error) {
