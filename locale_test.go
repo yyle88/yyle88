@@ -51,8 +51,8 @@ var supportedLanguages = []*yyle88.LanguageLink{
 }
 
 func TestMoveReadmeIntoLocales(t *testing.T) {
-	mutexRewriteFp.Lock()
-	defer mutexRewriteFp.Unlock()
+	fileWriteMutex.Lock()
+	defer fileWriteMutex.Unlock()
 
 	root := runpath.PARENT.Path()
 	for idx, lang := range supportedLanguages {
@@ -71,8 +71,8 @@ func TestMoveReadmeIntoLocales(t *testing.T) {
 }
 
 func TestWriteLocaleMenu(t *testing.T) {
-	mutexRewriteFp.Lock()
-	defer mutexRewriteFp.Unlock()
+	fileWriteMutex.Lock()
+	defer fileWriteMutex.Unlock()
 
 	const menuShortName = "LOCALE-MENU.md"
 	menuPath := osmustexist.PATH(runpath.PARENT.Join(menuShortName))
@@ -121,8 +121,8 @@ func caseGetMatchedLanguages(t *testing.T) []*yyle88.LangLinkPath {
 }
 
 func TestGenLanguageLinkMarkdown(t *testing.T) {
-	mutexRewriteFp.Lock()
-	defer mutexRewriteFp.Unlock()
+	fileWriteMutex.Lock()
+	defer fileWriteMutex.Unlock()
 
 	menuRoot := runpath.PARENT.Path()
 

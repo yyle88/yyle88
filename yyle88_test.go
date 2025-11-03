@@ -29,11 +29,31 @@ import (
 
 const username = "yyle88"
 
-var mutexRewriteFp sync.Mutex //write file one by one
+// fileWriteMutex ensures files are written one at a time to prevent conflicts
+// fileWriteMutex 确保文件逐个写入以防止冲突
+var fileWriteMutex sync.Mutex
 
-func TestGenAboutMe(t *testing.T) {
-	mutexRewriteFp.Lock()
-	defer mutexRewriteFp.Unlock()
+// TestGenAboutMe_Preview generates "About Me" section for primary languages (English and Chinese)
+// This test is for quick debugging and validation
+// TestGenAboutMe_Preview 为主要语言（英文和中文）生成"自我介绍"部分
+// 此测试用于快速调试和验证
+func TestGenAboutMe_Preview(t *testing.T) {
+	primaryLanguages := supportedLanguages[:2] // English and 简体中文
+	runGenAboutMe(t, primaryLanguages)
+}
+
+// TestGenAboutMe_Publish generates "About Me" section for all remaining languages
+// TestGenAboutMe_Publish 为所有剩余语言生成"自我介绍"部分
+func TestGenAboutMe_Publish(t *testing.T) {
+	publishLanguages := supportedLanguages[2:] // All remaining languages
+	runGenAboutMe(t, publishLanguages)
+}
+
+// runGenAboutMe generates "About Me" section for specified languages
+// runGenAboutMe 为指定语言生成"自我介绍"部分
+func runGenAboutMe(t *testing.T, languages []*yyle88.LanguageLink) {
+	fileWriteMutex.Lock()
+	defer fileWriteMutex.Unlock()
 
 	keysBundle, _ := i18n_aboutmekeys.LoadI18nFiles()
 	require.NotEmpty(t, keysBundle.LanguageTags())
@@ -41,12 +61,12 @@ func TestGenAboutMe(t *testing.T) {
 	valsBundle, _ := i18n_aboutmevals.LoadI18nFiles()
 	require.NotEmpty(t, valsBundle.LanguageTags())
 
-	for idx, one := range supportedLanguages {
-		caseName := fmt.Sprintf("%d-%s", idx, one.LangCode)
+	for idx, lang := range languages {
+		testName := fmt.Sprintf("%d-%s", idx, lang.LangCode)
 
-		t.Run(caseName, func(t *testing.T) {
-			keysLocalizer := i18n.NewLocalizer(keysBundle, one.LangCode)
-			valsLocalizer := i18n.NewLocalizer(valsBundle, one.LangCode)
+		t.Run(testName, func(t *testing.T) {
+			keysLocalizer := i18n.NewLocalizer(keysBundle, lang.LangCode)
+			valsLocalizer := i18n.NewLocalizer(valsBundle, lang.LangCode)
 
 			ptx := printgo.NewPTS()
 			ptx.Println("##", keysLocalizer.MustLocalize(i18n_aboutmekeys.I18nAboutMe()))
@@ -64,8 +84,8 @@ func TestGenAboutMe(t *testing.T) {
 
 			t.Log(ptx.String())
 
-			path, ok := obtainFilename(one.ReadmeFileName)
-			if ok {
+			path, skip := resolveReadmePath(lang.ReadmeFileName)
+			if skip {
 				return
 			}
 			t.Log(osmustexist.PATH(path))
@@ -86,19 +106,21 @@ type DocGenParam struct {
 	repoTitle      string
 }
 
-func TestGenMarkdownTable(t *testing.T) {
+// runGenMarkdownTable generates markdown table for specified languages
+// runGenMarkdownTable 为指定语言生成 markdown 表格
+func runGenMarkdownTable(t *testing.T, languages []*yyle88.LanguageLink) {
 	i18nBundle, messageFiles := i18n_message.LoadI18nFiles()
 	require.NotEmpty(t, messageFiles)
 	require.NotEmpty(t, i18nBundle.LanguageTags())
 
-	for idx, one := range supportedLanguages {
-		caseName := fmt.Sprintf("%d-%s", idx, one.LangCode)
+	for idx, lang := range languages {
+		testName := fmt.Sprintf("%d-%s", idx, lang.LangCode)
 
-		t.Run(caseName, func(t *testing.T) {
-			localizer := i18n.NewLocalizer(i18nBundle, one.LangCode)
+		t.Run(testName, func(t *testing.T) {
+			localizer := i18n.NewLocalizer(i18nBundle, lang.LangCode)
 
 			GenMarkdownTable(t, &DocGenParam{
-				readmeFileName: one.ReadmeFileName,
+				readmeFileName: lang.ReadmeFileName,
 				tableTitle: fmt.Sprintf(
 					"| **%s** | **%s** |",
 					rese.C1(localizer.Localize(i18n_message.I18nRepoTableTitleName())),
@@ -110,9 +132,25 @@ func TestGenMarkdownTable(t *testing.T) {
 	}
 }
 
+// TestGenMarkdownTable_Preview generates markdown table for primary languages (English and Chinese)
+// This test is for quick debugging and validation
+// TestGenMarkdownTable_Preview 为主要语言（英文和中文）生成项目表格
+// 此测试用于快速调试和验证
+func TestGenMarkdownTable_Preview(t *testing.T) {
+	primaryLanguages := supportedLanguages[:2] // English and 简体中文
+	runGenMarkdownTable(t, primaryLanguages)
+}
+
+// TestGenMarkdownTable_Publish generates markdown table for all remaining languages
+// TestGenMarkdownTable_Publish 为所有剩余语言生成项目表格
+func TestGenMarkdownTable_Publish(t *testing.T) {
+	publishLanguages := supportedLanguages[2:] // All remaining languages
+	runGenMarkdownTable(t, publishLanguages)
+}
+
 func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
-	mutexRewriteFp.Lock()
-	defer mutexRewriteFp.Unlock()
+	fileWriteMutex.Lock()
+	defer fileWriteMutex.Unlock()
 
 	repos := fetchRepos()
 	require.NotEmpty(t, repos)
@@ -127,9 +165,9 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 	ptx.Println(`<div align="left">`)
 	ptx.Println()
 	for _, repo := range subRepos {
-		cardLine := makeCardLine(repo, cardThemes[rand.IntN(len(cardThemes))])
+		cardMarkdown := generateRepoCard(repo, cardThemes[rand.IntN(len(cardThemes))])
 
-		ptx.Println(cardLine)
+		ptx.Println(cardMarkdown)
 		ptx.Println()
 	}
 	ptx.Println(`</div>`)
@@ -146,15 +184,15 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 		ptx.Println()
 		ptx.Println(`<div align="left">`)
 		ptx.Println()
-		const stepLimit = 4
-		ptx.Println("|" + repeatString(" "+arg.repoTitle+" |", stepLimit))
-		ptx.Println("|" + repeatString(" :--: |", stepLimit))
-		for start := 0; start < len(repos); start += stepLimit {
+		const columnsPerRow = 4
+		ptx.Println("|" + strings.Repeat(" "+arg.repoTitle+" |", columnsPerRow))
+		ptx.Println("|" + strings.Repeat(" :--: |", columnsPerRow))
+		for start := 0; start < len(repos); start += columnsPerRow {
 			ptx.Print("|")
-			for num := 0; num < stepLimit; num++ {
+			for num := 0; num < columnsPerRow; num++ {
 				if idx := start + num; idx < len(repos) {
 					repo := repos[idx]
-					ptx.Print(makeCustomHeightBadge(repo.Name, repo.Link, colors[idx%len(colors)], 24), " | ")
+					ptx.Print(generateBadgeWithHeight(repo.Name, repo.Link, colors[idx%len(colors)], 24), " | ")
 				} else {
 					ptx.Print("-", " | ")
 				}
@@ -168,8 +206,8 @@ func GenMarkdownTable(t *testing.T, arg *DocGenParam) {
 
 	t.Log(ptx.String())
 
-	path, ok := obtainFilename(arg.readmeFileName)
-	if ok {
+	path, skip := resolveReadmePath(arg.readmeFileName)
+	if skip {
 		return
 	}
 	t.Log(osmustexist.PATH(path))
@@ -194,26 +232,31 @@ func replaceBetween(t *testing.T, param *replaceBetweenParam) {
 	t.Log(text)
 
 	contentLines := strings.Split(text, "\n")
-	sIdx := slices.Index(contentLines, param.startLine)
-	require.Positive(t, sIdx)
-	eIdx := slices.Index(contentLines, param.closeLine)
-	require.Positive(t, eIdx)
+	startIdx := slices.Index(contentLines, param.startLine)
+	require.Positive(t, startIdx)
+	endIdx := slices.Index(contentLines, param.closeLine)
+	require.Positive(t, endIdx)
 
-	require.Less(t, sIdx, eIdx)
+	require.Less(t, startIdx, endIdx)
 
-	content := strings.Join(contentLines[:sIdx+1], "\n") + "\n" + "\n" +
+	content := strings.Join(contentLines[:startIdx+1], "\n") + "\n" + "\n" +
 		param.newString + "\n" +
-		strings.Join(contentLines[eIdx:], "\n")
+		strings.Join(contentLines[endIdx:], "\n")
 	t.Log(content)
 
 	must.Done(os.WriteFile(param.path, []byte(content), 0666))
 	t.Log("success")
 }
 
-func obtainFilename(shortName string) (string, bool) {
-	path := runpath.PARENT.Join(shortName)
+// resolveReadmePath resolves the full path for a README file
+// Returns the path and whether to skip (if file not found)
+//
+// resolveReadmePath 解析 README 文件的完整路径
+// 返回路径以及是否跳过（如果文件未找到）
+func resolveReadmePath(filename string) (path string, skip bool) {
+	path = runpath.PARENT.Join(filename)
 	if !osomitexist.IsFile(path) {
-		path = runpath.PARENT.Join("locales", shortName)
+		path = runpath.PARENT.Join("locales", filename)
 	}
 	if !osomitexist.IsFile(path) {
 		return "", true
@@ -236,23 +279,22 @@ func splitRepos(repos []*yyle88.Repo, subSize int) ([]*yyle88.Repo, []*yyle88.Re
 	return repos[:idx], repos[idx:]
 }
 
-//func makeBadge(repo *yyle88.Repo, colorString string) string {
-//	return fmt.Sprintf("[![%s](https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white)](%s)", repo.Name, repo.Name, url.QueryEscape(colorString), repo.Link)
-//}
-
-func makeCustomHeightBadge(name string, link string, colorString string, height int) string {
-	return fmt.Sprintf(`<a href="%s"><img src="https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white" height="%d"></a>`, link, strings.ReplaceAll(name, "-", "+"), url.QueryEscape(colorString), height)
+// generateBadgeWithHeight creates a custom height badge HTML
+// Used for repo links in markdown tables
+//
+// generateBadgeWithHeight 创建自定义高度的徽章 HTML
+// 用于 markdown 表格中的仓库链接
+func generateBadgeWithHeight(name, link, colorString string, height int) string {
+	return fmt.Sprintf(`<a href="%s"><img src="https://img.shields.io/badge/%s-%s.svg?style=flat&logoColor=white" height="%d"></a>`,
+		link, strings.ReplaceAll(name, "-", "+"), url.QueryEscape(colorString), height)
 }
 
-func repeatString(s string, n int) string {
-	var res string
-	for i := 0; i < n; i++ {
-		res += s
-	}
-	return res
-}
-
-func makeCardLine(repo *yyle88.Repo, cardTheme string) string {
+// generateRepoCard creates a GitHub repo card markdown with custom theme
+// Uses github-readme-stats API for rendering
+//
+// generateRepoCard 创建带自定义主题的 GitHub 仓库卡片 markdown
+// 使用 github-readme-stats API 进行渲染
+func generateRepoCard(repo *yyle88.Repo, cardTheme string) string {
 	const templateLine = "[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username={{ username }}&repo={{ repo_name }}&theme={{ card_theme }}&unique={{ unique_uuid }})]({{ repo_link }})"
 
 	rep := strings.NewReplacer(

@@ -9,10 +9,15 @@ import (
 	restyv2 "github.com/go-resty/resty/v2"
 	"github.com/yyle88/erero"
 	"github.com/yyle88/neatjson/neatjsons"
-	"github.com/yyle88/sortslice"
+	"github.com/yyle88/sortx"
 	"github.com/yyle88/zaplog"
 )
 
+// Repo represents a GitHub repository with essential metadata
+// Includes name, link, description, star count and last push time
+//
+// Repo 代表一个 GitHub 仓库及其基本元数据
+// 包含名称、链接、描述、星标数和最后推送时间
 type Repo struct {
 	Name       string    `json:"name"`
 	Link       string    `json:"html_url"`
@@ -21,18 +26,15 @@ type Repo struct {
 	PushedAt   time.Time `json:"pushed_at"`
 }
 
+// GetGithubRepos fetches all public repositories for the given username
+// Sorts repos by stars (descending) and recent activity
+//
+// GetGithubRepos 获取指定用户的所有公开仓库
+// 按星标数（降序）和最近活跃度排序
 func GetGithubRepos(username string) ([]*Repo, error) {
 	var repos []*Repo
 
-	// 从环境变量读取 GitHub Token
-	githubToken := os.Getenv("GITHUB_TOKEN")
-
-	// 使用 Token 添加 Authorization 请求头
-	request := restyv2.New().SetTimeout(time.Minute).R()
-	if githubToken != "" {
-		request = request.SetHeader("Authorization", "token "+githubToken)
-	}
-	response, err := request.SetPathParam("username", username).
+	response, err := newGithubRequest().SetPathParam("username", username).
 		SetResult(&repos).
 		Get("https://api.github.com/users/{username}/repos")
 	if err != nil {
@@ -43,81 +45,57 @@ func GetGithubRepos(username string) ([]*Repo, error) {
 	}
 	zaplog.SUG.Debugln(neatjsons.SxB(response.Body()))
 
-	sortslice.SortVStable(repos, func(a, b *Repo) bool {
+	sortx.SortVStable(repos, func(a, b *Repo) bool {
+		// 点开头的仓库排后面
 		if strings.HasPrefix(a.Name, ".") || strings.HasPrefix(b.Name, ".") {
 			return !strings.HasPrefix(a.Name, ".")
-		} else if a.Name == username || b.Name == username {
-			return a.Name != username //当是主页项目时把它排在最后面，避免排的太靠前占据重要的位置
-		} else if a.Stargazers > b.Stargazers {
-			return true //星多者排前面
-		} else if a.Stargazers < b.Stargazers {
-			return false //星少者排后面
-		} else {
-			return a.PushedAt.After(b.PushedAt) //同样星星时最近有更新的排前面
 		}
+		// 主页项目排后面，避免占据重要位置
+		if a.Name == username || b.Name == username {
+			return a.Name != username
+		}
+		// 星星数多的排前面
+		if a.Stargazers != b.Stargazers {
+			return a.Stargazers > b.Stargazers
+		}
+		// 星星数相同时，最近更新的排前面
+		return a.PushedAt.After(b.PushedAt)
 	})
 
 	zaplog.SUG.Debugln(neatjsons.S(repos))
 	return repos, nil
 }
 
+// newGithubRequest creates a new HTTP request with GitHub token if available
+func newGithubRequest() *restyv2.Request {
+	request := restyv2.New().SetTimeout(time.Minute).R()
+	if token := os.Getenv("GITHUB_TOKEN"); token != "" {
+		request = request.SetHeader("Authorization", "token "+token)
+	}
+	return request
+}
+
+// Organization represents a GitHub organization
+// Contains organization name and API endpoints
+//
+// Organization 代表一个 GitHub 组织
+// 包含组织名称和 API 端点
 type Organization struct {
-	Name      string `json:"login"`     // 组织名称
-	Link      string `json:"url"`       // 组织链接
-	ReposLink string `json:"repos_url"` // 组织链接
+	Name      string `json:"login"`     // Organization name // 组织名称
+	Link      string `json:"url"`       // Organization URL // 组织链接
+	ReposLink string `json:"repos_url"` // Repos API URL // 仓库接口链接
 }
 
-type Membership struct {
-	Role  string `json:"role"`  // "admin", "member"
-	State string `json:"state"` // "active", "pending"
-}
-
-func checkOrganizationOwnership(orgName, username string) (bool, error) {
-	// 从环境变量读取 GitHub Token
-	githubToken := os.Getenv("GITHUB_TOKEN")
-
-	// 使用 Token 添加 Authorization 请求头
-	request := restyv2.New().SetTimeout(time.Minute).R()
-	if githubToken != "" {
-		request = request.SetHeader("Authorization", "token "+githubToken)
-	}
-
-	var membership Membership
-	response, err := request.SetPathParams(map[string]string{
-		"org":      orgName,
-		"username": username,
-	}).SetResult(&membership).
-		Get("https://api.github.com/orgs/{org}/memberships/{username}")
-
-	if err != nil {
-		return false, erero.Wro(err)
-	}
-
-	// 如果状态码是200且role是admin，说明用户是owner
-	if response.StatusCode() == http.StatusOK {
-		zaplog.SUG.Debugf("Organization %s membership for %s: role=%s, state=%s", orgName, username, membership.Role, membership.State)
-		return membership.Role == "admin" && membership.State == "active", nil
-	}
-
-	// 其他状态码表示不是成员或无权限
-	return false, nil
-}
-
+// GetOrganizations fetches all organizations that the user belongs to
+// Returns list of organizations with their basic information
+//
+// GetOrganizations 获取用户所属的所有组织
+// 返回包含基本信息的组织列表
 func GetOrganizations(username string) ([]*Organization, error) {
-	var allOrganizations []*Organization
+	var organizations []*Organization
 
-	// 从环境变量读取 GitHub Token
-	githubToken := os.Getenv("GITHUB_TOKEN")
-
-	// 使用 Token 添加 Authorization 请求头
-	request := restyv2.New().SetTimeout(time.Minute).R()
-	if githubToken != "" {
-		request = request.SetHeader("Authorization", "Bearer "+githubToken)
-	}
-
-	// 请求获取用户的组织信息
-	response, err := request.SetPathParam("username", username).
-		SetResult(&allOrganizations).
+	response, err := newGithubRequest().SetPathParam("username", username).
+		SetResult(&organizations).
 		Get("https://api.github.com/users/{username}/orgs")
 	if err != nil {
 		return nil, erero.Wro(err)
@@ -126,24 +104,19 @@ func GetOrganizations(username string) ([]*Organization, error) {
 		return nil, erero.New(response.Status())
 	}
 	zaplog.SUG.Debugln(neatjsons.SxB(response.Body()))
-
-	// 暂时返回所有组织以测试其他功能
-	zaplog.SUG.Debugln(neatjsons.S(allOrganizations))
-	return allOrganizations, nil
+	zaplog.SUG.Debugln(neatjsons.S(organizations))
+	return organizations, nil
 }
 
+// GetOrganizationRepos fetches all repositories for the given organization
+// Sorts repos with organization main repo first, then by stars
+//
+// GetOrganizationRepos 获取指定组织的所有仓库
+// 组织主仓库排在最前，其余按星标数排序
 func GetOrganizationRepos(orgName string) ([]*Repo, error) {
 	var repos []*Repo
 
-	// 从环境变量读取 GitHub Token
-	githubToken := os.Getenv("GITHUB_TOKEN")
-
-	// 使用 Token 添加 Authorization 请求头
-	request := restyv2.New().SetTimeout(time.Minute).R()
-	if githubToken != "" {
-		request = request.SetHeader("Authorization", "token "+githubToken)
-	}
-	response, err := request.SetPathParam("org", orgName).
+	response, err := newGithubRequest().SetPathParam("org", orgName).
 		SetResult(&repos).
 		Get("https://api.github.com/orgs/{org}/repos")
 	if err != nil {
@@ -154,18 +127,21 @@ func GetOrganizationRepos(orgName string) ([]*Repo, error) {
 	}
 	zaplog.SUG.Debugln(neatjsons.SxB(response.Body()))
 
-	sortslice.SortVStable(repos, func(a, b *Repo) bool {
+	sortx.SortVStable(repos, func(a, b *Repo) bool {
+		// 点开头的仓库排后面
 		if strings.HasPrefix(a.Name, ".") || strings.HasPrefix(b.Name, ".") {
 			return !strings.HasPrefix(a.Name, ".")
-		} else if a.Name == orgName || b.Name == orgName {
-			return a.Name == orgName //当项目名称与组织名称相同时，说明是主项目，因此需要放在前面
-		} else if a.Stargazers > b.Stargazers {
-			return true //星多者排前面
-		} else if a.Stargazers < b.Stargazers {
-			return false //星少者排后面
-		} else {
-			return a.PushedAt.After(b.PushedAt) //同样星星时最近有更新的排前面
 		}
+		// 与组织同名的主项目排前面
+		if a.Name == orgName || b.Name == orgName {
+			return a.Name == orgName
+		}
+		// 星星数多的排前面
+		if a.Stargazers != b.Stargazers {
+			return a.Stargazers > b.Stargazers
+		}
+		// 星星数相同时，最近更新的排前面
+		return a.PushedAt.After(b.PushedAt)
 	})
 
 	zaplog.SUG.Debugln(neatjsons.S(repos))
